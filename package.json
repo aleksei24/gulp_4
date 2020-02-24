@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/aleksei24/gulp_4/issues"
   },
-  "homepage": "https://github.com/aleksei24/gulp_4#readme"
+  "homepage": "https://github.com/aleksei24/gulp_4#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-pug": "^4.0.1"
+  }
 }
