@@ -1,0 +1,23 @@
+{
+  "name": "gulp_4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleksei24/gulp_4.git"
+  },
+  "keywords": [
+    "gulp_4",
+    "new_gulp"
+  ],
+  "author": "Alexey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aleksei24/gulp_4/issues"
+  },
+  "homepage": "https://github.com/aleksei24/gulp_4#readme"
+}
