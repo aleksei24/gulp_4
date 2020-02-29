@@ -1,17 +1,27 @@
 header.header
+    .header__top
+        .header__logo
+            .logo__sign
+                img(src="../static/images/general/Logo.webp", alt="logo")
+        .header__menu
+            ul
+                li
+                    a(href="#") O Компании
+                li
+                    a(href="#") Портфолио
+                li
+                    a(href="#") Каталог
+                li
+                    a(href="#") Сервис
+                li
+                    a(href="#") Контакты
+        button.open &#9776;
     .container
-        .header__navbar.navbar
-            a.logo(href="#")
-                h1.logo__headline.headline Привет
-            nav.navbar__navigation.navigation
-                a(href="#") Главная
-                a(href="./pages/about.html") Обо мне
-                a(href="#") Портфолио
-                a(href="#") Контакты
-                button.open-menu Меню
-            nav.nav-hidden
-                button.close-menu Закрыть
-                a(href="#") Главная
-                a(href="#") Обо мне
-                a(href="#") Портфолио
-                a(href="#") Контакты
+        .header__banner
+            .banner__decor
+            .banner__info
+                h1 Светотехническое оборудование в Петербурге
+                p Продажа, аренда светотехнического оборудования.
+                        | Оформление официальных мероприятий под ключ.
+                a(href="#")
+                    button.info__btn.btn Перейти
