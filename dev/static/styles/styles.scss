@@ -93,9 +93,12 @@ button { outline: none; }
 
 .container {
   margin: 0 auto;
-  max-width: $content-size;
+  padding: 0 10px;
+  max-width: 75%;
   width: 100%;
+  background-color: #bbe5bb;
 }
 
 //Модули
 @import "modules/modules";
+@import "modules/header/header.scss";
