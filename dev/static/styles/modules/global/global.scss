@@ -1,0 +1,37 @@
+.container {
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: 90%;
+}
+
+.headline{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.open-menu,
+.hidden-menu{
+    display: none;
+}
+@media screen and (max-width: 1024px){
+    .open-menu{
+        display: block;
+    }
+}
+
+.open-menu{
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+}
+
+
+.text{
+    text-align: center;
+}
