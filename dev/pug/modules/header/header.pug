@@ -9,16 +9,12 @@ header.header
                 a(href="#") Портфолио
                 a(href="#") Навыки
                 a(href="#") Контакты
-            button.open-menu &#9776;
-            .hidden-menu
-                ul
-                    li
-                        a(href="#") Главная
-                    li
-                        a(href="#") Обо мне
-                    li
-                        a(href="#") Портфолио
-                    li
-                        a(href="#") Навыки
-                    li
-                        a(href="#") Контакты
+            button.open-menu(onclick='openMenu()') &#9776;
+            #mobile.hidden-menu
+                a.close(href="#", onclick='closeMenu()') &times;
+                .hidden-menu__inner-content
+                    a(href="#") Главная
+                    a(href="#") Обо мне
+                    a(href="#") Портфолио
+                    a(href="#") Навыки
+                    a(href="#") Контакты
