@@ -1,0 +1,54 @@
+.welcome{
+    height: 940px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+}
+
+@media screen and (max-width: 1536px){
+    .welcome{
+        background-size: 90%;
+    }
+}
+
+@media screen and (max-width: 1440px){
+    .welcome{
+        background-size: 100%;
+    }
+}
+
+@media screen and (max-width: 1248px){
+    .welcome{
+        background-size: 110%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .welcome{
+        background-size: 120%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .welcome{
+        background-size: 130%;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .welcome{
+        background-size: 140%;
+    }
+}
+
+@media screen and (max-width: 560px){
+    .welcome{
+        background-size: 150%;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .welcome{
+        background-size: 160%;
+    }
+}
