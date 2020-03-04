@@ -87,6 +87,7 @@ button { outline: none; }
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: #cee7b4;
 }
 
 .content { flex: 1 0 auto; }
@@ -96,9 +97,15 @@ button { outline: none; }
   padding: 0 10px;
   max-width: 75%;
   width: 100%;
-  background-color: #bbe5bb;
+}
+
+.headline{
+  text-align: center;
+  text-transform: uppercase;
 }
 
 //Модули
 @import "modules/modules";
 @import "modules/header/header.scss";
+@import "modules/footer/footer.scss";
+@import "pages/index.scss";
