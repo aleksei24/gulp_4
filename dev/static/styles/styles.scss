@@ -92,17 +92,6 @@ button { outline: none; }
 
 .content { flex: 1 0 auto; }
 
-.container {
-  margin: 0 auto;
-  padding: 0 10px;
-  max-width: 75%;
-  width: 100%;
-}
-
-.headline{
-  text-align: center;
-  text-transform: uppercase;
-}
 
 //Модули
 @import "modules/modules";
