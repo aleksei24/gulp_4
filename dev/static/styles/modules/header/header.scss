@@ -63,7 +63,7 @@
                 z-index: 10;
                 position: fixed;
                 right: 0;
-                top: 126px;
+                top: 100px;
                 overflow-x: hidden;
                 transition: .5s;
                 background-color: green;
@@ -129,6 +129,22 @@
             height: 135px;
             .hidden-menu{
                 top: 100px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 240px){
+    .header{
+        height: 50px;
+        .header__navbar{
+            height: 55px;
+            .hidden-menu{
+                top: 50px;
+                .close{
+                    top: 0;
+                    left: 20px;
+                }
             }
         }
     }
