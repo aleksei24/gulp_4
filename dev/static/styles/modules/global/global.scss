@@ -5,7 +5,7 @@
 }
 
 .headline{
-    font-family: 'Lato';
+    font-family: 'Helvetica';
     font-size: 24px;
     text-align: center;
     text-transform: uppercase;
@@ -15,6 +15,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+a{
+    font-family: 'Helvetica';
 }
 
 .open-menu,
@@ -37,5 +41,15 @@
 .text{
     font-family: 'Pacifico';
     font-size: 18px;
+    text-align: center;
+}
+
+.welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
     text-align: center;
 }
