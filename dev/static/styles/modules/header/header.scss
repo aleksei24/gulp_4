@@ -52,9 +52,14 @@
 @media screen and (max-width: 1024px){
     .header{
         .header__navbar{
-            height: 130px;
+            height: 90px;
             .navbar__navigation{
                 display: none;
+            }
+            .open-menu{
+                height: 40px;
+                width: 40px;
+                font-size: 24px;
             }
             .hidden-menu{
                 display: block;
@@ -71,7 +76,7 @@
                 .close{
                     font-size: 70px;
                     position: absolute;
-                    top: 30px;
+                    top: 0;
                     left: 30px;
                     color: #d1e4d1;
                 }
@@ -80,11 +85,11 @@
                     top: 5%;
                     width: 100%;
                     text-align: center;
-                    margin-top: 50px;
+                    margin-top: 40px;
                     a{
                         display: block;
-                        padding: 30px;
-                        font-size: 36px;
+                        padding: 22px;
+                        font-size: 30px;
                         color: #cee9b3;
                     }
                 }
@@ -95,10 +100,20 @@
 
 @media screen and (max-width: 768px){
     .header{
+        height: 70px;
         .header__navbar{
-            height: 135px;
             .hidden-menu{
-                top: 100px;
+                top: 70px;
+                .close{
+                    font-size: 60px;
+                }
+                .hidden-menu__inner-content{
+                    margin-top: 45px;
+                    a{
+                        font-size: 28px;
+                        padding: 25px;
+                    }
+                }
             }
         }
     }
@@ -107,7 +122,7 @@
 @media screen and (max-width: 640px){
     .header{
         .header__navbar{
-            height: 115px;
+            height: 80px;
         }
     }
 }
@@ -115,7 +130,7 @@
 @media screen and (max-width: 560px){
     .header{
         .header__navbar{
-            height: 135px;
+            height: 70px;
             .hidden-menu{
                 top: 120px;
             }
@@ -126,9 +141,9 @@
 @media screen and (max-width: 480px){
     .header{
         .header__navbar{
-            height: 135px;
+            height: 90px;
             .hidden-menu{
-                top: 100px;
+                top: 70px;
             }
         }
     }
@@ -139,11 +154,24 @@
         height: 50px;
         .header__navbar{
             height: 55px;
+            .open-menu{
+                height: 30px;
+                width: 30px;
+                font-size: 18px;
+            }
             .hidden-menu{
                 top: 50px;
                 .close{
-                    top: 0;
+                    top: 10px;
                     left: 20px;
+                    font-size: 30px;
+                }
+                .hidden-menu__inner-content{
+                    margin-top: 30px;
+                    a{
+                        font-size: 14px;
+                        padding: 20px;
+                    }
                 }
             }
         }

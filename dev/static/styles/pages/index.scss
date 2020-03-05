@@ -1,5 +1,5 @@
 .welcome{
-    height: 940px;
+    height: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 90%;
@@ -7,24 +7,24 @@
 
 @media screen and (max-width: 1536px){
     .welcome{
-        height: 570px;
-        background-size: 70%;
+        // height: 570px;
+        // background-size: 70%;
         background-position: center;
     }
 }
 
 @media screen and (max-width: 1440px){
     .welcome{
-        height: 770px;
+        // height: 770px;
         background-size: 100%;
     }
 }
 
-@media screen and (max-width: 1280px){
-    .welcome{
-        height: 670px;
-    }
-}
+// @media screen and (max-width: 1280px){
+//     .welcome{
+//         height: 670px;
+//     }
+// }
 
 @media screen and (max-width: 1248px){
     .welcome{
@@ -40,7 +40,7 @@
 
 @media screen and (max-width: 768px){
     .welcome{
-        height: 896px;
+        // height: 896px;
         background-size: 190%;
     }
 }
@@ -65,7 +65,7 @@
 
 @media screen and (max-width: 240px){
     .welcome{
-        height: 325px;
+        // height: 325px;
         background-size: 200%;
     }
 }
