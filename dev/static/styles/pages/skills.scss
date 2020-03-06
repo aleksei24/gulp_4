@@ -26,9 +26,10 @@
 @media screen and (max-width: 1536px){
     .skills{
         .skills__box{
+            margin-top: 50px;
             .box__brick{
-                max-width: 180px;
-                margin: 35px 20px;
+                max-width: 100px;
+                margin: 20px;
             }
         }
     }
@@ -38,8 +39,8 @@
     .skills{
         .skills__box{
             .box__brick{
-                max-width: 160px;
-                margin: 30px 20px;
+                max-width: 95px;
+                margin: 18px;
             }
         }
     }
@@ -50,8 +51,8 @@
         .skills__box{
             margin-top: 50px;
             .box__brick{
-                max-width: 150px;
-                margin: 30px 20px;
+                max-width: 90px;
+                margin: 17px;
                 .brick__headline{
                     font-size: 18px;
                 }
@@ -64,8 +65,7 @@
     .skills{
         .skills__box{
             .box__brick{
-                max-width: 116px;
-                margin: 25px 20px;
+                max-width: 80px;
                 .brick__headline{
                     font-size: 15px;
                 }
@@ -79,7 +79,6 @@
         .skills__box{
             .box__brick{
                 max-width: 20%;
-                margin: 25px 20px;
                 padding: 5px;
                 .brick__headline{
                     font-size: 12px;
@@ -108,7 +107,7 @@
         .skills__box{
             margin-top: 30px;
             .box__brick{
-                margin: 20px;
+                margin: 15px;
             }
         }
     }
