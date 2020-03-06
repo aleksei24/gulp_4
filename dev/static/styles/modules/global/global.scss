@@ -1,7 +1,7 @@
 .container {
     margin: 0 auto;
     padding: 0 10px;
-    max-width: 90%;
+    max-width: 80%;
 }
 
 .headline{
@@ -45,7 +45,8 @@ a{
 }
 
 .welcome,
-.about{
+.about,
+.works{
     display: flex;
     justify-content: center;
     align-items: center;
