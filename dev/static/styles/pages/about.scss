@@ -12,9 +12,6 @@
 
 @media screen and (max-width: 1440px){
     .about{
-        .about__headline{
-            font-size: 26px;
-        }
         .about__text{
             font-size: 20px;
         }
@@ -23,9 +20,6 @@
 
 @media screen and (max-width: 1024px){
     .about{
-        .about__headline{
-            font-size: 18px;
-        }
         .about__text{
             font-size: 16px;
             line-height: 36px;
@@ -35,9 +29,6 @@
 
 @media screen and (max-width: 640px){
     .about{
-        .about__headline{
-            font-size: 15px;
-        }
         .about__text{
             line-height: 32px;
         }
@@ -46,9 +37,6 @@
 
 @media screen and (max-width: 560px){
     .about{
-        .about__headline{
-            font-size: 14px;
-        }
         .about__text{
             font-size: 14px;
         }
@@ -57,9 +45,6 @@
 
 @media screen and (max-width: 480px){
     .about{
-        .about__headline{
-            font-size: 13px;
-        }
         .about__text{
             font-size: 13px;
             line-height: 21px;
@@ -71,7 +56,6 @@
     .about{
         margin: 10px 0;
         .about__headline{
-            font-size: 12px;
             margin-bottom: 10px;
         }
         .about__text{
