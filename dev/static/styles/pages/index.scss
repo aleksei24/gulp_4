@@ -1,0 +1,105 @@
+.welcome{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+    .welcome__content h1{
+        font-family: 'Helvetica';
+        font-size: 32px;
+        letter-spacing: 5px;
+        font-weight: 500;
+        color: #efe1c9;
+    }
+    .welcome__content h2{
+        font-family: 'Lato';
+        font-size: 28px;
+        letter-spacing: 4px;
+        font-weight: 500;
+        color: #efe1c9;
+    }
+}
+
+@media screen and (max-width: 1536px){
+    .welcome{
+        // height: 570px;
+        background-size: 70%;
+        background-position: center;
+    }
+}
+
+@media screen and (max-width: 1440px){
+    .welcome{
+        // height: 770px;
+        background-size: 100%;
+    }
+}
+
+// @media screen and (max-width: 1280px){
+//     .welcome{
+//         height: 670px;
+//     }
+// }
+
+@media screen and (max-width: 1248px){
+    .welcome{
+        background-size: 110%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .welcome{
+        background-size: 130%;
+        .welcome__content h1{
+            font-size: 28px;
+            letter-spacing: 4px;
+        }
+        .welcome__content h2{
+            font-size: 25px;
+            letter-spacing: 3px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .welcome{
+        // height: 896px;
+        background-size: 190%;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .welcome{
+        background-size: 230%;
+    }
+}
+
+@media screen and (max-width: 560px){
+    .welcome{
+        background-size: 240%;
+        .welcome__content h1{
+            font-size: 24px;
+        }
+        .welcome__content h2{
+            font-size: 21px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px){
+    .welcome{
+        background-size: 300%;
+    }
+}
+
+@media screen and (max-width: 240px){
+    .welcome{
+        // height: 325px;
+        background-size: 200%;
+        .welcome__content h1{
+            font-size: 18px;
+        }
+        .welcome__content h2{
+            font-size: 15px;
+        }
+    }
+}

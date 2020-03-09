@@ -1,0 +1,16 @@
+header.header
+    .container
+        .header__navbar.navbar
+            a.logo(href="index.html")
+                h1.logo__headline.headline логотип
+            nav.navbar__navigation.navigation
+                a(href="index.html") Главная
+                a(href="page2.html") страница 2
+                a(href="page3.html") страница 3
+            button.open-menu(onclick='openMenu()') &#9776;
+            #mobile.hidden-menu
+                a.close(href="#", onclick='closeMenu()') &times;
+                .hidden-menu__inner-content
+                    a(href="index.html") Главная
+                    a(href="page2.html") страница 2
+                    a(href="page3.html") страница 3
