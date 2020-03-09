@@ -47,40 +47,6 @@ if (!Array.from) {
 
 // mobile-menu
 /* Open when someone clicks on the span element */
-function openMenu() {
-    document.getElementById("mobile").style.width = "100%";
-}
 
-  /* Close when someone clicks on the "x" symbol inside the overlay */
-function closeMenu() {
-    document.getElementById("mobile").style.width = "0%";
-}
 
 // slideshow
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlide(n){
-    showSlides(slideIndex += n);
-}
-
-function currentSlide(n){
-    showSlides(slideIndex == n);
-}
-
-function showSlides(n){
-    let slide = document.getElementsByClassName('slide');
-
-    if(n > slide.length){
-        slideIndex = 1;
-    }
-    if(n < 1){
-        slideIndex = slide.length;
-    }
-
-    for(let i = 0; i < slide.length; i++){
-        slide[i].style.display = 'none';
-    }
-
-    slide[slideIndex-1].style.display = "block";
-}

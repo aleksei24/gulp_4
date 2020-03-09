@@ -1,5 +1,5 @@
 body{
-    background-color: #cee7b4;
+    
 }
 
 .container {
@@ -9,37 +9,7 @@ body{
 }
 
 .headline{
-    font-family: 'Helvetica';
-    font-size: 27px;
-    text-align: center;
-    text-transform: uppercase;
-    @media screen and (max-width: 1536px) {
-        font-size: 24px;
-    }
-    @media screen and (max-width: 1440px) {
-        font-size: 24px;
-    }
-    @media screen and (max-width: 1248px) {
-        font-size: 22px;
-    }
-    @media screen and (max-width: 1024px) {
-        font-size: 21px;
-    }
-    @media screen and (max-width: 768px) {
-        font-size: 20px;
-    }
-    @media screen and (max-width: 640px) {
-        font-size: 19px;
-    }
-    @media screen and (max-width: 560px) {
-        font-size: 18px;
-    }
-    @media screen and (max-width: 480px) {
-        font-size: 15px;
-    }
-    @media screen and (max-width: 400px) {
-        font-size: 12px;
-    }
+    
 }
 
 .navbar{
@@ -49,41 +19,6 @@ body{
 }
 
 a{
-    font-family: 'Helvetica';
+    
 }
 
-.open-menu,
-.hidden-menu{
-    display: none;
-}
-@media screen and (max-width: 1024px){
-    .open-menu{
-        display: block;
-    }
-}
-
-.open-menu{
-    height: 50px;
-    width: 50px;
-    font-size: 30px;
-}
-
-
-.text{
-    font-family: 'Helvetica';
-    font-size: 21px;
-    text-align: center;
-}
-
-.welcome,
-.about,
-.works,
-.skills{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.content{
-    text-align: center;
-}
