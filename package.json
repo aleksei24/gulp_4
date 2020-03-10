@@ -1,0 +1,22 @@
+{
+  "name": "gulp_4",
+  "version": "1.1.0",
+  "description": "gulp_4 new version",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleksei24/gulp_4.git"
+  },
+  "author": "Alexey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aleksei24/gulp_4/issues"
+  },
+  "homepage": "https://github.com/aleksei24/gulp_4#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
