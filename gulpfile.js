@@ -8,3 +8,6 @@ gulp.task('scss', function(){
         .pipe(gulp.dest('out/css'))
 });
 
+gulp.task('watch', function(){
+    gulp.watch('app/scss/**/*.scss', gulp.parallel('scss'))
+});
