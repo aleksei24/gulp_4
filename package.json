@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/aleksei24/gulp_4#readme",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
   }
 }
