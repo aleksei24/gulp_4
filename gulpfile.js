@@ -1,11 +1,20 @@
 const gulp = require('gulp'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    browserSync = require('browser-sync').create();
 
 
 gulp.task('scss', function(){
     return gulp.src('app/scss/**/*.scss')
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(gulp.dest('out/css'))
+});
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "app/"
+        }
+    });
 });
 
 gulp.task('watch', function(){
