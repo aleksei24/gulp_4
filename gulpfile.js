@@ -20,3 +20,5 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function(){
     gulp.watch('app/scss/**/*.scss', gulp.parallel('scss'))
 });
+
+gulp.task('default', gulp.parallel('browser-sync', 'watch'));
