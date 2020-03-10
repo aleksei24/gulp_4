@@ -22,20 +22,24 @@ gulp.task('html', function(){
 
 gulp.task('script', function(){
     return gulp.src('app/js/**/*.js')
-        .pipe(gulp.dest('out/js'))
-        .pipe(browserSync.reload({stream: true}))
-});
-
-gulp.task('js', function(){
-    return gulp.src([
-        'node_modules/slick-carousel/slick/slick.js',
-        'node_modules/magnific-popup/dist/jquery.magnific-popup.js'
-    ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('out/js'))
         .pipe(browserSync.reload({stream: true}))
 });
+
+
+// switch on, if necessary
+// gulp.task('js', function(){
+//     return gulp.src([
+//         'node_modules/slick-carousel/slick/slick.js',
+//         'node_modules/magnific-popup/dist/jquery.magnific-popup.js'
+//     ])
+//         .pipe(concat('libs.min.js'))
+//         .pipe(uglify())
+//         .pipe(gulp.dest('out/js'))
+//         .pipe(browserSync.reload({stream: true}))
+// });
 
 gulp.task('browser-sync', function() {
     browserSync.init({
@@ -51,4 +55,6 @@ gulp.task('watch', function(){
     gulp.watch('app/js/**/*.js', gulp.parallel('script'));
 });
 
-gulp.task('default', gulp.parallel('scss', 'js', 'browser-sync', 'watch'));
+
+// add 'js', if necessary
+gulp.task('default', gulp.parallel('html', 'scss', 'script', 'browser-sync', 'watch'));
