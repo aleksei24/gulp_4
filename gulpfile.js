@@ -5,7 +5,8 @@ const gulp = require('gulp'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
-    del = require('del');
+    del = require('del'),
+    imageMin = require('imagemin');
 
 
 gulp.task('del', async function(){
@@ -72,6 +73,19 @@ gulp.task('browser-sync', function() {
 });
 
 
+gulp.task('img', async function(){
+    return gulp.src('app/img/**/*.*')
+        .pipe(gulp.dest('out/img'))
+        .pipe(browserSync.reload({stream: true}))
+});
+
+gulp.task('font', async function(){
+    return gulp.src('app/fonts/**/*.*')
+        .pipe(gulp.dest('out/fonts'))
+        .pipe(browserSync.reload({stream: true}))
+});
+
+
 // task to make a project to send to a server
 // gulp.task('build', async function(){
 //     let buildHTML = gulp.src('app/**/*.html')
@@ -93,9 +107,10 @@ gulp.task('watch', function(){
     gulp.watch('app/scss/**/*.scss', gulp.parallel('scss'));
     gulp.watch('app/**/*.html', gulp.parallel('html'));
     gulp.watch('app/js/**/*.js', gulp.parallel('js'));
+    gulp.watch('app/img/**/*.*', gulp.parallel('img'));
 });
 
 
 // add 'script', if necessary
 // add 'style', if necessary
-gulp.task('default', gulp.parallel('html', 'scss', 'js', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('del', 'html', 'scss','img', 'font', 'js', 'browser-sync', 'watch'));
