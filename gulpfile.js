@@ -6,7 +6,8 @@ const gulp = require('gulp'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
     del = require('del'),
-    imageMin = require('imagemin');
+    imageMin = require('imagemin'),
+    fileInclude = require('gulp-file-include');
 
 
 gulp.task('del', async function(){
@@ -37,11 +38,21 @@ gulp.task('scss', function(){
 //         .pipe(browserSync.reload({stream: true}))
 // });
 
-gulp.task('html', function(){
-    return gulp.src('app/**/*.html')
-        .pipe(gulp.dest('out'))
-        .pipe(browserSync.reload({stream: true}))
+gulp.task('include', async function(){
+    return gulp.src('app/html/**/*.html')
+    .pipe(fileInclude({
+        prefix: '@@',
+        basepath: '@file'
+    }))
+    .pipe(gulp.dest('out'))
+    .pipe(browserSync.reload({stream: true}))
 });
+
+// gulp.task('html', function(){
+//     return gulp.src('app/**/*.html')
+//         .pipe(gulp.dest('out'))
+//         .pipe(browserSync.reload({stream: true}))
+// });
 
 gulp.task('js', function(){
     return gulp.src('app/js/**/*.js')
@@ -103,9 +114,10 @@ gulp.task('font', async function(){
 //         .pipe(gulp.dest('another_folder/img'))
 // });
 
-gulp.task('watch', function(){
+gulp.task('watch', async function(){
     gulp.watch('app/scss/**/*.scss', gulp.parallel('scss'));
-    gulp.watch('app/**/*.html', gulp.parallel('html'));
+    gulp.watch('app/**/*.html', gulp.parallel('include'));
+    //gulp.watch('app/*.html', gulp.parallel('html'));
     gulp.watch('app/js/**/*.js', gulp.parallel('js'));
     gulp.watch('app/img/**/*.*', gulp.parallel('img'));
 });
@@ -113,4 +125,4 @@ gulp.task('watch', function(){
 
 // add 'script', if necessary
 // add 'style', if necessary
-gulp.task('default', gulp.parallel('del', 'html', 'scss','img', 'font', 'js', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('del', 'include', 'scss','img', 'font', 'js', 'browser-sync', 'watch'));
