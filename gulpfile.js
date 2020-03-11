@@ -9,10 +9,23 @@ const gulp = require('gulp'),
 gulp.task('scss', function(){
     return gulp.src('app/scss/**/*.scss')
         .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(concat('style.css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('out/css'))
         .pipe(browserSync.reload({stream: true}))
 });
+
+
+// switch on, if necessary
+// gulp.task('style', function(){
+//     return gulp.src([
+//         'node_modules/slick-carousel/slick/slick.js',
+//         'node_modules/magnific-popup/dist/jquery.magnific-popup.js'
+//     ])
+//         .pipe(concat('libs.scss'))
+//         .pipe(gulp.dest('out/css'))
+//         .pipe(browserSync.reload({stream: true}))
+// });
 
 gulp.task('html', function(){
     return gulp.src('app/**/*.html')
@@ -57,4 +70,5 @@ gulp.task('watch', function(){
 
 
 // add 'js', if necessary
+// add 'style', if necessary
 gulp.task('default', gulp.parallel('html', 'scss', 'script', 'browser-sync', 'watch'));
