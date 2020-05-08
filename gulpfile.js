@@ -48,6 +48,10 @@ function html() {
         .pipe(browser.stream());
 }
 
+function css(params) {
+    return src(path.src.css).pipe(dest(path.build.css)).pipe(browser.stream());
+}
+
 function watchFiles(params) {
     gulp.watch([path.watch.html], html);
 }
