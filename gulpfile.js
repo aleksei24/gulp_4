@@ -26,4 +26,15 @@ let path = {
 };
 
 let { src, dest } = require('gulp'),
-    gulp = require('gulp');
+    gulp = require('gulp'),
+    browser = require('browser-sync').create();
+
+function browserSync(par) {
+    browser.init({
+        server: {
+            baseDir: './' + projectFolder + '/',
+        },
+        port: 3000,
+        notify: false,
+    });
+}
