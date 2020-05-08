@@ -24,3 +24,6 @@ let path = {
     },
     clean: './' + projectFolder + '/',
 };
+
+let { src, dest } = require('gulp'),
+    gulp = require('gulp');
