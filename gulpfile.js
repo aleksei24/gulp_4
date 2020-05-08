@@ -33,7 +33,8 @@ let { src, dest } = require('gulp'),
     scss = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     groupmedia = require('gulp-group-css-media-queries'),
-    cleancss = require('gulp-clean-css');
+    cleancss = require('gulp-clean-css'),
+    rename = require('gulp-rename');
 
 function browserSync(par) {
     browser.init({
@@ -66,7 +67,13 @@ function css(params) {
                 cascade: true,
             })
         )
+        .pipe(dest(path.build.css))
         .pipe(cleancss())
+        .pipe(
+            rename({
+                extname: '.min.css',
+            })
+        )
         .pipe(dest(path.build.css))
         .pipe(browser.stream());
 }
