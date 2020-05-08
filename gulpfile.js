@@ -35,7 +35,8 @@ let { src, dest } = require('gulp'),
     groupmedia = require('gulp-group-css-media-queries'),
     cleancss = require('gulp-clean-css'),
     rename = require('gulp-rename'),
-    uglifyes = require('gulp-uglify-es').default;
+    uglifyes = require('gulp-uglify-es').default,
+    imagemin = require('gulp-imagemin');
 
 function browserSync(par) {
     browser.init({
@@ -93,19 +94,39 @@ function js() {
         .pipe(browser.stream());
 }
 
+function images() {
+    return src(path.src.img)
+        .pipe(
+            imagemin({
+                interlaced: true,
+                progressive: true,
+                optimizationLevel: 5,
+                svgoPlugins: [
+                    {
+                        removeViewBox: false,
+                    },
+                ],
+            })
+        )
+        .pipe(dest(path.build.img))
+        .pipe(browser.stream());
+}
+
 function watchFiles(params) {
     gulp.watch([path.watch.html], html);
     gulp.watch([path.watch.css], css);
     gulp.watch([path.watch.js], js);
+    gulp.watch([path.watch.img], images);
 }
 
 function clean(params) {
     return del(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(js, css, html));
+let build = gulp.series(clean, gulp.parallel(js, css, html, images));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
+exports.images = images;
 exports.js = js;
 exports.css = css;
 exports.html = html;
