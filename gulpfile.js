@@ -30,7 +30,8 @@ let { src, dest } = require('gulp'),
     browser = require('browser-sync').create(),
     fileinclude = require('gulp-file-include'),
     del = require('del'),
-    scss = require('gulp-sass');
+    scss = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer');
 
 function browserSync(par) {
     browser.init({
@@ -54,6 +55,12 @@ function css(params) {
         .pipe(
             scss({
                 outputStyle: 'expanded',
+            })
+        )
+        .pipe(
+            autoprefixer({
+                overrideBrowserlist: ['last 5 versions'],
+                cascade: true,
             })
         )
         .pipe(dest(path.build.css))
