@@ -31,7 +31,9 @@ let { src, dest } = require('gulp'),
     fileinclude = require('gulp-file-include'),
     del = require('del'),
     scss = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    groupmedia = require('gulp-group-css-media-queries'),
+    cleancss = require('gulp-clean-css');
 
 function browserSync(par) {
     browser.init({
@@ -57,12 +59,14 @@ function css(params) {
                 outputStyle: 'expanded',
             })
         )
+        .pipe(groupmedia())
         .pipe(
             autoprefixer({
                 overrideBrowserlist: ['last 5 versions'],
                 cascade: true,
             })
         )
+        .pipe(cleancss())
         .pipe(dest(path.build.css))
         .pipe(browser.stream());
 }
