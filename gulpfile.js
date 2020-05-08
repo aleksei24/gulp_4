@@ -38,3 +38,8 @@ function browserSync(par) {
         notify: false,
     });
 }
+
+let watch = gulp.parallel(browserSync);
+
+exports.watch = watch;
+exports.default = watch;
