@@ -10,7 +10,7 @@ let path = {
         fonts: projectFolder + '/fonts/',
     },
     src: {
-        html: sourceFolder + '/',
+        html: sourceFolder + '/*.html',
         css: sourceFolder + '/scss/style.scss',
         js: sourceFolder + '/js/script.js',
         img: sourceFolder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
@@ -39,7 +39,16 @@ function browserSync(par) {
     });
 }
 
-let watch = gulp.parallel(browserSync);
+function html() {
+    return src(path.src.html)
+        .pipe(dest(path.build.html))
+        .pipe(browser.stream());
+}
 
+let build = gulp.series(html);
+let watch = gulp.parallel(build, browserSync);
+
+exports.html = html;
+exports.build = build;
 exports.watch = watch;
 exports.default = watch;
