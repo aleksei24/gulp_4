@@ -158,9 +158,9 @@ gulp.task('svgsprite', function () {
 });
 
 function fontsStyle(params) {
-    let file_content = fs.readFileSync(source_folder + '/scss/fonts.scss');
+    let file_content = fs.readFileSync(sourceFolder + '/scss/fonts.scss');
     if (file_content == '') {
-        fs.writeFile(source_folder + '/scss/fonts.scss', '', cb);
+        fs.writeFile(sourceFolder + '/scss/fonts.scss', '', cb);
         return fs.readdir(path.build.fonts, function (err, items) {
             if (items) {
                 let c_fontname;
@@ -169,7 +169,7 @@ function fontsStyle(params) {
                     fontname = fontname[0];
                     if (c_fontname != fontname) {
                         fs.appendFile(
-                            source_folder + '/scss/fonts.scss',
+                            sourceFolder + '/scss/fonts.scss',
                             '@include font("' +
                                 fontname +
                                 '", "' +
