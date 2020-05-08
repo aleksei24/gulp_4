@@ -1,6 +1,8 @@
 const projectFolder = 'dist',
     sourceFolder = 'app';
 
+let fs = require('fs');
+
 let path = {
     build: {
         html: projectFolder + '/',
@@ -42,7 +44,8 @@ let { src, dest } = require('gulp'),
     webpcss = require('gulp-webp-css'),
     svgsprite = require('gulp-svg-sprite'),
     ttf2woff = require('gulp-ttf2woff'),
-    ttf2woff2 = require('gulp-ttf2woff2');
+    ttf2woff2 = require('gulp-ttf2woff2'),
+    fonter = require('gulp-fonter');
 
 function browserSync(par) {
     browser.init({
@@ -132,6 +135,16 @@ function fonts() {
     return src(path.src.fonts).pipe(ttf2woff2()).pipe(dest(path.build.fonts));
 }
 
+gulp.task('otf2ttf', function () {
+    return src([sourceFolder + '/fonts/*.otf'])
+        .pipe(
+            fonter({
+                formats: ['ttf'],
+            })
+        )
+        .pipe(dest(sourceFolder + '/fonts/'));
+});
+
 gulp.task('svgsprite', function () {
     return gulp.src([sourceFolder + '/iconsprite/*.svg']).pipe(
         svgsprite({
@@ -144,6 +157,36 @@ gulp.task('svgsprite', function () {
     );
 });
 
+function fontsStyle(params) {
+    let file_content = fs.readFileSync(source_folder + '/scss/fonts.scss');
+    if (file_content == '') {
+        fs.writeFile(source_folder + '/scss/fonts.scss', '', cb);
+        return fs.readdir(path.build.fonts, function (err, items) {
+            if (items) {
+                let c_fontname;
+                for (var i = 0; i < items.length; i++) {
+                    let fontname = items[i].split('.');
+                    fontname = fontname[0];
+                    if (c_fontname != fontname) {
+                        fs.appendFile(
+                            source_folder + '/scss/fonts.scss',
+                            '@include font("' +
+                                fontname +
+                                '", "' +
+                                fontname +
+                                '", "400", "normal");\r\n',
+                            cb
+                        );
+                    }
+                    c_fontname = fontname;
+                }
+            }
+        });
+    }
+}
+
+function cb() {}
+
 function watchFiles(params) {
     gulp.watch([path.watch.html], html);
     gulp.watch([path.watch.css], css);
@@ -155,9 +198,14 @@ function clean(params) {
     return del(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts));
+let build = gulp.series(
+    clean,
+    gulp.parallel(js, css, html, images, fonts),
+    fontsStyle
+);
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
+exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
 exports.js = js;
