@@ -1,0 +1,100 @@
+$laptopWidth: 1440px;
+$smallLaptop: 1150px;
+$tabletWidth: 992px;
+$smallTablet: 767px;
+$mobileWidth: 545px;
+$minWidth: 240px;
+$fontFamily: 'Open-Sans';
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: $minWidth;
+    position: relative;
+    color: #000000;
+}
+body {
+    font-size: 100%;
+    font-size: 14px;
+    font-family: $fontFamily;
+    &.lock {
+        overflow: hidden;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    position: relative;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration: none;
+    // outline: 1px solid red;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+a:focus,
+a:active {
+    outline: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+input,
+button,
+textarea {
+    font-family: $fontFamily;
+}
+button {
+    cursor: pointer;
+    border-radius: 5px;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    max-width: 1600px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+}
+.container {
+    max-width: 1030px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.ibg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.ibg img {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+}
