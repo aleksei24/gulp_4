@@ -15,6 +15,7 @@ let path = {
         html: [sourceFolder + '/*.html', '!' + sourceFolder + '/_*.html'],
         css: sourceFolder + '/scss/style.scss',
         js: sourceFolder + '/js/main.js',
+        jquery: './node_modules/jquery/dist/jquery.js',
         img: sourceFolder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
         fonts: sourceFolder + '/fonts/*.{woff,woff2}',
     },
@@ -101,6 +102,15 @@ function js() {
                 extname: '.min.js',
             })
         )
+        .pipe(dest(path.build.js))
+        .pipe(browser.stream());
+}
+
+function jquery() {
+    return src(path.src.jquery)
+        .pipe(dest(path.build.js))
+        .pipe(uglifyes())
+        .pipe(rename({ extname: '.min.js' }))
         .pipe(dest(path.build.js))
         .pipe(browser.stream());
 }
@@ -200,11 +210,12 @@ function clean(params) {
 
 let build = gulp.series(
     clean,
-    gulp.parallel(js, css, html, images, fonts),
+    gulp.parallel(js, jquery, css, html, images, fonts),
     fontsStyle
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
+exports.jquery = jquery;
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
