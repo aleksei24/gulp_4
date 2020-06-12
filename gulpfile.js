@@ -108,7 +108,6 @@ function js() {
 
 function jquery() {
     return src(path.src.jquery)
-        .pipe(dest(path.build.js))
         .pipe(uglifyes())
         .pipe(rename({ extname: '.min.js' }))
         .pipe(dest(path.build.js))
