@@ -1,0 +1,46 @@
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: yellowgreen;
+    z-index: 5;
+}
+.header__inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+.header__logo {
+    position: relative;
+    flex: 0 0 50px;
+    overflow: hidden;
+    z-index: 5;
+}
+.header__burger {
+    display: none;
+}
+.header__list {
+    display: flex;
+    position: relative;
+    z-index: 5;
+    li {
+        margin-left: 20px;
+    }
+}
+.header__link {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 18px;
+}
