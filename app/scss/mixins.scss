@@ -1,0 +1,16 @@
+$maxWidth: 1400;
+
+@mixin response-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.7;
+    @media (max-width: 767px) {
+        font-size: calc(
+            #{$mobSize + px} + #{$addMobSize} * ((100vw - 240px) / #{$maxWidth})
+        );
+    }
+    @media (min-width: 767px) {
+        font-size: calc(
+            #{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth})
+        );
+    }
+}
