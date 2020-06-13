@@ -1,6 +1,9 @@
 .fullscreen {
     display: flex;
     min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .fullscreen__container {
     display: flex;
@@ -9,8 +12,18 @@
     flex: 1 1 auto;
     text-align: center;
     width: 100%;
+    max-width: 700px;
+}
+.fullscreen__headline,
+.fullscreen__text {
+    color: powderblue;
+}
+.fullscreen__text {
+    margin: 30px 0;
 }
 .fullscreen__btn {
     height: 30px;
     width: 90px;
+    text-transform: uppercase;
+    background-color: powderblue;
 }
