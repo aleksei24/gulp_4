@@ -1,0 +1,31 @@
+.text {
+    padding: 30px 0;
+}
+.text__image {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.text__image img {
+    max-width: 100%;
+}
+.cards__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.cards__item {
+    max-width: 33.3%;
+    padding: 0 10px;
+}
+.cards__image {
+    margin-bottom: 20px;
+    height: 200px;
+    min-height: 100px;
+    overflow: hidden;
+}
+.cards__image img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
