@@ -1,0 +1,16 @@
+.fullscreen {
+    display: flex;
+    min-height: 100vh;
+}
+.fullscreen__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 auto;
+    text-align: center;
+    width: 100%;
+}
+.fullscreen__btn {
+    height: 30px;
+    width: 90px;
+}
