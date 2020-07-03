@@ -16,6 +16,7 @@ let path = {
         css: sourceFolder + '/scss/style.scss',
         js: sourceFolder + '/js/main.js',
         jquery: './node_modules/jquery/dist/jquery.js',
+        slick: './node_modules/slick-slider/slick/slick.js',
         img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
         fonts: sourceFolder + '/fonts/*.{woff,woff2}',
     },
@@ -108,6 +109,14 @@ function js() {
 
 function jquery() {
     return src(path.src.jquery)
+        .pipe(uglifyes())
+        .pipe(rename({ extname: '.min.js' }))
+        .pipe(dest(path.build.js))
+        .pipe(browser.stream());
+}
+
+function slider() {
+    return src(path.src.slick)
         .pipe(uglifyes())
         .pipe(rename({ extname: '.min.js' }))
         .pipe(dest(path.build.js))
@@ -209,11 +218,12 @@ function clean(params) {
 
 let build = gulp.series(
     clean,
-    gulp.parallel(js, jquery, css, html, images, fonts),
+    gulp.parallel(js, jquery, slider, css, html, images, fonts),
     fontsStyle
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
+exports.slider = slider;
 exports.jquery = jquery;
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
