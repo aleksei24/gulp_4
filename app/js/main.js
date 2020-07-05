@@ -34,3 +34,11 @@ $('.slider__row').slick({
     centerMode: true,
     focusOnSelect: true,
 });
+
+// main-popup
+// setTimeout(() => {
+//     $('.order').addClass('active');
+// }, 10000);
+// $('.order__close').click(function () {
+//     $('.order').removeClass('active');
+// });
