@@ -17,6 +17,7 @@ let path = {
         js: sourceFolder + '/js/main.js',
         jquery: './node_modules/jquery/dist/jquery.js',
         slick: './node_modules/slick-slider/slick/slick.js',
+        magnific: './node_modules/magnific-popup/dist/jquery.magnific-popup.js',
         img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
         fonts: sourceFolder + '/fonts/*.{woff,woff2}',
     },
@@ -123,6 +124,14 @@ function slider() {
         .pipe(browser.stream());
 }
 
+function magnific() {
+    return src(path.src.magnific)
+        .pipe(uglifyes())
+        .pipe(rename({ extname: '.min.js' }))
+        .pipe(dest(path.build.js))
+        .pipe(browser.stream());
+}
+
 function images() {
     return src(path.src.img)
         .pipe(
@@ -218,11 +227,12 @@ function clean(params) {
 
 let build = gulp.series(
     clean,
-    gulp.parallel(js, jquery, slider, css, html, images, fonts),
+    gulp.parallel(js, jquery, slider, magnific, css, html, images, fonts),
     fontsStyle
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
+exports.magnific = magnific;
 exports.slider = slider;
 exports.jquery = jquery;
 exports.fontsStyle = fontsStyle;
