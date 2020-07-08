@@ -42,3 +42,32 @@ $('.slider__row').slick({
 // $('.order__close').click(function () {
 //     $('.order').removeClass('active');
 // });
+
+$('#mobId').click(function (event) {
+    $('.order').addClass('mob');
+    $('.order__close').click(function () {
+        $('.order').removeClass('mob');
+    });
+});
+
+// fixed menu
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= 200) {
+        $('.header').addClass('header_fixed');
+    } else {
+        $('.header').removeClass('header_fixed');
+    }
+});
+
+// magnific
+$('.column__pics').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    tLoading: 'Loading image #%curr%...',
+    mainClass: 'mfp-img-mobile',
+    gallery: {
+        enabled: true,
+        navigateByImgClick: true,
+        preload: [1, 1], // Will preload 0 - before current, and 1 after the current image
+    },
+});
