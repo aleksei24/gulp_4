@@ -103,3 +103,26 @@ function triggerAnimation() {
         $('.drop').css('width', finalWidth + 'em');
     }, 400);
 }
+
+// jquery counter
+DecreaseCount = function () {
+    let count = $('.display').val();
+    if (count > 0) count--;
+    if (count == 0) count = 0;
+    $('.display').val(count);
+};
+
+IncreaseCount = function () {
+    let count = $('.display').val();
+    if (count < 10) count++;
+    if (count == 10) count = 10;
+    $('.display').val(count);
+};
+
+$('.decrement').click(function () {
+    DecreaseCount();
+});
+
+$('.increment').click(function () {
+    IncreaseCount();
+});

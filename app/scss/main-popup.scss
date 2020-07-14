@@ -192,7 +192,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
     @media (max-width: 1100px) {
         margin-top: 50px;
     }
