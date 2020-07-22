@@ -1,8 +1,84 @@
+.calc {
+    margin: 50px 0;
+}
 .calc__form {
+    width: 450px;
+    padding: 20px;
+    border: 3px solid #64c064;
+    border-radius: 10px;
+}
+.calc__headline {
+    margin-bottom: 20px;
+}
+#price {
+    font-size: 28px;
+    font-weight: bold;
+}
+.calc__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.calc__item {
+    margin: 30px 0;
+}
+
+.calc__img img {
+    display: none;
+}
+#card-1 {
+    display: block;
+}
+.calc__select {
     width: 400px;
-}
-#sort-of-service {
-    max-width: 400px;
     height: 50px;
-    width: 100%;
+    padding: 5px;
 }
+
+// select
+// /* Выпадающий список: */
+// .select ul {
+//     padding: 0;
+//     margin: 0;
+//     list-style-type: none;
+//     border: 1px solid #0095ff;
+//     width: 400px;
+// }
+
+// /* Пункт списка: */
+// .select ul li {
+//     padding: 5px;
+// }
+// .select__item {
+//     border: 1px solid #ccc;
+//     width: 400px;
+//     height: 50px;
+//     padding: 10px 5px;
+// }
+
+// /* Наведение на пункт списка: */
+// .select ul li:hover {
+//     background: #0095ff;
+//     color: #fff;
+// }
+
+// /* Выбор option "Please Select": */
+// .select__gap {
+//     position: relative;
+//     padding: 10px 5px;
+//     width: 400px;
+//     height: 50px;
+//     border: 1px solid #ccc;
+//     padding-right: 10px;
+// }
+
+// /* Стрелочка: */
+// .select__gap:after {
+//     content: '';
+//     position: absolute;
+//     right: 5px;
+//     top: 10px;
+//     // border-top: 5px solid #000;
+//     // border-left: 3px solid transparent;
+//     // border-right: 3px solid transparent;
+// }

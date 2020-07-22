@@ -60,17 +60,17 @@ $(window).scroll(function () {
 });
 
 // magnific
-$('.column__pics').magnificPopup({
-    delegate: 'a',
-    type: 'image',
-    tLoading: 'Loading image #%curr%...',
-    mainClass: 'mfp-img-mobile',
-    gallery: {
-        enabled: true,
-        navigateByImgClick: true,
-        preload: [1, 1], // Will preload 0 - before current, and 1 after the current image
-    },
-});
+// $('.column__pics').magnificPopup({
+//     delegate: 'a',
+//     type: 'image',
+//     tLoading: 'Loading image #%curr%...',
+//     mainClass: 'mfp-img-mobile',
+//     gallery: {
+//         enabled: true,
+//         navigateByImgClick: true,
+//         preload: [1, 1], // Will preload 0 - before current, and 1 after the current image
+//     },
+// });
 
 // custom select
 $('.drop .option').click(function () {
@@ -125,4 +125,71 @@ $('.decrement').click(function () {
 
 $('.increment').click(function () {
     IncreaseCount();
+});
+
+// select calculation
+// $('.calc__select').each(function () {
+//     // Variables
+//     let $this = $(this),
+//         selectOption = $this.find('option'),
+//         selectOptionLength = selectOption.length,
+//         selectedOption = selectOption.filter(':selected'),
+//         dur = 200;
+
+//     $this.hide();
+//     // Wrap all in select box
+//     $this.wrap('<div class="calc__select"></div>');
+//     // Style box
+//     $('<div>', {
+//         class: 'select__gap',
+//         text: 'Please select', //Placeholder
+//     }).insertAfter($this);
+
+//     let selectGap = $this.next('.select__gap'),
+//         caret = selectGap.find('.caret');
+//     // Add ul list
+//     $('<ul>', {
+//         class: 'select__list',
+//     }).insertAfter(selectGap);
+
+//     let selectList = selectGap.next('.select__list');
+//     // Add li - option items
+//     for (let i = 0; i < selectOptionLength; i++) {
+//         $('<li>', {
+//             class: 'select__item',
+//             html: $('<span>', {
+//                 text: selectOption.eq(i).text(),
+//             }),
+//         })
+//             .attr('data-value', selectOption.eq(i).val())
+//             .appendTo(selectList);
+//     }
+//     // Find all items
+//     let selectItem = selectList.find('li');
+
+//     selectList.slideUp(0);
+//     selectGap.on('click', function () {
+//         if (!$(this).hasClass('on')) {
+//             $(this).addClass('on');
+//             selectList.slideDown(dur);
+//             selectItem.on('click', function () {
+//                 let chooseItem = $(this).data('value');
+//                 $('select').val(chooseItem).attr('selected', 'selected');
+//                 selectGap.text($(this).find('span').text());
+//                 selectList.slideUp(dur);
+//                 selectGap.removeClass('on');
+//             });
+//         } else {
+//             $(this).removeClass('on');
+//             selectList.slideUp(dur);
+//         }
+//     });
+// });
+
+// calculation itself
+$(document).ready(function () {
+    $('.calc__form select').change(function () {
+        let edition = $('#edition').val();
+        console.log(edition);
+    });
 });
