@@ -225,15 +225,18 @@ function clean(params) {
     return del(path.clean);
 }
 
+const script = [slider(), magnific()];
+
 let build = gulp.series(
     clean,
-    gulp.parallel(js, jquery, slider, magnific, css, html, images, fonts),
+    gulp.parallel(js, jquery, script, css, html, images, fonts),
     fontsStyle
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
-exports.magnific = magnific;
-exports.slider = slider;
+// exports.magnific = magnific;
+// exports.slider = slider;
+exports.script = script;
 exports.jquery = jquery;
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
