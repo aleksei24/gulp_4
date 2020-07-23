@@ -225,7 +225,7 @@ function clean(params) {
     return del(path.clean);
 }
 
-const script = [slider(), magnific()];
+const script = [slider, magnific];
 
 let build = gulp.series(
     clean,
@@ -234,9 +234,9 @@ let build = gulp.series(
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
-// exports.magnific = magnific;
-// exports.slider = slider;
-exports.script = script;
+exports.magnific = magnific;
+exports.slider = slider;
+// exports.script = script;
 exports.jquery = jquery;
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
