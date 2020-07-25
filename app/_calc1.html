@@ -15,24 +15,58 @@
             <div class="calc__item">
                 <label for="paper">Paper</label> <br />
                 <select name="paper" id="paper" class="calc__select">
-                    <option value="white-paper">White Paper</option>
-                    <option value="black-paper">Black Paper</option>
-                    <option value="yellow-paper">Yellow Paper</option>
+                    <option data-paper="6.8" value="white-paper"
+                        >White Paper</option
+                    >
+                    <option data-paper="40.5" value="black-paper"
+                        >Black Paper</option
+                    >
+                    <option data-paper="45.0" value="yellow-paper"
+                        >Yellow Paper</option
+                    >
                 </select>
             </div>
             <div class="calc__item">
                 <label for="colour">Colour</label> <br />
                 <select name="colour" id="colour" class="calc__select">
-                    <option value="one-sized-black-and-white">
+                    <option
+                        data-kind="14"
+                        data-print="110"
+                        data-colour="01"
+                        value="one-sized-black-and-white"
+                    >
                         One Sized Black and White
                     </option>
-                    <option value="two-sized-black-and-white">
+                    <option
+                        data-kind="28"
+                        data-print="220"
+                        data-colour="02"
+                        value="two-sized-black-and-white"
+                    >
                         Two Sized Black and White
                     </option>
-                    <option value="one-sized-cololured">
+                    <option
+                        data-kind="37"
+                        data-print="110"
+                        data-colour="03"
+                        value="one-sized-cololured"
+                    >
                         One Sized Cololured
                     </option>
-                    <option value="two-sized-coloured">
+                    <option
+                        data-kind="51"
+                        data-print="110"
+                        data-colour="04"
+                        value="one-sized-cololured-another-black-and-white"
+                    >
+                        One Sized Cololured, Another Black-and-White
+                    </option>
+                    <option
+                        data-kind="74"
+                        data-print="220"
+                        data-colour="05"
+                        value="two-sized-coloured"
+                    >
                         Two Sized Coloured
                     </option>
                 </select>
@@ -40,7 +74,7 @@
             <div class="calc__item">
                 <h3 class="calc__headline headline">Price</h3>
                 <p class="calc__text">
-                    <span id="price">0</span>
+                    <span id="final-price">0</span>
                     ducates
                 </p>
             </div>
