@@ -187,9 +187,38 @@ $('.increment').click(function () {
 // });
 
 // calculation itself
-$(document).ready(function () {
-    $('.calc__form select').change(function () {
-        let edition = $('#edition').val();
-        console.log(edition);
-    });
+$('.calc__form select').change(function () {
+    $edition = $('#edition').val();
+    $paper = $('#paper').val();
+    $paperRatio = $('#paper option:selected').attr('data-paper');
+    $colour = $('#colour').val();
+    $print = $('#colour option:selected').attr('data-print');
+    $kind = $('#colour option:selected').attr('data-kind');
+    $card = $('#colour option:selected').attr('data-colour');
+    if ($card == 01) {
+        $('.calc__img img').hide();
+        $('#card-1').show(600);
+    }
+    if ($card == 02) {
+        $('.calc__img img').hide();
+        $('#card-2').show(600);
+    }
+    if ($card == 03) {
+        $('.calc__img img').hide();
+        $('#card-3').show(600);
+    }
+    if ($card == 04) {
+        $('.calc__img img').hide();
+        $('#card-4').show(600);
+    }
+    if ($card == 05) {
+        $('.calc__img img').hide();
+        $('#card-5').show(600);
+    }
+    $division = 30;
+    $final = $edition / $division;
+    $price = $edition * $paperRatio + parseInt($print) + $final * $print;
+    $finalPrice = $('span#final-price');
+    $finalPrice.text($price);
+    console.log($price);
 });
