@@ -219,6 +219,6 @@ $('.calc__form select').change(function () {
     $final = $edition / $division;
     $price = $edition * $paperRatio + parseInt($print) + $final * $print;
     $finalPrice = $('span#final-price');
-    $finalPrice.text($price);
+    $finalPrice.text($price.toFixed(0));
     console.log($price);
 });
