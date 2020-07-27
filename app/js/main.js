@@ -222,3 +222,28 @@ $('.calc__form select').change(function () {
     $finalPrice.text($price.toFixed(0));
     console.log($price);
 });
+
+// form counter
+DecreaseCount = function () {
+    let count = $('.counter__display').val();
+    if (count > 1) count--;
+    if (count == 1) count = 1;
+    $('.counter__display').val(count);
+    console.log(count);
+};
+
+IncreaseCount = function () {
+    let count = $('.counter__display').val();
+    if (count < 10) count++;
+    if (count == 10) count = 10;
+    $('.counter__display').val(count);
+    console.log(count);
+};
+
+$('.minus').click(function () {
+    DecreaseCount();
+});
+
+$('.plus').click(function () {
+    IncreaseCount();
+});
