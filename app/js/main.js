@@ -248,3 +248,71 @@ $('.minus').click(function () {
 $('.plus').click(function () {
     IncreaseCount();
 });
+
+// ===========================================================================================================
+// form 2
+$(document).ready(function () {
+    $('.switcher input').click(function () {
+        let tab_id = $(this).attr('data-tab');
+        $('.switcher input').removeClass('current');
+        $('.switch_menu').removeClass('current');
+
+        $(this).addClass('current');
+        $('#' + tab_id).addClass('current');
+    });
+
+    //калькулятор
+    let calcbutton = document.querySelector('.calcbuton');
+    if (calcbutton) {
+        calcbutton.addEventListener('click', function () {
+            let prods = {
+                pongs: 650,
+                polyplast: 680,
+                msd: 600,
+                descor: 1060,
+                clipso: 500,
+                malpensa: 600,
+                photo: 2060,
+            };
+
+            let faktura = {
+                mate: 0,
+                glance: 0,
+                satin: 0,
+            };
+
+            let color = {
+                white: 0,
+                colorfull: 1420,
+            };
+
+            let material = {
+                PVH: 0,
+                fabric: 720,
+            };
+
+            let lightprice =
+                400 * document.querySelector('input[name="fixtures"]').value;
+
+            let prodprice =
+                prods[
+                    document.querySelector('input[name="manufacturer"]:checked')
+                        .value
+                ] * document.querySelector('input[name="area"]').value;
+
+            document.querySelector('.output_price > span').innerHTML =
+                prodprice + lightprice;
+            $('.personal_link.hidden').slideDown();
+        });
+        $('.calcbuton').trigger('click');
+    }
+    $('.calculator2-control').click(function () {
+        let input = this.parentNode.querySelector('.calculator2-input');
+        console.log(input);
+        if (this.classList.contains('plus')) {
+            input.value++;
+        } else if (this.classList.contains('minus') && input.value > 0) {
+            input.value--;
+        }
+    });
+});

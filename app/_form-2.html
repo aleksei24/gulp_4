@@ -1,0 +1,91 @@
+<div class="wrap">
+    <div class="calculation block flex">
+        <h2 class="calc-prices-header">РАССЧИТАЙТЕ СТОИМОСТЬ ПОТОЛКА <span>С УСТАНОВКОЙ</span></h2>
+        <form class="flex" oninput="">
+            <div class="calculation_block flex">
+                <div class="manufacturer_block flex">
+                    <div class="item manufacturer">Производитель</div>
+                    <div class="switcher">
+                        <input type="radio" name="manufacturer" value="pongs" id="manufacturer_pongs" checked data-tab="menu_faktura">
+                        <label for="manufacturer_pongs">Pongs ПВХ (Германия)</label>
+                    </div>
+                    <div class="switcher">
+                        <input type="radio" name="manufacturer" value="polyplast" id="manufacturer_polyplast" data-tab="menu_faktura">
+                        <label for="manufacturer_polyplast">Polyplast ПВХ (Бельгия)</label>
+                    </div>
+                    <div class="switcher">
+                        <input type="radio" name="manufacturer" value="msd" id="manufacturer_msd" data-tab="menu_faktura"> 
+                        <label for="manufacturer_msd">MSD ПВХ (Китай)</label>
+                    </div>
+                    <div class="switcher">
+                        <input type="radio" name="manufacturer" value="descor" id="manufacturer_descor" data-tab="menu_color">
+                        <label for="manufacturer_descor">Descor Ткань (Германия)</label>
+                    </div>
+                    <div class="switcher">
+                        <input type="radio" name="manufacturer" value="photo" id="manufacturer_photo" data-tab="menu_material">
+                        <label for="manufacturer_photo">Фотопечать</label>
+                    </div>
+            <div>
+          </div>
+                </div>
+                <div id="menu_faktura" class="manufacturer_block switch_menu flex current">
+                    <div class="item manufacturer">Фактура</div>
+                        <div>
+                            <input type="radio" name="faktura" value="mate" id="faktura_mate" checked>
+                            <label for="faktura_mate">Матовая</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="faktura" value="glance" id="faktura_glance">
+                            <label for="faktura_glance">Глянцевая</label>
+                        </div>
+                        <div>
+                              <input type="radio" name="faktura" value="satin" id="faktura_satin">
+                              <label for="faktura_satin">Сатиновая</label>
+                        </div>
+                </div>
+                <div id="menu_color" class="manufacturer_block switch_menu flex">
+                    <div class="item manufacturer">Цвет</div>
+                    <div>
+                        <input type="radio" name="color" value="white" id="color_white" checked>
+                        <label for="color_white">Белый</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="color" value="colorfull" id="color_colorfull">
+                        <label for="color_colorfull">Цветной</label>
+                    </div>
+                </div>
+                <div id="menu_material" class="manufacturer_block switch_menu flex">
+                    <div class="item manufacturer">Материал</div>
+                    <div>
+                        <input type="radio" name="material" value="PVH" id="material_PVH" checked>
+                        <label for="material_PVH">ПВХ</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="material" value="fabric" id="material_fabric">
+                        <label for="material_fabric">Ткань</label>
+                    </div>
+                </div>
+            </div>
+            <div class="indent">
+                <div class="item room">Помещение</div>
+                <div class="calculator2-input-wrapper clearfix">
+                    <label for="calculator2-area" class="calculator2-input-label">Площадь, м2</label>
+                    <div class="calculator2-control minus">−</div>
+                    <input type="number" value="10" min="0" name="area" id="calculator2-area" class="calculator2-input" required>
+                    <div class="calculator2-control plus">+</div>
+                </div>
+                <div class="calculator2-input-wrapper clearfix">
+                    <label for="calculator2-fixtures" class="calculator2-input-label">Светильники, шт</label>
+                    <div class="calculator2-control minus">−</div>
+                    <input type="number" value="4" min="0" name="fixtures" id="calculator2-fixtures" class="calculator2-input" required>
+                    <div class="calculator2-control plus">+</div>
+                </div>
+            </div>
+            <div class="calcbuton buton">Рассчитать реальную стоимость потолка</div>
+            <div class="title_output">Cтоимость потолка составляет:</div>
+            <div class="output_price">
+                <span>0</span> Руб.</i>
+            </div>
+        </form>
+    </div>
+</div>
