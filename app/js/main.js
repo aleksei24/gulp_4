@@ -5,6 +5,7 @@ $(document).ready(function () {
         $('body').toggleClass('locked');
     });
 });
+// ================================================================================================================
 // slider
 $('.slider__img').slick({
     slidesToShow: 1,
@@ -34,7 +35,7 @@ $('.slider__row').slick({
     centerMode: true,
     focusOnSelect: true,
 });
-
+// =================================================================================================================
 // main-popup
 // setTimeout(() => {
 //     $('.order').addClass('active');
@@ -49,7 +50,7 @@ $('#mobId').click(function (event) {
         $('.order').removeClass('mob');
     });
 });
-
+// ====================================================================================================================
 // fixed menu
 $(window).scroll(function () {
     if ($(window).scrollTop() >= 200) {
@@ -58,7 +59,7 @@ $(window).scroll(function () {
         $('.header').removeClass('header_fixed');
     }
 });
-
+// ================================================================================================================
 // magnific
 // $('.column__pics').magnificPopup({
 //     delegate: 'a',
@@ -71,7 +72,7 @@ $(window).scroll(function () {
 //         preload: [1, 1], // Will preload 0 - before current, and 1 after the current image
 //     },
 // });
-
+// ========================================================================================================================
 // custom select
 $('.drop .option').click(function () {
     let val = $(this).attr('data-value'),
@@ -103,7 +104,7 @@ function triggerAnimation() {
         $('.drop').css('width', finalWidth + 'em');
     }, 400);
 }
-
+// =================================================================================================================
 // jquery counter
 DecreaseCount = function () {
     let count = $('.display').val();
@@ -126,7 +127,7 @@ $('.decrement').click(function () {
 $('.increment').click(function () {
     IncreaseCount();
 });
-
+// ==================================================================================================================
 // select calculation
 // $('.calc__select').each(function () {
 //     // Variables
@@ -185,7 +186,7 @@ $('.increment').click(function () {
 //         }
 //     });
 // });
-
+// ==================================================================================================================
 // calculation itself
 $('.calc__form select').change(function () {
     $edition = $('#edition').val();
@@ -222,7 +223,7 @@ $('.calc__form select').change(function () {
     $finalPrice.text($price.toFixed(0));
     console.log($price);
 });
-
+// ====================================================================================================================
 // form counter
 DecreaseCount = function () {
     let count = $('.counter__display').val();
