@@ -188,75 +188,74 @@ $('.increment').click(function () {
 // });
 // ==================================================================================================================
 // calculation itself
-$('.calc__form select').change(function () {
-    $edition = $('#edition').val();
-    $paper = $('#paper').val();
-    $paperRatio = $('#paper option:selected').attr('data-paper');
-    $colour = $('#colour').val();
-    $print = $('#colour option:selected').attr('data-print');
-    $kind = $('#colour option:selected').attr('data-kind');
-    $card = $('#colour option:selected').attr('data-colour');
-    if ($card == 01) {
-        $('.calc__img img').hide();
-        $('#card-1').show(600);
-    }
-    if ($card == 02) {
-        $('.calc__img img').hide();
-        $('#card-2').show(600);
-    }
-    if ($card == 03) {
-        $('.calc__img img').hide();
-        $('#card-3').show(600);
-    }
-    if ($card == 04) {
-        $('.calc__img img').hide();
-        $('#card-4').show(600);
-    }
-    if ($card == 05) {
-        $('.calc__img img').hide();
-        $('#card-5').show(600);
-    }
-    $division = 30;
-    $final = $edition / $division;
-    $price = $edition * $paperRatio + parseInt($print) + $final * $print;
-    $finalPrice = $('span#final-price');
-    $finalPrice.text($price.toFixed(0));
-    console.log($price);
-});
-// ====================================================================================================================
-// form counter
-DecreaseCount = function () {
-    let count = $('.counter__display').val();
-    if (count > 1) count--;
-    if (count == 1) count = 1;
-    $('.counter__display').val(count);
-    console.log(count);
-};
+// $('.calc__form select').change(function () {
+//     $edition = $('#edition').val();
+//     $paper = $('#paper').val();
+//     $paperRatio = $('#paper option:selected').attr('data-paper');
+//     $colour = $('#colour').val();
+//     $print = $('#colour option:selected').attr('data-print');
+//     $kind = $('#colour option:selected').attr('data-kind');
+//     $card = $('#colour option:selected').attr('data-colour');
+//     if ($card == 01) {
+//         $('.calc__img img').hide();
+//         $('#card-1').show(600);
+//     }
+//     if ($card == 02) {
+//         $('.calc__img img').hide();
+//         $('#card-2').show(600);
+//     }
+//     if ($card == 03) {
+//         $('.calc__img img').hide();
+//         $('#card-3').show(600);
+//     }
+//     if ($card == 04) {
+//         $('.calc__img img').hide();
+//         $('#card-4').show(600);
+//     }
+//     if ($card == 05) {
+//         $('.calc__img img').hide();
+//         $('#card-5').show(600);
+//     }
+//     $division = 30;
+//     $final = $edition / $division;
+//     $price = $edition * $paperRatio + parseInt($print) + $final * $print;
+//     $finalPrice = $('span#final-price');
+//     $finalPrice.text($price.toFixed(0));
+//     console.log($price);
+// });
+// // ====================================================================================================================
+// // form counter
+// DecreaseCount = function () {
+//     let count = $('.counter__display').val();
+//     if (count > 1) count--;
+//     if (count == 1) count = 1;
+//     $('.counter__display').val(count);
+//     console.log(count);
+// };
 
-IncreaseCount = function () {
-    let count = $('.counter__display').val();
-    if (count < 10) count++;
-    if (count == 10) count = 10;
-    $('.counter__display').val(count);
-    console.log(count);
-};
+// IncreaseCount = function () {
+//     let count = $('.counter__display').val();
+//     if (count < 10) count++;
+//     if (count == 10) count = 10;
+//     $('.counter__display').val(count);
+//     console.log(count);
+// };
 
-$('.minus').click(function () {
-    DecreaseCount();
-});
+// $('.minus').click(function () {
+//     DecreaseCount();
+// });
 
-$('.plus').click(function () {
-    IncreaseCount();
-});
+// $('.plus').click(function () {
+//     IncreaseCount();
+// });
 
 // ===========================================================================================================
 // form 2
 $(document).ready(function () {
-    $('.switcher input').click(function () {
+    $('select#manufacturer option').click(function () {
         let tab_id = $(this).attr('data-tab');
-        $('.switcher input').removeClass('current');
+        $('select#manufacturer option').removeClass('current');
         $('.switch_menu').removeClass('current');
-
         $(this).addClass('current');
         $('#' + tab_id).addClass('current');
     });
@@ -296,8 +295,9 @@ $(document).ready(function () {
 
             let prodprice =
                 prods[
-                    document.querySelector('input[name="manufacturer"]:checked')
-                        .value
+                    document.querySelector(
+                        'select[name="manufacturer"] option:checked'
+                    ).value
                 ] * document.querySelector('input[name="area"]').value;
 
             document.querySelector('.output_price > span').innerHTML =
@@ -308,7 +308,7 @@ $(document).ready(function () {
     }
     $('.calculator2-control').click(function () {
         let input = this.parentNode.querySelector('.calculator2-input');
-        console.log(input);
+        // console.log(input);
         if (this.classList.contains('plus')) {
             input.value++;
         } else if (this.classList.contains('minus') && input.value > 0) {

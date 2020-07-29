@@ -5,7 +5,7 @@
             <div class="calculation_block flex">
                 <div class="manufacturer_block flex">
                     <div class="item manufacturer">Производитель</div>
-                    <div class="switcher">
+                    <!-- <div class="switcher">
                         <input type="radio" name="manufacturer" value="pongs" id="manufacturer_pongs" checked data-tab="menu_faktura">
                         <label for="manufacturer_pongs">Pongs ПВХ (Германия)</label>
                     </div>
@@ -24,7 +24,14 @@
                     <div class="switcher">
                         <input type="radio" name="manufacturer" value="photo" id="manufacturer_photo" data-tab="menu_material">
                         <label for="manufacturer_photo">Фотопечать</label>
-                    </div>
+                    </div> -->
+                    <select name="manufacturer" id="manufacturer" class="switcher">
+                        <option value="pongs" data-tab="menu_faktura">Pongs ПВХ (Германия)</option>
+                        <option value="polyplast" data-tab="menu_faktura">Polyplast ПВХ (Бельгия)</option>
+                        <option value="msd" data-tab="menu_faktura">MSD ПВХ (Китай)</option>
+                        <option value="descor" data-tab="menu_color">Descor Ткань (Германия)</option>
+                        <option value="photo" data-tab="menu_material">Фотопечать</option>
+                    </select>
             <div>
           </div>
                 </div>
