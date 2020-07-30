@@ -251,10 +251,9 @@ $('.increment').click(function () {
 
 // ===========================================================================================================
 // form 2
-// let inputValue = document.querySelector('#calculator2-input').value;
-// console.log(inputValue);
-$('.calculator2-control').click(function () {
-    let input = this.parentNode.querySelector('#calculator2-input');
+
+$('.counter-control').click(function () {
+    let input = this.parentNode.querySelector('#counter-input');
     // console.log(input);
     if (this.classList.contains('plus')) {
         input.value++;
@@ -262,5 +261,29 @@ $('.calculator2-control').click(function () {
         input.value--;
     }
     let inputValue = input.value;
-    console.log(inputValue);
+    // console.log(inputValue);
+});
+$('.form__params').change(function () {
+    let inputMaterial = document.querySelector('select#first option:checked')
+        .value;
+    // console.log(inputMaterial);
+    let inputQuality = document.querySelector('select#second option:checked')
+        .value;
+    // console.log(inputQuality);
+    let inputColour = document.querySelector('select#third option:checked')
+        .value;
+    // console.log(inputColour);
+});
+$('.calculation__form').change(function () {
+    let firstInput = document.querySelector('select#first option:checked')
+        .value;
+    let secondInput = document.querySelector('select#second option:checked')
+        .value;
+    let thirdInput = document.querySelector('select#third option:checked')
+        .value;
+    let counterInput = document.querySelector('#counter-input').value;
+    // let minusCounter = document.querySelector('.minus');
+    // let plusCounter = document.querySelector('.plus');
+    let totalPrice = (+firstInput + +secondInput + +thirdInput) * counterInput;
+    console.log(totalPrice);
 });

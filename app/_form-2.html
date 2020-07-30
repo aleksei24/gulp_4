@@ -33,27 +33,29 @@
                     <div class="colour">
                         <h3 class="colour__title title">Colour</h3>
                         <select name="colour" id="third" class="colour__select">
-                            <option value="900">Golden</option>
-                            <option value="500">Yellow-green</option>
-                            <option value="300">Pink</option>
+                            <option value="90">Golden</option>
+                            <option value="50">Yellow-green</option>
+                            <option value="30">Pink</option>
                         </select>
                     </div>
                 </div>
-                <div class="calculator2-input">
+                <div class="counter-input">
                     <h4 class="counter__title title">Amount</h4>
-                    <div class="calculator2-control minus">−</div>
+                    <div class="counter-control minus">−</div>
                     <input
                         type="text"
                         value="5"
                         max="10"
                         min="1"
-                        id="calculator2-input"
-                        class="calculator2-input"
+                        id="counter-input"
+                        class="counter-input"
                     />
-                    <div class="calculator2-control plus">+</div>
+                    <div class="counter-control plus">+</div>
                 </div>
                 <h4 class="title_output">The price is:</h4>
-                <div class="output_price"><span>0</span> rub.</div>
+                <div class="output_price" id="total-price">
+                    <span>0</span> rub.
+                </div>
             </form>
         </div>
     </div>
