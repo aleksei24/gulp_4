@@ -251,13 +251,16 @@ $('.increment').click(function () {
 
 // ===========================================================================================================
 // form 2
-
+// let inputValue = document.querySelector('#calculator2-input').value;
+// console.log(inputValue);
 $('.calculator2-control').click(function () {
-    let input = this.parentNode.querySelector('.calculator2-input');
+    let input = this.parentNode.querySelector('#calculator2-input');
     // console.log(input);
     if (this.classList.contains('plus')) {
         input.value++;
     } else if (this.classList.contains('minus') && input.value > 0) {
         input.value--;
     }
+    let inputValue = input.value;
+    console.log(inputValue);
 });
