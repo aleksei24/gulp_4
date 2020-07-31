@@ -4,59 +4,47 @@
             РАССЧИТАЙТЕ СТОИМОСТЬ
         </h2>
         <div class="calculation__form form">
-            <form action="" method="post">
-                <div class="form__params">
-                    <div class="material">
-                        <h3 class="material__title title">Material</h3>
-                        <select
-                            name="material"
-                            id="first"
-                            class="material__select"
-                        >
-                            <option value="350">Timber</option>
-                            <option value="250">Metal</option>
-                            <option value="100">Plastic</option>
-                        </select>
-                    </div>
-                    <div class="quality">
-                        <h3 class="quality__title title">Quality</h3>
-                        <select
-                            name="quality"
-                            id="second"
-                            class="quality__select"
-                        >
-                            <option value="80">Good</option>
-                            <option value="50">Moderate</option>
-                            <option value="30">Slapdash</option>
-                        </select>
-                    </div>
-                    <div class="colour">
-                        <h3 class="colour__title title">Colour</h3>
-                        <select name="colour" id="third" class="colour__select">
-                            <option value="90">Golden</option>
-                            <option value="50">Yellow-green</option>
-                            <option value="30">Pink</option>
-                        </select>
-                    </div>
+            <div class="form__params">
+                <div class="material">
+                    <h3 class="material__title title">Material</h3>
+                    <select name="material" id="first" class="material__select">
+                        <option value="350">Timber</option>
+                        <option value="250">Metal</option>
+                        <option value="100">Plastic</option>
+                    </select>
                 </div>
-                <div class="counter-input">
-                    <h4 class="counter__title title">Amount</h4>
-                    <div class="counter-control minus">−</div>
-                    <input
-                        type="text"
-                        value="5"
-                        max="10"
-                        min="1"
-                        id="counter-input"
-                        class="counter-input"
-                    />
-                    <div class="counter-control plus">+</div>
+                <div class="quality">
+                    <h3 class="quality__title title">Quality</h3>
+                    <select name="quality" id="second" class="quality__select">
+                        <option value="80">Good</option>
+                        <option value="50">Moderate</option>
+                        <option value="30">Slapdash</option>
+                    </select>
                 </div>
-                <h4 class="title_output">The price is:</h4>
-                <div class="output_price" id="total-price">
-                    <span>0</span> rub.
+                <div class="colour">
+                    <h3 class="colour__title title">Colour</h3>
+                    <select name="colour" id="third" class="colour__select">
+                        <option value="90">Golden</option>
+                        <option value="50">Yellow-green</option>
+                        <option value="30">Pink</option>
+                    </select>
                 </div>
-            </form>
+            </div>
+            <div class="counter-input">
+                <h4 class="counter__title title">Amount</h4>
+                <div class="counter-control minus">−</div>
+                <input
+                    type="text"
+                    value="5"
+                    max="10"
+                    min="1"
+                    id="counter-input"
+                    class="counter-input"
+                />
+                <div class="counter-control plus">+</div>
+            </div>
+            <a href="#!" class="btn btn_output">Show price</a>
+            <div class="output_price" id="total-price"><span>0</span> rub.</div>
         </div>
     </div>
 </div>

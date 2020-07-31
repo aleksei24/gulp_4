@@ -274,7 +274,7 @@ $('.form__params').change(function () {
         .value;
     // console.log(inputColour);
 });
-$('.calculation__form').change(function () {
+$('.btn_output').click(function () {
     let firstInput = document.querySelector('select#first option:checked')
         .value;
     let secondInput = document.querySelector('select#second option:checked')
@@ -284,6 +284,11 @@ $('.calculation__form').change(function () {
     let counterInput = document.querySelector('#counter-input').value;
     // let minusCounter = document.querySelector('.minus');
     // let plusCounter = document.querySelector('.plus');
-    let totalPrice = (+firstInput + +secondInput + +thirdInput) * counterInput;
-    console.log(totalPrice);
+    let totalPrice =
+        (parseInt(firstInput) + parseInt(secondInput) + parseInt(thirdInput)) *
+        counterInput;
+    // let knob = document.querySelector('.btn_output');
+    let showPrice = document.querySelector('#total-price span');
+    showPrice.innerHTML = totalPrice;
+    // console.log(totalPrice);
 });
