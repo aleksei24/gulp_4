@@ -12,7 +12,10 @@ let path = {
         fonts: projectFolder + '/fonts/',
     },
     src: {
-        html: [sourceFolder + '/*.html', '!' + sourceFolder + '/_*.html'],
+        html: [
+            sourceFolder + '/*.html',
+            '!' + sourceFolder + '/template/_*.html',
+        ],
         css: sourceFolder + '/scss/style.scss',
         js: sourceFolder + '/js/main.js',
         jquery: './node_modules/jquery/dist/jquery.js',
