@@ -1,22 +1,12 @@
 // burger menu
-// $(document).ready(function () {
-//     $('.header__burger').click(function (event) {
-//         $('.header__burger,.header__menu').toggleClass('active');
-//         $('body').toggleClass('locked');
-//     });
-// });
+$(document).ready(function () {
+    $('.header__burger').click(function (event) {
+        $('.header__burger,.header__menu').toggleClass('active');
+        $('body').toggleClass('locked');
+    });
+});
 // ================================================================================================================
 // burger menu javascript
-const burger = document.querySelector('.header__burger');
-burger.addEventListener('click', openMenu());
-function openMenu() {
-    const menu = document.querySelector('.header__menu');
-    if (menu.hasClass('.active')) {
-        menu.removeClass('active');
-    } else {
-        menu.addClass('active');
-    }
-}
 
 //=================================================================================================================
 // slider
