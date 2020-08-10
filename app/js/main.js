@@ -1,10 +1,21 @@
 // burger menu
-$(document).ready(function () {
-    $('.header__burger').click(function (event) {
-        $('.header__burger,.header__menu').toggleClass('active');
-        $('body').toggleClass('locked');
-    });
-});
+// $(document).ready(function () {
+//     $('.header__burger').click(function (event) {
+//         $('.header__burger,.header__menu').toggleClass('active');
+//         $('body').toggleClass('locked');
+//     });
+// });
+// ================================================================================================================
+// burger js
+const burger = document.querySelector('.header__burger');
+const list = document.querySelector('.menu');
+const body = document.querySelector('body');
+burger.addEventListener('click', toggleMenu);
+function toggleMenu() {
+    list.classList.toggle('active');
+    burger.classList.toggle('active');
+    body.classList.toggle('locked');
+}
 // ================================================================================================================
 // slider
 $('.slider__img').slick({
