@@ -93,13 +93,13 @@ $('#mobId').click(function (event) {
 });
 // ====================================================================================================================
 // fixed menu
-$(window).scroll(function () {
-    if ($(window).scrollTop() >= 200) {
-        $('.header').addClass('header_fixed');
-    } else {
-        $('.header').removeClass('header_fixed');
-    }
-});
+// $(window).scroll(function () {
+//     if ($(window).scrollTop() >= 200) {
+//         $('.header').addClass('header_fixed');
+//     } else {
+//         $('.header').removeClass('header_fixed');
+//     }
+// });
 // ================================================================================================================
 // magnific
 // $('.column__pics').magnificPopup({
