@@ -9,12 +9,12 @@
 // burger js
 const burger = document.querySelector('.header__burger');
 const list = document.querySelector('.menu');
-const body = document.querySelector('body');
+const bodyLock = document.querySelector('body');
 burger.addEventListener('click', toggleMenu);
 function toggleMenu() {
     list.classList.toggle('active');
     burger.classList.toggle('active');
-    body.classList.toggle('locked');
+    bodyLock.classList.toggle('locked');
 }
 // ================================================================================================================
 // dropdown menu javascript
