@@ -127,14 +127,6 @@ function slider() {
         .pipe(browser.stream());
 }
 
-function magnific() {
-    return src(path.src.magnific)
-        .pipe(uglifyes())
-        .pipe(rename({ extname: '.min.js' }))
-        .pipe(dest(path.build.js))
-        .pipe(browser.stream());
-}
-
 function images() {
     return src(path.src.img)
         .pipe(
@@ -228,7 +220,7 @@ function clean(params) {
     return del(path.clean);
 }
 
-const script = [slider, magnific];
+const script = [slider];
 
 let build = gulp.series(
     clean,
@@ -237,7 +229,6 @@ let build = gulp.series(
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
-exports.magnific = magnific;
 exports.slider = slider;
 // exports.script = script;
 exports.jquery = jquery;
