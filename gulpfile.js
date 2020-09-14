@@ -18,7 +18,7 @@ let path = {
         ],
         css: sourceFolder + '/scss/style.scss',
         js: sourceFolder + '/js/main.js',
-        jquery: './node_modules/jquery/dist/jquery.js',
+        glider: './node_modulaes/glider-js/glider.js',
         img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
         fonts: sourceFolder + '/fonts/*.{woff,woff2}',
     },
@@ -109,8 +109,8 @@ function js() {
         .pipe(browser.stream());
 }
 
-function jquery() {
-    return src(path.src.jquery)
+function gliderJs() {
+    return src(path.src.glider)
         .pipe(uglifyes())
         .pipe(rename({ extname: '.min.js' }))
         .pipe(dest(path.build.js))
@@ -212,13 +212,13 @@ function clean(params) {
 
 let build = gulp.series(
     clean,
-    gulp.parallel(js, jquery, css, html, images, fonts),
+    gulp.parallel(js, gliderJs, css, html, images, fonts),
     fontsStyle
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 // exports.script = script;
-exports.jquery = jquery;
+exports.gliderJs = gliderJs;
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
