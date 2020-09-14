@@ -18,7 +18,7 @@ let path = {
         ],
         css: sourceFolder + '/scss/style.scss',
         js: sourceFolder + '/js/main.js',
-        glider: './node_modulaes/glider-js/glider.js',
+        glider: './node_modules/glider-js/glider.js',
         img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
         fonts: sourceFolder + '/fonts/*.{woff,woff2}',
     },
@@ -112,7 +112,6 @@ function js() {
 function gliderJs() {
     return src(path.src.glider)
         .pipe(uglifyes())
-        .pipe(rename({ extname: '.min.js' }))
         .pipe(dest(path.build.js))
         .pipe(browser.stream());
 }

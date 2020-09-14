@@ -1,10 +1,3 @@
-// burger menu
-// $(document).ready(function () {
-//     $('.header__burger').click(function (event) {
-//         $('.header__burger,.header__menu').toggleClass('active');
-//         $('body').toggleClass('locked');
-//     });
-// });
 // ================================================================================================================
 // burger js
 const burger = document.querySelector('.header__burger');
@@ -59,33 +52,8 @@ if (mobile.any()) {
 }
 //=================================================================================================================
 // slider
-$('.slider__img').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    infinite: true,
-    fade: true,
-    asNavFor: '.slider__row',
-    responsive: [
-        {
-            breakpoint: 376,
-            settings: {
-                autoplay: true,
-                autoplaySpeed: 2500,
-                arrows: false,
-            },
-        },
-    ],
-});
-$('.slider__row').slick({
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    asNavFor: '.slider__img',
-    dots: false,
-    infinite: true,
-    arrows: false,
-    centerMode: true,
-    focusOnSelect: true,
+window.addEventListener('load', function () {
+    new Glider(document.querySelector('.slider__img', {}));
 });
 // =================================================================================================================
 // main-popup
@@ -124,61 +92,7 @@ $('#mobId').click(function (event) {
 //         preload: [1, 1], // Will preload 0 - before current, and 1 after the current image
 //     },
 // });
-// ========================================================================================================================
-// custom select
-$('.drop .option').click(function () {
-    let val = $(this).attr('data-value'),
-        $drop = $('.drop'),
-        prevActive = $('.drop .option.active').attr('data-value'),
-        options = $('.drop .option').length;
-    $drop.find('.option.active').addClass('mini-hack');
-    $drop.toggleClass('visible');
-    $drop.removeClass('withBG');
-    $(this).css('top');
-    $drop.toggleClass('opacity');
-    $('.mini-hack').removeClass('mini-hack');
-    if ($drop.hasClass('visible')) {
-        setTimeout(function () {
-            $drop.addClass('withBG');
-        }, 400 + options * 100);
-    }
-    triggerAnimation();
-    if (val !== 'placeholder' || prevActive === 'placeholder') {
-        $('.drop .option').removeClass('active');
-        $(this).addClass('active');
-    }
-});
 
-function triggerAnimation() {
-    let finalWidth = $('.drop').hasClass('visible') ? 22 : 20;
-    $('.drop').css('width', '24em');
-    setTimeout(function () {
-        $('.drop').css('width', finalWidth + 'em');
-    }, 400);
-}
-// =================================================================================================================
-// jquery counter
-DecreaseCount = function () {
-    let count = $('.display').val();
-    if (count > 0) count--;
-    if (count == 0) count = 0;
-    $('.display').val(count);
-};
-
-IncreaseCount = function () {
-    let count = $('.display').val();
-    if (count < 10) count++;
-    if (count == 10) count = 10;
-    $('.display').val(count);
-};
-
-$('.decrement').click(function () {
-    DecreaseCount();
-});
-
-$('.increment').click(function () {
-    IncreaseCount();
-});
 // ==================================================================================================================
 // select calculation
 // $('.calc__select').each(function () {
@@ -300,47 +214,3 @@ $('.increment').click(function () {
 // $('.plus').click(function () {
 //     IncreaseCount();
 // });
-
-// ===========================================================================================================
-// form 2
-
-$('.counter-control').click(function () {
-    let input = this.parentNode.querySelector('#counter-input');
-    // console.log(input);
-    if (this.classList.contains('plus')) {
-        input.value++;
-    } else if (this.classList.contains('minus') && input.value > 0) {
-        input.value--;
-    }
-    let inputValue = input.value;
-    // console.log(inputValue);
-});
-$('.form__params').change(function () {
-    let inputMaterial = document.querySelector('select#first option:checked')
-        .value;
-    // console.log(inputMaterial);
-    let inputQuality = document.querySelector('select#second option:checked')
-        .value;
-    // console.log(inputQuality);
-    let inputColour = document.querySelector('select#third option:checked')
-        .value;
-    // console.log(inputColour);
-});
-$('.btn_output').click(function () {
-    let firstInput = document.querySelector('select#first option:checked')
-        .value;
-    let secondInput = document.querySelector('select#second option:checked')
-        .value;
-    let thirdInput = document.querySelector('select#third option:checked')
-        .value;
-    let counterInput = document.querySelector('#counter-input').value;
-    // let minusCounter = document.querySelector('.minus');
-    // let plusCounter = document.querySelector('.plus');
-    let totalPrice =
-        (parseInt(firstInput) + parseInt(secondInput) + parseInt(thirdInput)) *
-        counterInput;
-    // let knob = document.querySelector('.btn_output');
-    let showPrice = document.querySelector('#total-price span');
-    showPrice.innerHTML = totalPrice;
-    // console.log(totalPrice);
-});
