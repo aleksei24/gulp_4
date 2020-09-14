@@ -59,7 +59,8 @@
     border: 0;
     top: 30%;
     cursor: pointer;
-    color: #666;
+    // color: #666;
+    color: red;
     opacity: 1;
     line-height: 1;
     transition: opacity 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67),
@@ -73,7 +74,8 @@
 }
 .glider-next {
     right: -23px;
-    left: auto;
+    // left: auto;
+    left: 0;
 }
 .glider-next.disabled,
 .glider-prev.disabled {
