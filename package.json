@@ -36,7 +36,6 @@
     "gulp-webp-css": "^1.1.0",
     "gulp-webp-html": "^1.0.2",
     "jquery": "^3.5.1",
-    "magnific-popup": "^1.1.0",
     "slick-slider": "^1.8.2"
   },
   "dependencies": {}
