@@ -32,10 +32,16 @@ new Glider(document.querySelector('.slider__img'), {
 
 // ====================================================================================================================
 // fixed menu
-// $(window).scroll(function () {
-//     if ($(window).scrollTop() >= 200) {
-//         $('.header').addClass('header_fixed');
-//     } else {
-//         $('.header').removeClass('header_fixed');
-//     }
-// });
+
+let header = document.querySelector('.header');
+
+function fixedHeader() {
+    if (window.pageYOffset >= 100) {
+        header.classList.add('header_fixed');
+    } else {
+        header.classList.remove('header_fixed');
+    }
+}
+window.onscroll = function () {
+    fixedHeader();
+};
