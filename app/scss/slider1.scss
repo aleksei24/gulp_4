@@ -7,8 +7,6 @@
     margin: 0 auto;
     position: relative;
     overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
     transform: translateZ(0);
 }
 .glider-track {
@@ -55,9 +53,9 @@
     z-index: 2;
     font-size: 40px;
     text-decoration: none;
-    left: -23px;
+    // left: -23px;
     border: 0;
-    top: 30%;
+    top: 35%;
     cursor: pointer;
     // color: #666;
     color: red;
@@ -72,10 +70,13 @@
 .glider-next:focus {
     color: #a89cc8;
 }
+.glider-prev {
+    left: -30px;
+}
 .glider-next {
-    right: -23px;
+    // right: -23px;
     // left: auto;
-    left: 0;
+    right: -30px;
 }
 .glider-next.disabled,
 .glider-prev.disabled {
@@ -130,4 +131,10 @@
         background-color: rgba(156, 156, 156, 0.25);
         box-shadow: 0 0 1px rgba(255, 255, 255, 0.25);
     }
+}
+// ============================================================
+// custom style
+.slider {
+    width: 1400px;
+    margin: 0 auto;
 }

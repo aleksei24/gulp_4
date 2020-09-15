@@ -52,18 +52,15 @@ if (mobile.any()) {
 }
 //=================================================================================================================
 // slider
-window.addEventListener('load', function () {
-    new Glider(
-        document.querySelector('.slider__img', {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: {
-                prev: '.glider-prev',
-                next: '.glider-next',
-            },
-        })
-    );
+new Glider(document.querySelector('.slider__img'), {
+    slidesToShow: 1,
+    draggable: true,
+    arrows: {
+        prev: '.glider-prev',
+        next: '.glider-next',
+    },
 });
+
 // =================================================================================================================
 // main-popup
 // setTimeout(() => {
