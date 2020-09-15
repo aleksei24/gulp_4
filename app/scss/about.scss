@@ -21,16 +21,6 @@
         flex-direction: column-reverse;
     }
 }
-.about__left,
-.about__right {
-    flex: 0 0 50%;
-}
-.about__right {
-    flex: 0 0 50%;
-    @media (max-width: 500px) {
-        width: 80%;
-    }
-}
 .about__content {
     max-width: 390px;
 }

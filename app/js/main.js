@@ -9,49 +9,9 @@ function toggleMenu() {
     burger.classList.toggle('active');
     bodyLock.classList.toggle('locked');
 }
-// ================================================================================================================
-// dropdown menu javascript
-// let mobile = {
-//     Android: function () {
-//         return navigator.userAgent.match(/Android/i);
-//     },
-//     iOS: function () {
-//         return navigator.userAgent.match(/iPhone|Padi| iPod/i);
-//     },
-//     Opera: function () {
-//         return navigator.userAgent.match(/Opera Mini/i);
-//     },
-//     Windows: function () {
-//         return navigator.userAgent.match(/IEMobile/i);
-//     },
-//     any: function () {
-//         return (
-//             mobile.Android() ||
-//             mobile.iOS() ||
-//             mobile.Opera() ||
-//             mobile.Windows()
-//         );
-//     },
-// };
-// const body = document.querySelector('body');
-// if (mobile.any()) {
-//     body.classList.add('touch');
-//     const arrow = document.querySelectorAll('.arrow');
-//     for (let i = 0; i < arrow.length; i++) {
-//         let thisLink = arrow[i].previousElementSibling;
-//         let underground = arrow[i].nextElementSibling;
-//         let thisArrow = arrow[i];
-//         thisLink.classList.add('parent');
-//         arrow[i].addEventListener('click', function () {
-//             underground.classList.toggle('open');
-//             thisArrow.classList.toggle('active');
-//         });
-//     }
-// } else {
-//     body.classList.add('mouse');
-// }
+
 //=================================================================================================================
-// slider
+// Glider
 new Glider(document.querySelector('.slider__img'), {
     slidesToShow: 1,
     draggable: true,
