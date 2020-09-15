@@ -112,6 +112,11 @@ function js() {
 function gliderJs() {
     return src(path.src.glider)
         .pipe(uglifyes())
+        .pipe(
+            rename({
+                extname: '.min.js',
+            })
+        )
         .pipe(dest(path.build.js))
         .pipe(browser.stream());
 }
