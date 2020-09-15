@@ -14,23 +14,37 @@ function toggleMenu() {
 // Glider
 new Glider(document.querySelector('.slider__img'), {
     slidesToShow: 1,
+    slidesToScroll: 1,
     draggable: true,
     arrows: {
         prev: '.glider-prev',
         next: '.glider-next',
     },
+    scrollLock: true,
+    scrollLockDelay: 100,
+    resizeLock: true,
+    rewind: true,
+    responsive: [
+        {
+            breakpoint: 900,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            },
+        },
+    ],
 });
 
 // =================================================================================================================
 // main-popup
-let order = document.querySelector('.order');
-let closeOrder = document.querySelector('.order__close');
-setTimeout(() => {
-    order.classList.add('active');
-}, 10000);
-closeOrder.addEventListener('click', function () {
-    order.classList.remove('active');
-});
+// let order = document.querySelector('.order');
+// let closeOrder = document.querySelector('.order__close');
+// setTimeout(() => {
+//     order.classList.add('active');
+// }, 10000);
+// closeOrder.addEventListener('click', function () {
+//     order.classList.remove('active');
+// });
 
 // ====================================================================================================================
 // fixed menu
