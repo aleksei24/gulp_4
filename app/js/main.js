@@ -23,12 +23,14 @@ new Glider(document.querySelector('.slider__img'), {
 
 // =================================================================================================================
 // main-popup
-// setTimeout(() => {
-//     $('.order').addClass('active');
-// }, 10000);
-// $('.order__close').click(function () {
-//     $('.order').removeClass('active');
-// });
+let order = document.querySelector('.order');
+let closeOrder = document.querySelector('.order__close');
+setTimeout(() => {
+    order.classList.add('active');
+}, 10000);
+closeOrder.addEventListener('click', function () {
+    order.classList.remove('active');
+});
 
 // ====================================================================================================================
 // fixed menu
