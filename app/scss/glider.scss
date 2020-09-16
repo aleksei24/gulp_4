@@ -55,7 +55,7 @@
     text-decoration: none;
     // left: -23px;
     border: 0;
-    top: 35%;
+    top: 50%;
     cursor: pointer;
     // color: #666;
     color: red;
@@ -140,9 +140,16 @@
 // ============================================================
 // custom style
 .slider {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
 }
 .slider__img {
     width: 100%;
+}
+.img__on-screen {
+    position: absolute;
+    top: 50%;
+    color: yellow;
+    max-width: 1000px;
+    left: 10%;
 }
