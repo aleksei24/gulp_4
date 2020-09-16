@@ -61,3 +61,22 @@ function fixedHeader() {
 window.onscroll = function () {
     fixedHeader();
 };
+
+// =====================================================================================================================
+// tabs JS
+const container = document.querySelector('.tabs');
+const controls = [].slice.call(document.querySelectorAll('.control'));
+
+let setTab = function () {
+    let num = controls.indexOf(this);
+    container.style.left = `${-num * 100}%`;
+
+    for (let control of controls) {
+        control.classList.remove('active');
+    }
+    this.classList.add('active');
+};
+
+for (let control of controls) {
+    control.addEventListener('click', setTab);
+}
