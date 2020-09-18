@@ -48,7 +48,6 @@ new Glider(document.querySelector('.slider__img'), {
 
 // ====================================================================================================================
 // fixed menu
-
 let header = document.querySelector('.header');
 
 function fixedHeader() {
