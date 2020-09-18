@@ -214,15 +214,18 @@ function clean(params) {
     return del(path.clean);
 }
 
+let libs = [gliderJs];
+
 let build = gulp.series(
     clean,
-    gulp.parallel(js, gliderJs, css, html, images, fonts),
+    gulp.parallel(js, libs, css, html, images, fonts),
     fontsStyle
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 // exports.script = script;
 exports.gliderJs = gliderJs;
+
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
