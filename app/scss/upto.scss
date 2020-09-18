@@ -1,0 +1,25 @@
+.toTop {
+    position: fixed;
+    bottom: 12%;
+    right: 3%;
+    display: none;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    background-color: aqua;
+    border-radius: 50%;
+    text-decoration: none;
+    &:hover {
+        background-color: red;
+    }
+}
+
+.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hide {
+    display: none;
+}

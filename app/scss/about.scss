@@ -1,29 +1,12 @@
 .about {
-    margin: 200px 0 100px 0;
-    @media (max-width: 1000px) {
-        margin: 100px 0;
-    }
-    @media (max-width: 700px) {
-        margin: 60px 0;
-    }
-    @media (max-width: 600px) {
-        margin: 40px 0;
-    }
+    margin: 50px 0;
 }
 .about__container {
     display: flex;
     align-items: center;
-    @media (max-width: 1000px) {
-        max-width: 95%;
-        padding: 0 10px;
-    }
-    @media (max-width: 500px) {
-        flex-direction: column-reverse;
-    }
+    padding: 0 10px;
 }
-.about__content {
-    max-width: 390px;
-}
+
 .title {
     color: #161418;
     @include response-font(36, 16);

@@ -79,3 +79,28 @@ let setTab = function () {
 for (let control of controls) {
     control.addEventListener('click', setTab);
 }
+// ===========================================================================================================
+// upTo
+let toTop = document.querySelector('.toTop');
+
+window.onscroll = function () {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (
+        document.body.scrollTop > 150 ||
+        document.documentElement.scrollTop > 150
+    ) {
+        toTop.classList.add('show');
+    } else {
+        toTop.classList.remove('show');
+    }
+}
+
+toTop.addEventListener('click', onTheTop);
+
+function onTheTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
