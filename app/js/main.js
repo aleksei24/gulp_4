@@ -101,6 +101,16 @@ function scrollFunction() {
 toTop.addEventListener('click', onTheTop);
 
 function onTheTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    let position =
+        document.body.scrollTop !== 0 ||
+        document.documentElement.scrollTop !== 0;
+    if (position) {
+        window.scrollBy(0, -30);
+        requestAnimationFrame(onTheTop);
+    }
 }
+
+// in window.scrollBy(0, -30), changing a second parameter(-30) affects the speed of scrolling
+// less than -30 means faster speed
+// greater than -30 means slower speed
+// a second parameter must be negative, otherwise it won`t work
