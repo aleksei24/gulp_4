@@ -1,11 +1,11 @@
 // ================================================================================================================
 // burger js
 const burger = document.querySelector('.header__burger');
-const list = document.querySelector('.menu');
+const menu = document.querySelector('.menu');
 const bodyLock = document.querySelector('body');
 burger.addEventListener('click', toggleMenu);
 function toggleMenu() {
-    list.classList.toggle('active');
+    menu.classList.toggle('active');
     burger.classList.toggle('active');
     bodyLock.classList.toggle('locked');
 }
@@ -109,8 +109,28 @@ function onTheTop() {
         requestAnimationFrame(onTheTop);
     }
 }
-
 // in window.scrollBy(0, -30), changing a second parameter(-30) affects the speed of scrolling
 // less than -30 means faster speed
 // greater than -30 means slower speed
 // a second parameter must be negative, otherwise it won`t work
+
+// ==========================================================================================================
+// accordion
+const accordion = document.querySelector('.accordion');
+const list = document.querySelectorAll('.accordion__item');
+const title = document.querySelectorAll('.accordion__title');
+
+function toggleAccordion() {
+    let thisItem = this.parentNode;
+    list.forEach((item) => {
+        if (thisItem == item) {
+            thisItem.classList.toggle('active');
+            return;
+        }
+        item.classList.remove('active');
+    });
+}
+
+title.forEach((open) => {
+    open.addEventListener('click', toggleAccordion);
+});
