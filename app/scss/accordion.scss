@@ -1,0 +1,35 @@
+.accordion {
+    padding-top: 20px;
+    &__title {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        padding: 15px 0;
+        border-top: 1px solid #242932;
+    }
+    &__icon {
+        width: 16px;
+        height: 16px;
+        background-image: url('https://image.flaticon.com/icons/svg/748/748122.svg');
+        background-repeat: no-repeat;
+        transform: rotate(-45deg);
+        transition: all 0.5s ease-in-out;
+    }
+    &__content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+        p {
+            padding-bottom: 20px;
+        }
+    }
+}
+
+.active .accordion__content {
+    max-height: 150px;
+}
+.active .accordion__icon {
+    transform: rotate(0deg);
+}
