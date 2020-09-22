@@ -20,7 +20,7 @@ let path = {
         js: sourceFolder + '/js/main.js',
         glider: './node_modules/glider-js/glider.js',
         img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
-        fonts: sourceFolder + '/fonts/*.{woff,woff2}',
+        fonts: sourceFolder + '/fonts/*.ttf',
     },
     watch: {
         html: sourceFolder + '/**/*.html',
@@ -201,7 +201,7 @@ function fontsStyle(params) {
     }
 }
 
-function cb() {}
+function cb() {} // callback
 
 function watchFiles(params) {
     gulp.watch([path.watch.html], html);
