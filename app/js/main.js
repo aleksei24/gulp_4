@@ -134,3 +134,34 @@ function toggleAccordion() {
 title.forEach((open) => {
     open.addEventListener('click', toggleAccordion);
 });
+
+// ============================================================================================================
+// dropdown with javascript
+let dropdown = document.querySelectorAll('.dropdown');
+let dropdownArray = Array.prototype.slice.call(dropdown, 0);
+dropdownArray.forEach((element) => {
+    let button = element.querySelector('a[data-toggle="dropdown"]');
+    let menu = element.querySelector('.dropdown-menu');
+    let arrow = element.querySelector('.dropdown-arrow');
+    button.addEventListener('click', function (event) {
+        if (!menu.hasClass('drop-js-show')) {
+            menu.classList.add('drop-js-show');
+            menu.classList.remove('drop-js-hide');
+            arrow.classList.add('drop-js-open');
+            arrow.classList.remove('drop-js-close');
+            event.preventDefault();
+        } else {
+            menu.classList.remove('drop-js-show');
+            menu.classList.add('drop-js-hide');
+            arrow.classList.remove('drop-js-open');
+            arrow.classList.add('drop-js-close');
+            event.preventDefault();
+        }
+    });
+});
+Element.prototype.hasClass = function (className) {
+    return (
+        this.className &&
+        new RegExp('(^|\\s)' + className + '(\\s|$)').test(this.className)
+    );
+};
