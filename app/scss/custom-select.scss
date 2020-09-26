@@ -17,7 +17,7 @@
         height: 45px;
         padding: 10px 20px;
         padding-right: 40px;
-        &_active,
+        &.cust-select-active,
         &:focus {
             outline: none;
             box-shadow: 0 0 0 3px rgba(176, 198, 225, 0.8);
@@ -38,7 +38,7 @@
     }
 
     &__list {
-        // display: none;
+        display: none;
         list-style-type: none;
         background-color: #fff;
         overflow: hidden;
@@ -48,7 +48,7 @@
         left: 0;
         top: 45px;
         z-index: 10;
-        &_visible {
+        &.dropdown__list_visible {
             display: block;
         }
     }
