@@ -1,6 +1,8 @@
 .custom-select-group {
     &__container {
-        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
     }
 }
 .cust-select {
@@ -9,7 +11,7 @@
     &__btn {
         position: relative;
         display: block;
-        width: 30%;
+        width: 100%;
         text-align: left;
         background-color: #fff;
         border: 1px solid rgb(70, 70, 202);
@@ -43,7 +45,7 @@
         background-color: #fff;
         overflow: hidden;
         border-radius: 6px;
-        width: 30%;
+        width: 100%;
         position: absolute;
         left: 0;
         top: 45px;
@@ -70,7 +72,7 @@
         }
     }
 }
-#cust-select__input_hidden {
+.cust-select__input_hidden {
     border: 1px solid black;
     // display: none;
 }
