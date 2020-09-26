@@ -165,3 +165,60 @@ Element.prototype.hasClass = function (className) {
         new RegExp('(^|\\s)' + className + '(\\s|$)').test(this.className)
     );
 };
+
+// ================================================================================================================
+// custom-select
+// for only one custom-select element unwrap the code out of block.forEach
+const customSelectBlock = document.querySelectorAll('.cust-select');
+customSelectBlock.forEach(function (everyCustomSelect) {
+    const customSelectButton = everyCustomSelect.querySelector(
+        '.cust-select__btn'
+    );
+    const customSelectList = everyCustomSelect.querySelector(
+        '.cust-select__list'
+    );
+    const customSelectItem = customSelectList.querySelectorAll(
+        '.cust-select__item'
+    );
+    const customSelectInput = everyCustomSelect.querySelector(
+        '.cust-select__input_hidden'
+    );
+
+    customSelectButton.addEventListener('click', function () {
+        customSelectList.classList.toggle('dropdown__list_visible');
+        this.classList.add('cust-select-active');
+    });
+    customSelectItem.forEach(function (item) {
+        item.addEventListener('click', function (e) {
+            e.stopPropagation();
+            customSelectButton.innerText = this.innerText;
+            customSelectButton.focus();
+            customSelectInput.value = this.dataset.value;
+            customSelectList.classList.remove('dropdown__list_visible');
+        });
+    });
+    document.addEventListener('click', function (e) {
+        if (e.target !== customSelectButton) {
+            customSelectButton.classList.remove('cust-select-active');
+            customSelectList.classList.remove('dropdown__list_visible');
+        }
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Tab' || e.key === 'Escape') {
+            customSelectButton.classList.remove('cust-select-active');
+            customSelectList.classList.remove('dropdown__list_visible');
+        }
+    });
+});
+// if the code is going to be used in old browsers
+// you should add a polyfill below
+// if (window.NodeList && !NodeList.prototype.forEach) {
+//     NodeList.prototype.forEach = function (callback, thisArg) {
+//         thisArg = thisArg || window;
+//         for (var i = 0; i < this.length; i++) {
+//             callback.call(thisArg, this[i], i, this);
+//         }
+//     };
+// }
+
+// ================================================================================================================
