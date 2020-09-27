@@ -1,0 +1,86 @@
+.block {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    &__item {
+        margin: 40px 20px;
+    }
+}
+.square {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+}
+
+.rectangle {
+    height: 50px;
+    width: 150px;
+    background-color: red;
+}
+
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.oval {
+    height: 50px;
+    width: 150px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid red;
+}
+
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 50px solid red;
+}
+
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-right: 50px solid red;
+}
+
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 50px solid red;
+}
+
+.triangle-right:hover {
+    border-left: none;
+    border-right: 50px solid red;
+}
+
+.parallelogram {
+    height: 50px;
+    width: 150px;
+    background-color: red;
+    transform: skew(30deg);
+}
+
+.trapezium {
+    width: 100px;
+    border-bottom: 50px solid red;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+}
