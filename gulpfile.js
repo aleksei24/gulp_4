@@ -119,7 +119,7 @@ function jquery() {
         .pipe(browser.stream());
 }
 
-function slider() {
+function slick() {
     return src(path.src.slick)
         .pipe(uglifyes())
         .pipe(rename({ extname: '.min.js' }))
@@ -228,7 +228,7 @@ function clean(params) {
     return del(path.clean);
 }
 
-const script = [slider, magnific];
+const script = [slick, magnific];
 
 let build = gulp.series(
     clean,
@@ -238,7 +238,7 @@ let build = gulp.series(
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.magnific = magnific;
-exports.slider = slider;
+exports.slick = slick;
 // exports.script = script;
 exports.jquery = jquery;
 exports.fontsStyle = fontsStyle;
