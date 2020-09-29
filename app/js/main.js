@@ -222,3 +222,24 @@ customSelectBlock.forEach(function (everyCustomSelect) {
 // }
 
 // ================================================================================================================
+// mouse event
+// document.addEventListener('mousemove', function (mouse) {
+//     console.log(mouse);
+// });
+const appear = document.querySelector('#appear');
+
+window.onscroll = function () {
+    appearBlock();
+    scrollFunction();
+};
+
+function appearBlock() {
+    if (
+        document.body.scrollTop > 600 ||
+        document.documentElement.scrollTop > 600
+    ) {
+        appear.classList.add('animate__animated', 'animate__backInLeft');
+    } else {
+        appear.classList.remove('animate__animated', 'animate__backInLeft');
+    }
+}
