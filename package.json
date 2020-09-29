@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/aleksei24/gulp_4#readme",
   "devDependencies": {
+    "animate.css": "^4.1.1",
     "browser-sync": "^2.26.10",
     "del": "^5.1.0",
     "glider-js": "^1.7.3",
