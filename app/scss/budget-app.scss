@@ -3,50 +3,55 @@
     margin: 50px auto;
 }
 
-.total {
+.result {
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 25px;
 }
 
-.total__balance {
+.result__balance {
     font-size: 28px;
     font-weight: bold;
 }
 
-.total__header {
+.result__title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.result__top {
     border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.total__main {
+.result__main {
     display: flex;
     justify-content: space-between;
 }
 
-.total__main-item {
+.result__main-item {
     flex: 1;
     text-align: center;
     padding-top: 15px;
 }
 
-.total__main-item:first-child {
+.result__main-item:first-child {
     border-right: 1px solid #ccc;
 }
 
-.total__money {
+.result__money {
     font-size: 24px;
     line-height: 1.5;
 }
 
-.total__money-expenses {
+.result__money-expenses {
     color: tomato;
 }
 
-.total__money-income {
+.result__money-income {
     color: darkgreen;
 }
 
