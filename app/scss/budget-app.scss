@@ -69,6 +69,7 @@
     justify-content: space-between;
     padding: 10px;
     margin: 10px 0;
+    font-size: 21px;
     line-height: 25px;
 }
 
@@ -88,18 +89,18 @@
 
 .history_delete {
     background-color: transparent;
-    color: red;
+    color: rgb(43, 33, 33);
     padding: 0 10px;
     border-width: 0;
-    font-size: 20px;
-    opacity: 0;
+    font-size: 30px;
+    opacity: 1;
     transition: opacity 0.3s ease;
     cursor: pointer;
 }
 
-.history__item:hover .history_delete {
-    opacity: 1;
-}
+// .history__item:hover .history_delete {
+//     opacity: 1;
+// }
 
 .operation {
     margin-top: 40px;
