@@ -85,6 +85,7 @@ let toTop = document.querySelector('.toTop');
 
 window.onscroll = function () {
     scrollFunction();
+    fixedHeader();
 };
 
 function scrollFunction() {
@@ -226,7 +227,8 @@ customSelectBlock.forEach(function (everyCustomSelect) {
 // document.addEventListener('mousemove', function (mouse) {
 //     console.log(mouse);
 // });
-const appear = document.querySelector('#appear');
+// animated blocks
+/*const appear = document.querySelector('#appear');
 
 window.onscroll = function () {
     appearBlock();
@@ -242,7 +244,7 @@ function appearBlock() {
     } else {
         appear.classList.remove('animate__animated', 'animate__backInLeft');
     }
-}
+}*/
 
 // ============================================================================================================
 // budget app
