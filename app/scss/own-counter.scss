@@ -1,0 +1,44 @@
+.own-counter {
+    margin: 0 auto;
+    padding: 10px;
+    height: 100px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid rgb(230, 68, 68);
+    border-radius: 10px;
+
+    &__minus {
+        height: 40px;
+        width: 40px;
+        border: 1px solid rgb(47, 58, 158);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+    }
+
+    &__field {
+        height: 50px;
+        width: 50px;
+        border: 1px solid rgb(27, 102, 27);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 35px;
+    }
+
+    &__plus {
+        height: 40px;
+        width: 40px;
+        border: 1px solid rgb(47, 58, 158);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+    }
+}
