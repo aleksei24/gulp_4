@@ -247,3 +247,25 @@ function appearBlock() {
 }*/
 
 // ============================================================================================================
+// counter (from 0 to 10)
+const countField = document.querySelector('.own-counter__field');
+const countMinus = document.querySelector('.own-counter__minus');
+const countPlus = document.querySelector('.own-counter__plus');
+
+let count = 0;
+
+countMinus.addEventListener('click', function () {
+    count--;
+    if (count <= 0) {
+        count = 0;
+    }
+    countField.textContent = count;
+});
+
+countPlus.addEventListener('click', function () {
+    count++;
+    if (count > 10) {
+        count = 10;
+    }
+    countField.textContent = count;
+});
