@@ -12,9 +12,19 @@ function toggleMenu() {
 
 //=================================================================================================================
 // Swiper
-import Swiper from './node_modules/swiper/swiper-bundle.min';
+// import Swiper from './node_modules/swiper/swiper-bundle.min';
 // import 'swiper/swiper-bundle.css';
-const swiper = new Swiper();
+const mySwiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
 
 // =================================================================================================================
 // main-popup
