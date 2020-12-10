@@ -24,6 +24,7 @@ $colors: (
     padding: 0;
     height: 520px;
     width: 1600px;
+    max-width: 100%;
     // Fix of Webkit flickering
     z-index: 1;
 }
