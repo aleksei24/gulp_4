@@ -11,29 +11,6 @@ function toggleMenu() {
 }
 
 //=================================================================================================================
-// Glider
-new Glider(document.querySelector('.slider__img'), {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    draggable: true,
-    arrows: {
-        prev: '.glider-prev',
-        next: '.glider-next',
-    },
-    scrollLock: true,
-    scrollLockDelay: 100,
-    resizeLock: true,
-    rewind: true,
-    responsive: [
-        {
-            breakpoint: 900,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-            },
-        },
-    ],
-});
 
 // =================================================================================================================
 // main-popup
