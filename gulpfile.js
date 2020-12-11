@@ -18,7 +18,6 @@ let path = {
         ],
         css: sourceFolder + '/scss/style.scss',
         js: sourceFolder + '/js/main.js',
-        glider: './node_modules/glider-js/glider.js',
         img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
         fonts: sourceFolder + '/fonts/*.ttf',
     },
@@ -69,7 +68,7 @@ function html() {
         .pipe(browser.stream());
 }
 
-function css(params) {
+function css() {
     return src(path.src.css)
         .pipe(
             scss({
@@ -99,18 +98,6 @@ function js() {
     return src(path.src.js)
         .pipe(fileinclude())
         .pipe(dest(path.build.js))
-        .pipe(uglifyes())
-        .pipe(
-            rename({
-                extname: '.min.js',
-            })
-        )
-        .pipe(dest(path.build.js))
-        .pipe(browser.stream());
-}
-
-function gliderJs() {
-    return src(path.src.glider)
         .pipe(uglifyes())
         .pipe(
             rename({
@@ -214,17 +201,16 @@ function clean(params) {
     return del(path.clean);
 }
 
-let libs = [gliderJs];
+// let libs = [];
 
 let build = gulp.series(
     clean,
-    gulp.parallel(js, libs, css, html, images, fonts),
+    gulp.parallel(js, css, html, images, fonts),
     fontsStyle
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 // exports.script = script;
-exports.gliderJs = gliderJs;
 
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
