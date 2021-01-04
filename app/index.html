@@ -3,23 +3,22 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>New Project</title>
-        <link rel="icon" type="image/png" href="./img/fitness.png" />
+        <title>Crown-shop</title>
+        <link rel="icon" type="image/png" href="./img/crown.png" />
         <link rel="stylesheet" href="css/style.min.css" />
     </head>
     <body>
         <div class="wrapper">
             @@include('template/_header.html')
-            @@include('template/_dropJS.html') @@include('template/_about.html')
-            @@include('template/_about.html') @@include('template/_about.html')
-            <!-- @@include('template/_about-1.html') -->
-            <!-- @@include('template/_tabsJS.html')  -->
-            @@include('template/_upto.html')
-            <!-- @@include('template/_main-popup.html') -->
-            <!-- @@include('template/_footer.html') -->
-            @@include('template/_budget-hid.html')
+            <main class="main">
+                @@include('template/_hero.html')
+                @@include('template/_banner1.html')
+                @@include('template/_tabsJS.html')
+                @@include('template/_banner2.html')
+            </main>
+            @@include('template/_footer.html')
         </div>
-        <script src="js/glider.min.js"></script>
+        <script src="js/swiper-bundle.min.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

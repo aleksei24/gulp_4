@@ -1,24 +1,36 @@
+.tabs-JS {
+    margin-bottom: 50px;
+}
+
 .control-panel {
     display: block;
     margin: 0;
+    margin-bottom: 20px;
     padding: 0;
     width: 100%;
     height: 50px;
     text-align: center;
-    background: #2795ee;
+    background-color: $bgColour;
 }
 
 .control {
     display: inline-block;
+    margin: 0 50px;
     padding: 0 10px;
     height: 100%;
     line-height: 50px;
-    color: #fff;
+    font-family: $secondFont;
+    @include response-font(24, 12);
+    color: $colourFont;
     transition: border-bottom 0.2s;
     cursor: pointer;
     &:hover,
     &.active {
-        border-bottom: 4px solid darken(#2795ee, 15%);
+        border-bottom: 4px solid $btnBgColour;
+    }
+    @media (max-width: $md5) {
+        margin: 0 15px;
+        padding: 0 5px;
     }
 }
 
@@ -26,7 +38,8 @@
     position: relative;
     width: 100%;
     height: calc(100% - 50px);
-    overflow-x: hidden;
+    // overflow-x: hidden;
+    padding-bottom: 50px;
 }
 
 .tabs {
@@ -39,12 +52,24 @@
 }
 
 .tab {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     flex: 0 0 100%;
     padding: 20px;
     width: 100%;
-    p {
-        margin: 0 0 15px 0;
-        line-height: 1.5;
+}
+.tab__show-more {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    span {
+        @include response-font(24, 12);
+        font-weight: 700;
+        text-transform: capitalize;
+        border: 1px solid $colourFont;
+        border-radius: 7px;
+        padding: 15px;
     }
 }

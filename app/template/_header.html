@@ -1,28 +1,44 @@
 <header class="header">
-    <div class="container">
-        <div class="header__inner">
-            <a href="../index.html" class="header__logo">
-                <img src="./img/logo/hamachi-logo.png" alt="logo" />
-            </a>
-            <div class="header__burger">
-                <span></span>
-            </div>
-            <nav class="header__menu">
-                <ul class="header__list">
-                    <li>
-                        <a href="./index.html" class="header__link"> home </a>
-                    </li>
-                    <li>
-                        <a href="./tools.html" class="header__link"> tools </a>
-                    </li>
-                    <li>
-                        <a href="#!" class="header__link"> empty </a>
-                    </li>
-                    <li><a href="#!" class="header__link">empty</a></li>
-                    <li><a href="#!" class="header__link">empty</a></li>
-                    <li><a href="#!" class="header__link">empty</a></li>
-                </ul>
-            </nav>
-        </div>
+    <div class="header__container container">
+        <nav class="header__nav nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="./index.html" class="nav__link"> Home </a>
+                </li>
+                <li class="nav__item">
+                    <a href="./catalogue.html" class="nav__link"> Shop </a>
+                </li>
+                <li class="nav__item">
+                    <a href="./card.html" class="nav__link"> Elements </a>
+                </li>
+                <li class="nav__item">
+                    <a href="tools.html" class="nav__link"> tools </a>
+                </li>
+                <li class="nav__item">
+                    <a href="#!" class="nav__link"> Page </a>
+                </li>
+            </ul>
+        </nav>
+        @@include('../template/_burger.html')
+        <a href="./index.html" class="header__logo logo">
+            <img src="./img/logo/logo.png" alt="logo" />
+        </a>
+        <ul class="header__shop-menu shop-menu">
+            <li class="shop-menu__item">
+                <form action="#" class="shop-menu__search search">
+                    <button class="search__btn ibg"></button>
+                </form>
+            </li>
+            <li class="shop-menu__item">
+                <a href="#!" class="shop-menu__link">
+                    <img src="./img/icons/user.png" alt="user" />
+                </a>
+            </li>
+            <li class="shop-menu__item">
+                <a href="#!" class="shop-menu__link cart ibg">
+                    <span class="cart__num num">3</span>
+                </a>
+            </li>
+        </ul>
     </div>
 </header>
