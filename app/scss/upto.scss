@@ -1,12 +1,12 @@
 .toTop {
     position: fixed;
     bottom: 12%;
-    right: 3%;
+    right: 2%;
     display: none;
     cursor: pointer;
     height: 50px;
     width: 50px;
-    background-color: aqua;
+    background-color: $btnBgColour;
     border-radius: 50%;
     text-decoration: none;
     // &:hover {

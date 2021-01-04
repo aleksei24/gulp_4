@@ -1,0 +1,65 @@
+.popup {
+    position: absolute;
+    bottom: 50px;
+    left: -50px;
+    background-color: $popupBg;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    transform: translateX(-50vw);
+    transition: all 0.5s ease;
+    z-index: 5;
+    @media (max-width: $md2) {
+        left: 50px;
+        max-width: 300px;
+        bottom: 100px;
+    }
+    @media (max-width: $md3) {
+        left: 50px;
+        max-width: 200px;
+    }
+
+    &.active {
+        transform: translateX(0);
+    }
+
+    &.remove {
+        left: -50vw;
+    }
+
+    &__dscr {
+        font-size: 12px;
+        line-height: 15/12 * 100%;
+    }
+
+    &__title {
+        font-family: $secondFont;
+        font-size: 16px;
+        line-height: 21/16 * 100%;
+        @media (max-width: $md3) {
+            font-size: 14px;
+        }
+    }
+
+    &__from {
+        font-size: 12px;
+        line-height: 15/12 * 100%;
+        @media (max-width: $md3) {
+            font-size: 10px;
+        }
+    }
+
+    &__close {
+        max-width: 30px;
+        max-height: 30px;
+        @media (max-width: $md2) {
+            display: none;
+            max-height: 0;
+            max-width: 0;
+        }
+    }
+    @media (max-width: $md4) {
+        display: none;
+    }
+}

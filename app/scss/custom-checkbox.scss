@@ -32,7 +32,7 @@
 }
 
 .checkbox_border .checkbox__span {
-    border-color: #121514;
+    border-color: $colourFont;
 }
 
 .checkbox__box:checked + .checkbox__span::after {
@@ -68,7 +68,7 @@
     content: '';
     width: 0;
     height: 2px;
-    background-color: #f60a20;
+    background-color: $colourFont;
     display: block;
     position: absolute;
     border-radius: 5px;
@@ -87,8 +87,8 @@
     transform: translate(50%, -50%) rotate(-45deg);
 }
 .checkbox__text {
-    color: #8c8c8c;
-    font-size: 12px;
-    font-style: italic;
-    line-height: 74px;
+    color: $colourFont;
+    // font-size: 12px;
+    @include response-font(12, 10);
+    line-height: 14/12 * 100%;
 }
