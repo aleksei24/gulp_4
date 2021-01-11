@@ -213,7 +213,7 @@ let libs = [swiperJs];
 
 let build = gulp.series(
     clean,
-    gulp.parallel(js, css, html, images, fonts),
+    gulp.parallel(js, libs, css, html, images, fonts),
     fontsStyle
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
