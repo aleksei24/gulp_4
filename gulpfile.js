@@ -46,7 +46,6 @@ let { src, dest } = require('gulp'),
     webp = require('gulp-webp'),
     webphtml = require('gulp-webp-html'),
     webpcss = require('gulp-webp-css'),
-    svgsprite = require('gulp-svg-sprite'),
     ttf2woff = require('gulp-ttf2woff'),
     ttf2woff2 = require('gulp-ttf2woff2'),
     fonter = require('gulp-fonter');
@@ -154,18 +153,6 @@ gulp.task('otf2ttf', function () {
             })
         )
         .pipe(dest(sourceFolder + '/fonts/'));
-});
-
-gulp.task('svgsprite', function () {
-    return gulp.src([sourceFolder + '/iconsprite/*.svg']).pipe(
-        svgsprite({
-            mode: {
-                stack: {
-                    sprite: '../icons/icons.svg',
-                },
-            },
-        }).pipe(dest(path.build.img))
-    );
 });
 
 function fontsStyle(params) {
