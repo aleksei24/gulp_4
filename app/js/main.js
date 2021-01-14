@@ -9,6 +9,7 @@ const catalogGoodsGrid = document.querySelector('.catalogue-goods__grid');
 const catalogFilterItems = document.querySelectorAll('.catalogue-filter__item');
 const catalogChoice = document.querySelector('.catalogue-choice');
 const customSelect = document.querySelectorAll('.cust-sel');
+const singleCustomSelect = document.querySelector('.single-select');
 const catalogueTopCloseBtn = document.querySelector('.top__close');
 const headerTop = document.querySelector('.header_top');
 const colourSelect = document.querySelector('.colour-select');
@@ -467,6 +468,17 @@ customSelectBlock.forEach(function (everyCustomSelect) {
 // }
 
 // ====================================================================================================
+// single custom select
+if (singleCustomSelect) {
+    let singleSelect = function () {
+        let selectTop = document.querySelectorAll('.single-select__top');
+        selectTop.forEach((el) => {
+            el.addEventListener('click', function () {
+                this.parentElement.classList.toggle('active');
+            });
+        });
+    };
+}
 
 // =================================================================================================
 // counter (from 0 to 10)
