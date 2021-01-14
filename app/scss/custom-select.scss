@@ -1,11 +1,11 @@
-.custom-select-group {
+.single-custom-select {
     max-width: 450px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
 }
-.custom-select {
+.single-custom-select {
     position: relative;
 
     &__span {
@@ -75,7 +75,7 @@
         cursor: pointer;
     }
 }
-.custom-select__input_hidden {
+.single-custom-select__input_hidden {
     border: 1px solid black;
     display: none;
 }
