@@ -33,7 +33,7 @@
                             value="right"
                         />
                         <label for="form-righthand" class="options__label">
-                            Right hand
+                            <span>Right hand</span>
                         </label>
                     </div>
                     <div class="options__item">
@@ -45,7 +45,7 @@
                             value="left"
                         />
                         <label for="form-lefthand" class="options__label">
-                            Left hand
+                            <span>Left hand</span>
                         </label>
                     </div>
                 </div>
@@ -60,12 +60,7 @@
             </div>
             <div class="form__item">
                 <div class="form__label">Age*:</div>
-                <select name="age" class="select">
-                    <option value="18 to 25" selected>Item 1</option>
-                    <option value="26 to 45">Item 2</option>
-                    <option value="46 to 75">Item 3</option>
-                    <option value="76 to 99">Item 4</option>
-                </select>
+                <!-- @@include('../template/_custom-select-group.html') -->
             </div>
             <div class="form__item">
                 <div class="form__label">Stick photo</div>
@@ -84,17 +79,7 @@
                 </div>
             </div>
             <div class="form__item">
-                <div class="checkbox">
-                    <input
-                        type="checkbox"
-                        name="agreement"
-                        id="form-agreement"
-                        class="ckeckbox__input"
-                    />
-                    <label for="form-agreement" class="checkbox__label">
-                        I agree blah-blah-blah
-                    </label>
-                </div>
+                @@include('../template/_custom-checkbox.html')
             </div>
             <button type="submit" class="form__button">Send</button>
         </form>
