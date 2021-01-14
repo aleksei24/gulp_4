@@ -21,6 +21,7 @@ const goodsGrid = document.querySelector('.tab');
 const loadMore = document.querySelector('.tab__show-more');
 const toTop = document.querySelector('.toTop');
 const burger = document.querySelector('.burger');
+const form = document.querySelector('#form');
 
 // =================================================================================================
 // burger js
@@ -578,3 +579,59 @@ if (goodsGrid && loadMore) {
         fetchGoods(amountOfGoods);
     });
 }
+// =================================================================================================
+// form
+document.addEventListener('DOMContentLoaded', function () {
+    form.addEventListener('submit', formSend);
+
+    async function formSend(e) {
+        e.preventDefault();
+
+        let error = formValidate(form);
+    }
+
+    function formValidate(form) {
+        let err = 0;
+        let formReq = document.querySelectorAll('.req');
+
+        for (let i = 0; i < formReq.length; i++) {
+            const elem = formReq[i];
+            formRemoveError(input);
+
+            if (input.classList.contains('_email')) {
+                if (emailTest(input)) {
+                    formAddError(input);
+                    err++;
+                }
+            } else if (
+                input.getAttribute('type') === 'ckeckbox' &&
+                input.checked === false
+            ) {
+                formAddError(input);
+                err++;
+            } else {
+                if (input.value === '') {
+                    formAddError(input);
+                    err++;
+                }
+            }
+        }
+        return err;
+    }
+
+    function formAddError(input) {
+        input.parentElement.classList.add('_error');
+        input.classList.add('_error');
+    }
+
+    function formRemoveError(input) {
+        input.parentElement.classList.remove('_error');
+        input.classList.remove('_error');
+    }
+
+    function emailTest(input) {
+        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(
+            input.value
+        );
+    }
+});

@@ -4,10 +4,9 @@
     padding: 30px 0;
     border: 2px solid black;
     border-radius: 5px;
-    &__container {
-    }
 
-    &__body {
+    & * {
+        outline: none;
     }
 
     &__title {
@@ -32,9 +31,30 @@
         border-radius: 5px;
         width: 100%;
         font-size: 18px;
+        &:focus {
+            box-shadow: 0 0 10px $btnBgColour;
+        }
+        &._error {
+            box-shadow: 0 0 15px $error;
+        }
     }
 
     &__button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $btnBgColour;
+        color: $btnColour;
+        min-height: 50px;
+        border-radius: 10px;
+        font-size: 21px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        &:active {
+            transform: scale(1.02);
+        }
     }
 }
 textarea.form__input {
