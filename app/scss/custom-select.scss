@@ -34,11 +34,11 @@
         @media (max-width: $md3) {
             height: 28px;
         }
-        &.active &__list {
+        &.active {
             display: block;
         }
 
-        &.custom-select-active,
+        &.single-select-active,
         &:focus {
             outline: none;
         }
