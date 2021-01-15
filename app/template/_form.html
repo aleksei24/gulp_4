@@ -1,6 +1,6 @@
 <div class="form">
     <div class="form__container container">
-        <form action="#" id="form" class="form__body">
+        <form action="#!" id="form" class="form__body">
             <h1 class="form__title">Sending data to e-mail</h1>
             <div class="form__item">
                 <label for="form-name" class="form__label">Name*:</label>
@@ -79,7 +79,19 @@
                 </div>
             </div>
             <div class="form__item">
-                @@include('../template/_custom-checkbox.html')
+                <div class="checkbox">
+                    <input
+                        type="checkbox"
+                        name="agreement"
+                        id="formAgreement"
+                        class="checkbox__input"
+                        checked
+                    />
+                    <label for="formAgreement" class="checkbox__label">
+                        Согласен с правилами обработки данных, прописанных в
+                        политике конфиденциальности.
+                    </label>
+                </div>
             </div>
             <button type="submit" class="form__button">Send</button>
         </form>

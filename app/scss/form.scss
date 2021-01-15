@@ -144,3 +144,41 @@ textarea.form__input {
         }
     }
 }
+.checkbox {
+    &__input {
+        display: none;
+        &:checked + .checkbox__label::after {
+            transform: scale(1);
+        }
+    }
+
+    &__label {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        font-size: 14px;
+        line-height: 120%;
+        cursor: pointer;
+        &::before {
+            content: '';
+            flex: 0 0 24px;
+            align-self: flex-start;
+            height: 24px;
+            border: 1px solid black;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        &::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            border-radius: 4px;
+            background-color: $btnBgColour;
+            transform: scale(0);
+            transition: transform 0.2s ease;
+        }
+    }
+}
