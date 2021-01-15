@@ -582,8 +582,16 @@ if (goodsGrid && loadMore) {
 // form
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('#form');
-    const input = document.querySelectorAll('input');
-    form.addEventListener('submit', formSend);
+    if (form) {
+        const input = document.querySelectorAll('input');
+        form.addEventListener('submit', formSend);
+
+        const formImage = document.querySelector('#form-image');
+        const formPreview = document.querySelector('.file__preview');
+        formImage.addEventListener('change', () => {
+            uploadFile(formImage.files[0]);
+        });
+    }
 
     async function formSend(e) {
         e.preventDefault();
@@ -654,12 +662,6 @@ document.addEventListener('DOMContentLoaded', function () {
             input.value
         );
     }
-
-    const formImage = document.querySelector('#form-image');
-    const formPreview = document.querySelector('.file__preview');
-    formImage.addEventListener('change', () => {
-        uploadFile(formImage.files[0]);
-    });
 
     function uploadFile(file) {
         if (!['image/jpg', 'image/png', 'image/gif'].includes(file.type)) {
