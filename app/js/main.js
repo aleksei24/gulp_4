@@ -9,6 +9,7 @@ const catalogGoodsGrid = document.querySelector('.catalogue-goods__grid');
 const catalogFilterItems = document.querySelectorAll('.catalogue-filter__item');
 const catalogChoice = document.querySelector('.catalogue-choice');
 const customSelect = document.querySelectorAll('.cust-sel');
+const singleCustomSelect = document.querySelector('.single-select');
 const catalogueTopCloseBtn = document.querySelector('.top__close');
 const headerTop = document.querySelector('.header_top');
 const colourSelect = document.querySelector('.colour-select');
@@ -467,6 +468,36 @@ customSelectBlock.forEach(function (everyCustomSelect) {
 // }
 
 // ====================================================================================================
+// single custom select
+if (singleCustomSelect) {
+    const customSelectButton = document.querySelector('.single-select__top');
+    const customSelectList = document.querySelector('.single-select__list');
+    const customSelectItem = customSelectList.querySelectorAll(
+        '.single-select__item'
+    );
+    const customSelectInput = document.querySelector(
+        '.single-select__input_hidden'
+    );
+
+    customSelectButton.addEventListener('click', function () {
+        customSelectList.classList.toggle('dropdown__list_visible');
+        this.classList.add('active');
+    });
+    customSelectItem.forEach(function (item) {
+        item.addEventListener('click', function (e) {
+            e.stopPropagation();
+            customSelectButton.innerText = this.innerText;
+            customSelectInput.value = this.dataset.value;
+            customSelectList.classList.remove('dropdown__list_visible');
+        });
+    });
+    document.addEventListener('click', function (e) {
+        if (e.target !== customSelectButton) {
+            customSelectButton.classList.remove('active');
+            customSelectList.classList.remove('dropdown__list_visible');
+        }
+    });
+}
 
 // =================================================================================================
 // counter (from 0 to 10)
@@ -547,3 +578,107 @@ if (goodsGrid && loadMore) {
         fetchGoods(amountOfGoods);
     });
 }
+// =================================================================================================
+// form
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('#form');
+    const input = document.querySelectorAll('input');
+    form.addEventListener('submit', formSend);
+
+    async function formSend(e) {
+        e.preventDefault();
+        let error = formValidate(form);
+
+        let formData = new FormData();
+        formData.append('image', formImage.files[0]);
+
+        if (error === 0) {
+            let response = await fetch('sendmail.php', {
+                method: 'POST',
+                body: formData,
+            });
+            if (response.ok) {
+                let result = await response.json();
+                alert(result.message);
+                formPreview.innerHTML = '';
+                form.reset();
+            } else {
+                alert('Error');
+            }
+        } else {
+            alert('Fill in required fields');
+        }
+    }
+
+    function formValidate(form) {
+        let err = 0;
+        let formReq = document.querySelectorAll('.req');
+
+        for (let i = 0; i < formReq.length; i++) {
+            const elem = formReq[i];
+            formRemoveError(elem);
+
+            if (elem.classList.contains('_email')) {
+                if (emailTest(elem)) {
+                    formAddError(elem);
+                    err++;
+                }
+            } else if (
+                elem.getAttribute('type') === 'ckeckbox' &&
+                elem.checked === false
+            ) {
+                formAddError(elem);
+                err++;
+            } else {
+                if (elem.value === '') {
+                    formAddError(elem);
+                    err++;
+                }
+            }
+        }
+        return err;
+    }
+
+    function formAddError(input) {
+        input.parentElement.classList.add('_error');
+        input.classList.add('_error');
+    }
+
+    function formRemoveError(input) {
+        input.parentElement.classList.remove('_error');
+        input.classList.remove('_error');
+    }
+
+    function emailTest(input) {
+        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(
+            input.value
+        );
+    }
+
+    const formImage = document.querySelector('#form-image');
+    const formPreview = document.querySelector('.file__preview');
+    formImage.addEventListener('change', () => {
+        uploadFile(formImage.files[0]);
+    });
+
+    function uploadFile(file) {
+        if (!['image/jpg', 'image/png', 'image/gif'].includes(file.type)) {
+            alert('Only images are allowed');
+            formImage.value = '';
+            return;
+        }
+        if (file.size > 2 * 1024 * 1024) {
+            alert('File must be less than 2MB');
+            return;
+        }
+
+        let showImage = new FileReader();
+        showImage.onload = (e) => {
+            formPreview.innerHTML = `<img src='${e.target.result}' alt='Image'`;
+        };
+        showImage.onerror = (e) => {
+            alert('Error');
+        };
+        showImage.readAsDataURL(file);
+    }
+});

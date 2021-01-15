@@ -1,125 +1,188 @@
 .form {
-    min-height: 400px;
-    height: auto;
-    border: 5px solid #7a7979;
-    border-radius: 10px;
-    margin: 50px 0;
-    padding: 50px;
-}
-.form .form__top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-.form .form__title {
-    font-size: 32px;
-}
-.form .form__switch {
-    display: flex;
-    align-items: center;
-}
-.form .btn__form-top {
-    width: 150px;
-    height: 50px;
-    font-size: 21px;
-}
-.btn_white {
-    background-color: #fff;
-    color: #000000;
-    border: 2px solid #000;
-}
-.btn_black {
-    background-color: #000000;
-    color: #fff;
-    border: 2px solid #000;
-}
-.form .form__level1,
-.form .form__level2,
-.form .form__level3 {
-    display: flex;
-    align-items: center;
-    margin-bottom: 50px;
-}
-.form .form__level2 {
-    justify-content: space-between;
-}
-.form .level1__c1,
-.form .level2__c1,
-.form .level2__c2,
-.form .level3__c1,
-.form .level3__c2 {
-    display: flex;
-    align-items: center;
-}
-// .form .level2__c1,
-// .form .level2__c2,
-.form .level3__c1,
-.form .level3__c2 {
-    margin: 0 30px;
-}
-.form .c2__01,
-.form .c2__02 {
-    margin: 0 20px;
-    display: flex;
-    align-items: center;
-}
-.form .level3__result {
-    margin-left: 30px;
-}
-.btn__form {
-    border: 2px solid #000;
-    width: 80px;
-    height: 30px;
-}
-.form .level3__result span {
-    margin-right: 10px;
-    font-size: 21px;
-    line-height: 25/21 * 100%;
-}
-.form select,
-.form input {
-    height: 30px;
-    width: 150px;
-    margin-left: 15px;
-    padding: 5px;
-    border: 1px solid #4ae44a;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px 0;
+    border: 2px solid black;
     border-radius: 5px;
-}
-.form .form__counter {
-    display: flex;
-    align-items: center;
-}
-.counter__inner {
-    display: flex;
-    align-items: center;
-    max-width: 120px;
-    width: 100%;
-}
-.btn_counter {
-    width: 25px;
-    height: 25px;
-    background-color: #4eb5ed;
-    color: #fff;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &:hover {
-        background-color: #1e85bc;
+
+    & * {
+        outline: none;
+    }
+
+    &__title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+
+    &__item {
+        margin-bottom: 20px;
+    }
+
+    &__label {
+        font-size: 18px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    &__input {
+        height: 50px;
+        padding: 0 20px;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 18px;
+        &:focus {
+            box-shadow: 0 0 10px $btnBgColour;
+        }
+        &._error {
+            box-shadow: 0 0 15px $error;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $btnBgColour;
+        color: $btnColour;
+        min-height: 50px;
+        border-radius: 10px;
+        font-size: 21px;
+        text-transform: uppercase;
         cursor: pointer;
+        transition: background-color 0.2s ease;
+        &:active {
+            transform: scale(1.02);
+        }
     }
 }
-
-.counter__display {
-    width: 50px;
-    height: 50px;
-    font-size: 36px;
-    line-height: 50px;
-    text-align: center;
+textarea.form__input {
+    min-height: 120px;
+    resize: vertical;
+    padding: 20px;
 }
-.counter__inner input {
-    font-size: 15px;
-    width: 50px;
-    margin-left: 0;
+.options {
+    padding-top: 10px;
+    &__item {
+        margin-bottom: 10px;
+    }
+
+    &__input {
+        display: none;
+        &:checked + .options__label::after {
+            transform: scale(1);
+        }
+    }
+
+    &__label {
+        display: inline-flex;
+        align-items: center;
+        font-size: 16px;
+        line-height: 120%;
+        width: 50%;
+        position: relative;
+        &::before {
+            content: '';
+            flex: 0 0 24px;
+            align-self: flex-start;
+            height: 24px;
+            background-color: $bgColour;
+            border: 1px solid black;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 16px;
+            height: 16px;
+            background-color: $btnBgColour;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: transform 0.2s ease;
+        }
+    }
+}
+.file {
+    &__item {
+        position: relative;
+    }
+
+    &__input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 100%;
+        opacity: 0;
+        font-size: 0;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    &__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        border: 1px solid black;
+        border-radius: 10px;
+        color: $btnColour;
+        background-color: $btnBgColour;
+        padding: 0 10px;
+    }
+
+    &__preview {
+        display: inline-block;
+        max-width: 100px;
+        img {
+            max-width: 100%;
+            padding-top: 10px;
+        }
+    }
+}
+.checkbox {
+    &__input {
+        display: none;
+        &:checked + .checkbox__label::after {
+            transform: scale(1);
+        }
+    }
+
+    &._error .checkbox__label::before {
+        box-shadow: 0 0 15px $error;
+    }
+
+    &__label {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        font-size: 14px;
+        line-height: 120%;
+        cursor: pointer;
+        &::before {
+            content: '';
+            flex: 0 0 24px;
+            align-self: flex-start;
+            height: 24px;
+            border: 1px solid black;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        &::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            border-radius: 4px;
+            background-color: $btnBgColour;
+            transform: scale(0);
+            transition: transform 0.2s ease;
+        }
+    }
 }

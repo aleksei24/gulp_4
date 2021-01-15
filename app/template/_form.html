@@ -1,82 +1,99 @@
-<section class="section">
-    <div class="section__container container">
-        <div class="form">
-            <form action="post" method="post">
-                <div class="form__top">
-                    <h3 class="form__title">Choose</h3>
-                    <div class="form__switch">
-                        <a href="#!" class="btn btn_white btn__form-top">
-                            Standart
-                        </a>
-                        <a
-                            href="#!"
-                            class="btn btn_black btn__form-top"
-                            id="nominal"
-                        >
-                            Nominal
-                        </a>
-                    </div>
-                </div>
-                <div class="form__level1">
-                    <div class="level1__c1">
-                        First Type
-                        <select name="" id="first">
-                            <option value="classic">Classic</option>
-                            <option value="face-massage">Face Massage</option>
-                            <option value="spa-programm">Spa Programm</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form__level2">
-                    <div class="level2__c1">
-                        Second Type
-                        <select name="" id="second">
-                            <option value="relax">Relax</option>
-                            <option value="recovery">Recovery</option>
-                        </select>
-                    </div>
-                    <div class="level2__c2">
-                        <div class="c2__01">
-                            <div class="form__counter">
-                                How many people
-                                <div class="counter__inner">
-                                    <div class="btn_counter minus">-</div>
-                                    <input type="num" class="counter__display" value="1"></input>
-                                    <div class="btn_counter plus">+</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="c2__02">
-                            Time
-                            <select name="" id="time">
-                                <option value="30">30</option>
-                                <option value="60">60</option>
-                                <option value="90">90</option>
-                                <option value="120">120</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="form__level3">
-                    <div class="level3__c1">
-                        Who
+<div class="form">
+    <div class="form__container container">
+        <form action="#!" id="form" class="form__body">
+            <h1 class="form__title">Sending data to e-mail</h1>
+            <div class="form__item">
+                <label for="form-name" class="form__label">Name*:</label>
+                <input
+                    type="text"
+                    name="name"
+                    id="form-name"
+                    class="form__input req"
+                />
+            </div>
+            <div class="form__item">
+                <label for="form-email" class="form__label">E-mail*:</label>
+                <input
+                    type="text"
+                    name="email"
+                    id="form-email"
+                    class="form__input req _email"
+                />
+            </div>
+            <div class="form__item">
+                <div class="form__label">Lefthand or Righthand</div>
+                <div class="options">
+                    <div class="options__item">
                         <input
-                            type="text"
-                            name=""
-                            id="name"
-                            placeholder="John Zoo"
+                            type="radio"
+                            name="hand"
+                            id="form-righthand"
+                            checked
+                            class="options__input"
+                            value="right"
                         />
+                        <label for="form-righthand" class="options__label">
+                            <span>Right hand</span>
+                        </label>
                     </div>
-                    <div class="level3__c2">
-                        <button type="submit" class="btn btn_white btn__form">
-                            Book
-                        </button>
-                        <div class="level3__result" id="result">
-                            <span>0</span>frank
-                        </div>
+                    <div class="options__item">
+                        <input
+                            type="radio"
+                            name="hand"
+                            id="form-lefthand"
+                            class="options__input"
+                            value="left"
+                        />
+                        <label for="form-lefthand" class="options__label">
+                            <span>Left hand</span>
+                        </label>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+            <div class="form__item">
+                <label for="form-message" class="form__label">Message</label>
+                <textarea
+                    name="message"
+                    id="form-message"
+                    class="form__input"
+                ></textarea>
+            </div>
+            <div class="form__item">
+                <div class="form__label">Age*:</div>
+                @@include('../template/_custom-select.html')
+            </div>
+            <div class="form__item">
+                <div class="form__label">Stick photo</div>
+                <div class="file">
+                    <div class="file__item">
+                        <input
+                            accept=".jpg, .png, .gif"
+                            type="file"
+                            name="image"
+                            id="form-image"
+                            class="file__input"
+                        />
+                        <div class="file__button">Choose</div>
+                    </div>
+                    <div class="file__preview"></div>
+                </div>
+            </div>
+            <div class="form__item">
+                <div class="checkbox">
+                    <input
+                        type="checkbox"
+                        name="agreement"
+                        id="formAgreement"
+                        class="checkbox__input req"
+                        checked
+                    />
+                    <label for="formAgreement" class="checkbox__label">
+                        Согласен с правилами обработки данных, прописанных в
+                        политике конфиденциальности.
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="form__button">Send</button>
+        </form>
     </div>
-</section>
+</div>
