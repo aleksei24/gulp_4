@@ -152,6 +152,10 @@ textarea.form__input {
         }
     }
 
+    &._error .checkbox__label::before {
+        box-shadow: 0 0 15px $error;
+    }
+
     &__label {
         position: relative;
         display: inline-flex;
