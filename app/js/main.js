@@ -21,7 +21,6 @@ const goodsGrid = document.querySelector('.tab');
 const loadMore = document.querySelector('.tab__show-more');
 const toTop = document.querySelector('.toTop');
 const burger = document.querySelector('.burger');
-const form = document.querySelector('#form');
 
 // =================================================================================================
 // burger js
@@ -582,12 +581,17 @@ if (goodsGrid && loadMore) {
 // =================================================================================================
 // form
 document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('#form');
+    const input = document.querySelectorAll('input');
     form.addEventListener('submit', formSend);
 
     async function formSend(e) {
         e.preventDefault();
-
         let error = formValidate(form);
+        if (error === 0) {
+        } else {
+            alert('Fill in required fields');
+        }
     }
 
     function formValidate(form) {
@@ -596,22 +600,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
         for (let i = 0; i < formReq.length; i++) {
             const elem = formReq[i];
-            formRemoveError(input);
+            formRemoveError(elem);
 
-            if (input.classList.contains('_email')) {
-                if (emailTest(input)) {
-                    formAddError(input);
+            if (elem.classList.contains('_email')) {
+                if (emailTest(elem)) {
+                    formAddError(elem);
                     err++;
                 }
             } else if (
-                input.getAttribute('type') === 'ckeckbox' &&
-                input.checked === false
+                elem.getAttribute('type') === 'ckeckbox' &&
+                elem.checked === false
             ) {
-                formAddError(input);
+                formAddError(elem);
                 err++;
             } else {
-                if (input.value === '') {
-                    formAddError(input);
+                if (elem.value === '') {
+                    formAddError(elem);
                     err++;
                 }
             }
@@ -633,5 +637,23 @@ document.addEventListener('DOMContentLoaded', function () {
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(
             input.value
         );
+    }
+
+    const formImage = document.querySelector('#form-image');
+    const formPreview = document.querySelector('.file__preview');
+    formImage.addEventListener('change', () => {
+        uploadFile(formImage.files[0]);
+    });
+
+    function uploadFile(file) {
+        if (!['image/jpg', 'image/png', 'image/gif'].includes(file.type)) {
+            alert('Only images are allowed');
+            formImage.value = '';
+            return;
+        }
+        if (file.size > 2 * 1024 * 1024) {
+            alert('File must be less than 2MB');
+            return;
+        }
     }
 });
