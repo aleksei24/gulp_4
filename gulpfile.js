@@ -26,7 +26,7 @@ let path = {
         html: sourceFolder + '/**/*.html',
         css: sourceFolder + '/scss/**/*.scss',
         js: sourceFolder + '/js/**/*.js',
-        img: sourceFolder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
+        img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
     },
     clean: './' + projectFolder + '/',
 };
