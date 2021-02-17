@@ -78,6 +78,7 @@ function css() {
         .pipe(groupmedia())
         .pipe(
             autoprefixer({
+                grid: true,
                 overrideBrowserlist: ['last 5 versions'],
                 cascade: true,
             })
