@@ -2,16 +2,16 @@
     padding: 30px 15px;
 }
 
-.sidebar-grid {
+.side-grid {
     background-color: rgb(206, 67, 206);
     padding: 30px 15px;
     margin-bottom: 30px;
 }
 
-.sidebar-grid__list li {
+.side-grid__list li {
     margin-bottom: 15px;
 }
-.sidebar-grid__link {
+.side-grid__link {
     color: white;
     font-size: 21px;
     text-transform: capitalize;
@@ -32,7 +32,7 @@
         grid-area: main-grid;
         grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
     }
-    .sidebar-grid {
+    .side-grid {
         grid-column: 2 / 3;
         margin: 0;
     }
