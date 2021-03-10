@@ -22,6 +22,7 @@ const goodsGrid = document.querySelector('.tab');
 const loadMore = document.querySelector('.tab__show-more');
 const toTop = document.querySelector('.toTop');
 const burger = document.querySelector('.burger');
+const accordion = document.querySelector('.accordion');
 
 // =================================================================================================
 // burger js
@@ -577,6 +578,27 @@ if (goodsGrid && loadMore) {
     loadMore.addEventListener('click', (e) => {
         amountOfGoods += 3;
         fetchGoods(amountOfGoods);
+    });
+}
+// ====================================================================================
+// accordion
+if (accordion) {
+    const list = document.querySelectorAll('.accordion__item');
+    const title = document.querySelectorAll('.accordion__title');
+
+    function toggleAccordion() {
+        let thisItem = this.parentNode;
+        list.forEach((item) => {
+            if (thisItem === item) {
+                thisItem.classList.toggle('active');
+                return;
+            }
+            item.classList.remove('active');
+        });
+    }
+
+    title.forEach((open) => {
+        open.addEventListener('click', toggleAccordion);
     });
 }
 // =================================================================================================
