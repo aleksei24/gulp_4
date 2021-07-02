@@ -69,7 +69,7 @@ function css() {
     return src(path.src.css)
         .pipe(
             scss({
-                outputStyle: 'expanded',
+                outputStyle: 'compressed',
             })
         )
         .pipe(groupmedia())
@@ -81,7 +81,6 @@ function css() {
             })
         )
         .pipe(webpcss())
-        .pipe(dest(path.build.css))
         .pipe(cleancss())
         .pipe(
             rename({
