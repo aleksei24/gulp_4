@@ -149,25 +149,16 @@ if (catalogFilterItems) {
         elem.querySelector('input').addEventListener('change', (e) => {
             let checked = elem.querySelector('input').checked;
             if (checked) {
-                elem.querySelector('.checkbox__box').classList.add(
-                    'checkbox__box_mark'
-                );
+                elem.querySelector('.checkbox__box').classList.add('checkbox__box_mark');
                 let text = elem.querySelector('.checkbox__text').textContent;
-                catalogChoice.insertAdjacentHTML(
-                    'afterbegin',
-                    createChoiceItem(text)
-                );
+                catalogChoice.insertAdjacentHTML('afterbegin', createChoiceItem(text));
             } else {
-                elem.querySelector('.checkbox__box').classList.remove(
-                    'checkbox__box_mark'
-                );
+                elem.querySelector('.checkbox__box').classList.remove('checkbox__box_mark');
                 let text = elem.querySelector('.checkbox__text').textContent;
                 document.querySelector(`[data-choice-txt="${text}"]`).remove();
             }
 
-            let activeCheckbox = document.querySelectorAll(
-                '.checkbox__box_mark'
-            );
+            let activeCheckbox = document.querySelectorAll('.checkbox__box_mark');
             if (activeCheckbox.length > 0) {
                 catalogChoice.style.display = 'flex';
             } else {
@@ -199,9 +190,7 @@ if (catalogChoice) {
                 }
                 catalogFilterItems.forEach((elem) => {
                     elem.querySelector('input').checked = false;
-                    elem.querySelector('.checkbox__box').classList.remove(
-                        'checkbox__box_mark'
-                    );
+                    elem.querySelector('.checkbox__box').classList.remove('checkbox__box_mark');
                 });
             });
             e.currentTarget.style.display = 'none';
@@ -245,9 +234,7 @@ if (customSelect) {
             e.currentTarget.classList.toggle('cust-sel_active');
             if (e.target.classList.contains('cust-sel__item')) {
                 let text = e.target.textContent;
-                e.currentTarget.querySelector(
-                    '.cust-sel__top'
-                ).textContent = text;
+                e.currentTarget.querySelector('.cust-sel__top').textContent = text;
             }
         });
     });
@@ -261,9 +248,7 @@ if (colourSelect) {
                 elem.classList.remove('colour-select__btn_active');
             });
             let colourText = e.target.dataset.colour;
-            e.currentTarget.querySelector(
-                '.colour-select__done span'
-            ).textContent = colourText;
+            e.currentTarget.querySelector('.colour-select__done span').textContent = colourText;
             e.target.classList.add('colour-select__btn_active');
         }
     });
@@ -277,9 +262,7 @@ if (sizeSelect) {
                 elem.classList.remove('size-select__btn_active');
             });
             let sizeText = e.target.dataset.size;
-            e.currentTarget.querySelector(
-                '.size-select__done span'
-            ).textContent = sizeText;
+            e.currentTarget.querySelector('.size-select__done span').textContent = sizeText;
             e.target.classList.add('size-select__btn_active');
         }
     });
@@ -341,9 +324,7 @@ if (verticalTabs) {
 
             tabs.addEventListener('click', function (e) {
                 let elem = e.target,
-                    activeTab = document.querySelector(
-                        '.vertical-tabs .active'
-                    ),
+                    activeTab = document.querySelector('.vertical-tabs .active'),
                     activeContent = document.querySelector('.item.active'),
                     elemAttr = elem.getAttribute('rel');
 
@@ -387,10 +368,7 @@ if (toTop) {
 }
 
 function scrollFunction() {
-    if (
-        document.body.scrollTop > 200 ||
-        document.documentElement.scrollTop > 200
-    ) {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
         toTop.classList.add('show');
     } else {
         toTop.classList.remove('show');
@@ -398,9 +376,7 @@ function scrollFunction() {
 }
 
 function onTheTop() {
-    let position =
-        document.body.scrollTop !== 0 ||
-        document.documentElement.scrollTop !== 0;
+    let position = document.body.scrollTop !== 0 || document.documentElement.scrollTop !== 0;
     if (position) {
         window.scrollBy(0, -40);
         requestAnimationFrame(onTheTop);
@@ -417,21 +393,11 @@ function onTheTop() {
 // for only one custom-select element unwrap the code out of block.forEach
 const customSelectBlock = document.querySelectorAll('.custom-select');
 customSelectBlock.forEach(function (everyCustomSelect) {
-    const customSelectButton = everyCustomSelect.querySelector(
-        '.custom-select__btn'
-    );
-    const customSelectButtonSpan = everyCustomSelect.querySelector(
-        '.custom-select__btn span'
-    );
-    const customSelectList = everyCustomSelect.querySelector(
-        '.custom-select__list'
-    );
-    const customSelectItem = customSelectList.querySelectorAll(
-        '.custom-select__item'
-    );
-    const customSelectInput = everyCustomSelect.querySelector(
-        '.custom-select__input_hidden'
-    );
+    const customSelectButton = everyCustomSelect.querySelector('.custom-select__btn');
+    const customSelectButtonSpan = everyCustomSelect.querySelector('.custom-select__btn span');
+    const customSelectList = everyCustomSelect.querySelector('.custom-select__list');
+    const customSelectItem = customSelectList.querySelectorAll('.custom-select__item');
+    const customSelectInput = everyCustomSelect.querySelector('.custom-select__input_hidden');
 
     customSelectButton.addEventListener('click', function () {
         customSelectList.classList.toggle('dropdown__list_visible');
@@ -474,12 +440,8 @@ customSelectBlock.forEach(function (everyCustomSelect) {
 if (singleCustomSelect) {
     const customSelectButton = document.querySelector('.single-select__top');
     const customSelectList = document.querySelector('.single-select__list');
-    const customSelectItem = customSelectList.querySelectorAll(
-        '.single-select__item'
-    );
-    const customSelectInput = document.querySelector(
-        '.single-select__input_hidden'
-    );
+    const customSelectItem = customSelectList.querySelectorAll('.single-select__item');
+    const customSelectInput = document.querySelector('.single-select__input_hidden');
 
     customSelectButton.addEventListener('click', function () {
         customSelectList.classList.toggle('dropdown__list_visible');
@@ -531,9 +493,7 @@ if (counter) {
 if (cardSlider) {
     const cardSliderThumbs = document.querySelector('.card-slider__thumbs');
     const cardSliderMain = document.querySelector('.card-slider__main img');
-    const cardSliderMainPicture = document.querySelector(
-        '.card-slider__main source'
-    );
+    const cardSliderMainPicture = document.querySelector('.card-slider__main source');
 
     cardSliderThumbs.addEventListener('click', (e) => {
         if (e.target.classList.contains('card-slider__thumb')) {
@@ -654,10 +614,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     formAddError(elem);
                     err++;
                 }
-            } else if (
-                elem.getAttribute('type') === 'ckeckbox' &&
-                elem.checked === false
-            ) {
+            } else if (elem.getAttribute('type') === 'ckeckbox' && elem.checked === false) {
                 formAddError(elem);
                 err++;
             } else {
@@ -681,9 +638,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function emailTest(input) {
-        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(
-            input.value
-        );
+        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
     }
 
     function uploadFile(file) {
@@ -732,9 +687,7 @@ function tabs() {
     };
 
     if (!top.querySelector('.pure-tabs__caption_active')) {
-        top.querySelector('.pure-tabs__caption').classList.add(
-            'pure-tabs__caption_active'
-        );
+        top.querySelector('.pure-tabs__caption').classList.add('pure-tabs__caption_active');
     }
 
     setActiveContent(getActiveTabName());
