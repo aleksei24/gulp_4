@@ -256,6 +256,7 @@
         display: inline-block;
         min-height: 20px;
         min-width: 20px;
+        font-size: 0;
         border-radius: 100%;
         transition: all 0.3s ease;
         @media (max-width: $md4) {

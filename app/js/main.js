@@ -7,8 +7,6 @@ const catalogueFilter = document.querySelectorAll('.catalogue-filter');
 const foldAside = document.querySelector('.fold-aside');
 const catCols = document.querySelector('.catalogue-cols__list');
 const catalogGoodsGrid = document.querySelector('.catalogue-goods__grid');
-const catalogFilterItems = document.querySelectorAll('.catalogue-filter__item');
-const catalogChoice = document.querySelector('.catalogue-choice');
 const customSelect = document.querySelectorAll('.cust-sel');
 const singleCustomSelect = document.querySelector('.single-select');
 const catalogueTopCloseBtn = document.querySelector('.top__close');
@@ -16,13 +14,11 @@ const headerTop = document.querySelector('.header_top');
 const colourSelect = document.querySelector('.colour-select');
 const sizeSelect = document.querySelector('.size-select');
 const counter = document.querySelector('.own-counter');
-const cardSlider = document.querySelector('.card-slider');
 const verticalTabs = document.querySelector('.vertical-tabs');
 const goodsGrid = document.querySelector('.tab');
 const loadMore = document.querySelector('.tab__show-more');
 const toTop = document.querySelector('.toTop');
 const burger = document.querySelector('.burger');
-const accordion = document.querySelector('.accordion');
 
 // =================================================================================================
 // burger js
@@ -134,73 +130,7 @@ function changPopupData() {
     }
 }
 // =================================================================================================
-// filter
-const createChoiceItem = (txt) => {
-    return `
-        <a href="#!" class="catalogue-choice__btn" data-choice-txt="${txt}">
-        ${txt}
-        <span></span>
-    </a>
-        `;
-};
 
-if (catalogFilterItems) {
-    catalogFilterItems.forEach((elem) => {
-        elem.querySelector('input').addEventListener('change', (e) => {
-            let checked = elem.querySelector('input').checked;
-            if (checked) {
-                elem.querySelector('.checkbox__box').classList.add('checkbox__box_mark');
-                let text = elem.querySelector('.checkbox__text').textContent;
-                catalogChoice.insertAdjacentHTML('afterbegin', createChoiceItem(text));
-            } else {
-                elem.querySelector('.checkbox__box').classList.remove('checkbox__box_mark');
-                let text = elem.querySelector('.checkbox__text').textContent;
-                document.querySelector(`[data-choice-txt="${text}"]`).remove();
-            }
-
-            let activeCheckbox = document.querySelectorAll('.checkbox__box_mark');
-            if (activeCheckbox.length > 0) {
-                catalogChoice.style.display = 'flex';
-            } else {
-                catalogChoice.style.display = 'none';
-            }
-        });
-    });
-}
-
-if (catalogChoice) {
-    catalogChoice.addEventListener('click', (e) => {
-        if (e.target.classList.contains('catalogue-choice__btn')) {
-            e.target.remove();
-
-            let choiceText = e.target.textContent.trim();
-
-            document
-                .querySelector(`[data-txt="${choiceText}"]`)
-                .querySelector('input').checked = false;
-            document
-                .querySelector(`[data-txt="${choiceText}"]`)
-                .classList.remove('checkbox__box_mark');
-        }
-
-        if (e.target.classList.contains('catalogue-choice__clear')) {
-            Array.from(e.currentTarget.children).forEach(function (elem) {
-                if (!elem.classList.contains('catalogue-choice__clear')) {
-                    elem.remove();
-                }
-                catalogFilterItems.forEach((elem) => {
-                    elem.querySelector('input').checked = false;
-                    elem.querySelector('.checkbox__box').classList.remove('checkbox__box_mark');
-                });
-            });
-            e.currentTarget.style.display = 'none';
-        }
-
-        if (e.currentTarget.children.length === 1) {
-            e.currentTarget.style.display = 'none';
-        }
-    });
-}
 
 // =================================================================================================
 // columns number
@@ -489,21 +419,7 @@ if (counter) {
     });
 }
 // =================================================================================================
-// card-slider
-if (cardSlider) {
-    const cardSliderThumbs = document.querySelector('.card-slider__thumbs');
-    const cardSliderMain = document.querySelector('.card-slider__main img');
-    const cardSliderMainPicture = document.querySelector('.card-slider__main source');
 
-    cardSliderThumbs.addEventListener('click', (e) => {
-        if (e.target.classList.contains('card-slider__thumb')) {
-            let src = e.target.querySelector('img').getAttribute('src');
-            cardSliderMainPicture.setAttribute('srcset', src);
-            cardSliderMain.setAttribute('src', src);
-        }
-    });
-}
-// =================================================================================================
 // show more
 if (goodsGrid && loadMore) {
     const fetchGoods = (line = 3) => {
@@ -541,26 +457,7 @@ if (goodsGrid && loadMore) {
     });
 }
 // ====================================================================================
-// accordion
-if (accordion) {
-    const list = document.querySelectorAll('.accordion__item');
-    const title = document.querySelectorAll('.accordion__title');
 
-    function toggleAccordion() {
-        let thisItem = this.parentNode;
-        list.forEach((item) => {
-            if (thisItem === item) {
-                thisItem.classList.toggle('active');
-                return;
-            }
-            item.classList.remove('active');
-        });
-    }
-
-    title.forEach((open) => {
-        open.addEventListener('click', toggleAccordion);
-    });
-}
 // =================================================================================================
 // form
 document.addEventListener('DOMContentLoaded', function () {
@@ -708,3 +605,9 @@ function tabs() {
         setActiveContent(getActiveTabName());
     });
 }
+
+// the code below works well, though errors are underlined
+@@include('./chunks/_hi.js')
+@@include('./chunks/_card_slider.js')
+@@include('./chunks/_filter.js')
+@@include('./chunks/_accordion.js')
