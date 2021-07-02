@@ -120,20 +120,6 @@ function images() {
             })
         )
         .pipe(dest(path.build.img))
-        .pipe(src(path.src.img))
-        .pipe(
-            imagemin({
-                interlaced: true,
-                progressive: true,
-                optimizationLevel: 5,
-                svgoPlugins: [
-                    {
-                        removeViewBox: false,
-                    },
-                ],
-            })
-        )
-        .pipe(dest(path.build.img))
         .pipe(browser.stream());
 }
 
