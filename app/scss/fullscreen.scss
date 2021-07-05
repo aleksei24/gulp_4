@@ -27,12 +27,12 @@
 .fullscreen__headline {
     width: 100%;
     max-width: 627px;
-    color: $fullscreenTitle;
+    color: rgb(226, 157, 29);
     @include response-font(70, 24);
     font-weight: 700;
     text-transform: uppercase;
     span {
-        color: $bannerColour;
+        color: rgb(39, 206, 39);
     }
     @media (max-width: 1000px) {
         max-width: 520px;

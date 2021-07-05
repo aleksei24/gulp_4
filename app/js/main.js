@@ -1,8 +1,6 @@
 // default variables
 const header = document.querySelector('.header');
-const popup = document.querySelector('.popup');
 const tabsContainer = document.querySelector('.tabs-page');
-const pureTabs = document.querySelector('.pure-tabs');
 const catalogueFilter = document.querySelectorAll('.catalogue-filter');
 const foldAside = document.querySelector('.fold-aside');
 const catCols = document.querySelector('.catalogue-cols__list');
@@ -13,27 +11,9 @@ const catalogueTopCloseBtn = document.querySelector('.top__close');
 const headerTop = document.querySelector('.header_top');
 const colourSelect = document.querySelector('.colour-select');
 const sizeSelect = document.querySelector('.size-select');
-const counter = document.querySelector('.own-counter');
-const verticalTabs = document.querySelector('.vertical-tabs');
 const goodsGrid = document.querySelector('.tab');
 const loadMore = document.querySelector('.tab__show-more');
 const toTop = document.querySelector('.toTop');
-const burger = document.querySelector('.burger');
-
-// =================================================================================================
-// burger js
-if (burger) {
-    burger.addEventListener('click', toggleMenu);
-}
-
-function toggleMenu() {
-    const icon = document.querySelector('.icon-burger');
-    const menu = document.querySelector('.menu-burger__list');
-    const bodyLock = document.querySelector('body');
-    icon.classList.toggle('active');
-    menu.classList.toggle('active');
-    bodyLock.classList.toggle('locked');
-}
 
 // =================================================================================================
 // Swiper
@@ -85,51 +65,7 @@ const catalogueSwiper = new Swiper('.catalog-swiper', {
     },*/
 });
 // =================================================================================================
-// popup
-const closePopup = document.querySelector('.popup__close');
-const popupTitle = document.querySelector('.popup__title');
-const popupWhen = document.querySelector('.popup__from');
-const popupData = [
-    {
-        title: 'A coat',
-        when: 'A minute ago',
-    },
-    {
-        title: 'A dress',
-        when: '30 seconds ago',
-    },
-    {
-        title: 'A suit',
-        when: 'Now',
-    },
-];
-let popupCount = 0;
-let popupDelay = 90000;
-let exposeFor = 4000;
-if (popup) {
-    closePopup.addEventListener('click', function () {
-        popup.classList.add('remove');
-    });
 
-    setInterval(changPopupData, popupDelay);
-}
-
-function changPopupData() {
-    popup.classList.remove('active');
-    popup.classList.remove('remove');
-    setTimeout(() => {
-        popup.classList.add('active');
-    }, popupDelay - exposeFor);
-    const titlePopup = `${popupData[popupCount].title}`;
-    const timePopup = `${popupData[popupCount].when}`;
-    popupTitle.textContent = titlePopup;
-    popupWhen.textContent = timePopup;
-    popupCount++;
-    if (popupCount === popupData.length) {
-        popupCount = 0;
-    }
-}
-// =================================================================================================
 
 
 // =================================================================================================
@@ -246,29 +182,7 @@ if (tabsContainer) {
     }
 }
 // =================================================================================================
-// vertical tabs
-if (verticalTabs) {
-    (function () {
-        let vertTabs = function () {
-            let tabs = document.querySelectorAll('.vertical-tabs')[0];
 
-            tabs.addEventListener('click', function (e) {
-                let elem = e.target,
-                    activeTab = document.querySelector('.vertical-tabs .active'),
-                    activeContent = document.querySelector('.item.active'),
-                    elemAttr = elem.getAttribute('rel');
-
-                activeTab.classList.remove('active');
-                activeContent.classList.remove('active');
-
-                elem.parentElement.classList.add('active');
-                document.getElementById(elemAttr).classList.add('active');
-            });
-        };
-
-        window.onload = vertTabs;
-    })();
-}
 
 // =================================================================================================
 // aside
@@ -394,31 +308,6 @@ if (singleCustomSelect) {
 }
 
 // =================================================================================================
-// counter (from 0 to 10)
-if (counter) {
-    const countField = document.querySelector('.own-counter__field');
-    const countMinus = document.querySelector('.own-counter__minus');
-    const countPlus = document.querySelector('.own-counter__plus');
-
-    let count = 1;
-
-    countMinus.addEventListener('click', function () {
-        count--;
-        if (count <= 1) {
-            count = 1;
-        }
-        countField.textContent = count;
-    });
-
-    countPlus.addEventListener('click', function () {
-        count++;
-        if (count > 10) {
-            count = 10;
-        }
-        countField.textContent = count;
-    });
-}
-// =================================================================================================
 
 // show more
 if (goodsGrid && loadMore) {
@@ -458,156 +347,15 @@ if (goodsGrid && loadMore) {
 }
 // ====================================================================================
 
-// =================================================================================================
-// form
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('#form');
-    if (form) {
-        const input = document.querySelectorAll('input');
-        form.addEventListener('submit', formSend);
-
-        const formImage = document.querySelector('#form-image');
-        const formPreview = document.querySelector('.file__preview');
-        formImage.addEventListener('change', () => {
-            uploadFile(formImage.files[0]);
-        });
-    }
-
-    async function formSend(e) {
-        e.preventDefault();
-        let error = formValidate(form);
-
-        let formData = new FormData();
-        formData.append('image', formImage.files[0]);
-
-        if (error === 0) {
-            let response = await fetch('sendmail.php', {
-                method: 'POST',
-                body: formData,
-            });
-            if (response.ok) {
-                let result = await response.json();
-                alert(result.message);
-                formPreview.innerHTML = '';
-                form.reset();
-            } else {
-                alert('Error');
-            }
-        } else {
-            alert('Fill in required fields');
-        }
-    }
-
-    function formValidate(form) {
-        let err = 0;
-        let formReq = document.querySelectorAll('.req');
-
-        for (let i = 0; i < formReq.length; i++) {
-            const elem = formReq[i];
-            formRemoveError(elem);
-
-            if (elem.classList.contains('_email')) {
-                if (emailTest(elem)) {
-                    formAddError(elem);
-                    err++;
-                }
-            } else if (elem.getAttribute('type') === 'ckeckbox' && elem.checked === false) {
-                formAddError(elem);
-                err++;
-            } else {
-                if (elem.value === '') {
-                    formAddError(elem);
-                    err++;
-                }
-            }
-        }
-        return err;
-    }
-
-    function formAddError(input) {
-        input.parentElement.classList.add('_error');
-        input.classList.add('_error');
-    }
-
-    function formRemoveError(input) {
-        input.parentElement.classList.remove('_error');
-        input.classList.remove('_error');
-    }
-
-    function emailTest(input) {
-        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-    }
-
-    function uploadFile(file) {
-        if (!['image/jpg', 'image/png', 'image/gif'].includes(file.type)) {
-            alert('Only images are allowed');
-            formImage.value = '';
-            return;
-        }
-        if (file.size > 2 * 1024 * 1024) {
-            alert('File must be less than 2MB');
-            return;
-        }
-
-        let showImage = new FileReader();
-        showImage.onload = (e) => {
-            formPreview.innerHTML = `<img src='${e.target.result}' alt='Image'`;
-        };
-        showImage.onerror = (e) => {
-            alert('Error');
-        };
-        showImage.readAsDataURL(file);
-    }
-});
-// ========================================================================================================
-// tabs
-if (pureTabs) {
-    tabs();
-}
-function tabs() {
-    const top = document.querySelector('.pure-tabs__top');
-    const body = document.querySelector('.pure-tabs__body');
-
-    const getActiveTabName = () => {
-        return top.querySelector('.pure-tabs__caption_active').dataset.tab;
-    };
-
-    const setActiveContent = () => {
-        if (body.querySelector('.pure-tabs__content_active')) {
-            body.querySelector('.pure-tabs__content_active').classList.remove(
-                'pure-tabs__content_active'
-            );
-        }
-        body.querySelector(`[data-tab=${getActiveTabName()}]`).classList.add(
-            'pure-tabs__content_active'
-        );
-    };
-
-    if (!top.querySelector('.pure-tabs__caption_active')) {
-        top.querySelector('.pure-tabs__caption').classList.add('pure-tabs__caption_active');
-    }
-
-    setActiveContent(getActiveTabName());
-
-    top.addEventListener('click', (e) => {
-        const caption = e.target.closest('.pure-tabs__caption');
-        if (!caption) return;
-        if (caption.classList.contains('pure-tabs__caption_active')) return;
-
-        if (top.querySelector('.pure-tabs__caption_active')) {
-            top.querySelector('.pure-tabs__caption_active').classList.remove(
-                'pure-tabs__caption_active'
-            );
-        }
-
-        caption.classList.add('pure-tabs__caption_active');
-
-        setActiveContent(getActiveTabName());
-    });
-}
 
 // the code below works well, though errors are underlined
 @@include('./chunks/_hi.js')
 @@include('./chunks/_card_slider.js')
 @@include('./chunks/_filter.js')
 @@include('./chunks/_accordion.js')
+@@include('./chunks/_tabs.js')
+@@include('./chunks/_form.js')
+@@include('./chunks/_counter.js')
+@@include('./chunks/_burger.js')
+@@include('./chunks/_popup.js')
+@@include('./chunks/_vertical_tabs.js')

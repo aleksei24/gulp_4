@@ -70,13 +70,13 @@
     &__title {
         font-family: $secondFont;
         @include response-font(70, 18);
-        color: $bannerColour;
+        color: yellowgreen;
         text-transform: uppercase;
     }
 
     &__headline {
         @include response-font(32, 14);
-        color: $bannerColour;
+        color: yellowgreen;
         text-transform: uppercase;
         margin: 20px 0;
     }
