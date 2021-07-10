@@ -5,7 +5,7 @@ const loadMore = document.querySelector('.tab__show-more');
 
 if (goodsGrid && loadMore) {
     const fetchGoods = (line = 3) => {
-        fetch('js/goods.json')
+        fetch('json/goods.json')
             .then((resp) => {
                 return resp.json();
             })
