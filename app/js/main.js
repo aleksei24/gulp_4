@@ -5,7 +5,6 @@ const catalogueFilter = document.querySelectorAll('.catalogue-filter');
 const foldAside = document.querySelector('.fold-aside');
 const catalogGoodsGrid = document.querySelector('.catalogue-goods__grid');
 const customSelect = document.querySelectorAll('.cust-sel');
-const singleCustomSelect = document.querySelector('.single-select');
 const catalogueTopCloseBtn = document.querySelector('.top__close');
 const headerTop = document.querySelector('.header_top');
 const colourSelect = document.querySelector('.colour-select');
@@ -15,54 +14,7 @@ const loadMore = document.querySelector('.tab__show-more');
 const toTop = document.querySelector('.toTop');
 
 // =================================================================================================
-// Swiper
-const indexSwiper = new Swiper('.index-swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    speed: 1000,
 
-    // Navigation arrows
-    /*navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },*/
-
-    // autoplay
-    autoplay: {
-        delay: 5000,
-    },
-
-    // pagination
-    pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-    },
-});
-
-const catalogueSwiper = new Swiper('.catalog-swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    speed: 1500,
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    // autoplay
-    /*autoplay: {
-        delay: 45000,
-    },*/
-
-    // pagination
-    /*pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-    },*/
-});
 // =================================================================================================
 
 
@@ -257,32 +209,7 @@ customSelectBlock.forEach(function (everyCustomSelect) {
 // }
 
 // ====================================================================================================
-// single custom select
-if (singleCustomSelect) {
-    const customSelectButton = document.querySelector('.single-select__top');
-    const customSelectList = document.querySelector('.single-select__list');
-    const customSelectItem = customSelectList.querySelectorAll('.single-select__item');
-    const customSelectInput = document.querySelector('.single-select__input_hidden');
 
-    customSelectButton.addEventListener('click', function () {
-        customSelectList.classList.toggle('dropdown__list_visible');
-        this.classList.add('active');
-    });
-    customSelectItem.forEach(function (item) {
-        item.addEventListener('click', function (e) {
-            e.stopPropagation();
-            customSelectButton.innerText = this.innerText;
-            customSelectInput.value = this.dataset.value;
-            customSelectList.classList.remove('dropdown__list_visible');
-        });
-    });
-    document.addEventListener('click', function (e) {
-        if (e.target !== customSelectButton) {
-            customSelectButton.classList.remove('active');
-            customSelectList.classList.remove('dropdown__list_visible');
-        }
-    });
-}
 
 // =================================================================================================
 
@@ -337,3 +264,5 @@ if (goodsGrid && loadMore) {
 @@include('./chunks/_popup.js')
 @@include('./chunks/_vertical_tabs.js')
 @@include('./chunks/_columns_number.js')
+@@include('./chunks/_single_custom_select.js')
+@@include('./chunks/_swiper_slider.js')
