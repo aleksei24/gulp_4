@@ -3,7 +3,6 @@ const header = document.querySelector('.header');
 const tabsContainer = document.querySelector('.tabs-page');
 const catalogueFilter = document.querySelectorAll('.catalogue-filter');
 const foldAside = document.querySelector('.fold-aside');
-const catCols = document.querySelector('.catalogue-cols__list');
 const catalogGoodsGrid = document.querySelector('.catalogue-goods__grid');
 const customSelect = document.querySelectorAll('.cust-sel');
 const singleCustomSelect = document.querySelector('.single-select');
@@ -69,29 +68,7 @@ const catalogueSwiper = new Swiper('.catalog-swiper', {
 
 
 // =================================================================================================
-// columns number
-if (catCols) {
-    catCols.addEventListener('click', (e) => {
-        if (
-            e.target.classList.contains('catalogue-cols__btn') ||
-            e.target.closest('catalogue-cols__item')
-        ) {
-            let columns = e.target.dataset.cols;
-            catalogGoodsGrid.dataset.gridCol = columns;
-            let colsBtn = document.querySelectorAll('.catalogue-cols__btn');
-            colsBtn.forEach((elem) => {
-                elem.classList.remove('catalogue-cols__btn_act');
-            });
 
-            e.target.classList.add('catalogue-cols__btn_act');
-        }
-    });
-    // if (window.innerWidth <= 992) {
-    //     let colsNum = 3;
-    //     let goodsGrid = document.querySelector('.catalogue-goods__grid');
-    //     goodsGrid.setAttribute('data-grid-col', colsNum);
-    // }
-}
 // =================================================================================================
 // custom-select 2
 if (customSelect) {
@@ -359,3 +336,4 @@ if (goodsGrid && loadMore) {
 @@include('./chunks/_burger.js')
 @@include('./chunks/_popup.js')
 @@include('./chunks/_vertical_tabs.js')
+@@include('./chunks/_columns_number.js')
