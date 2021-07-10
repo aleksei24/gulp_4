@@ -7,19 +7,9 @@ const catalogGoodsGrid = document.querySelector('.catalogue-goods__grid');
 const customSelect = document.querySelectorAll('.cust-sel');
 const catalogueTopCloseBtn = document.querySelector('.top__close');
 const headerTop = document.querySelector('.header_top');
-const colourSelect = document.querySelector('.colour-select');
-const sizeSelect = document.querySelector('.size-select');
 const goodsGrid = document.querySelector('.tab');
 const loadMore = document.querySelector('.tab__show-more');
 const toTop = document.querySelector('.toTop');
-
-// =================================================================================================
-
-// =================================================================================================
-
-
-
-// =================================================================================================
 
 // =================================================================================================
 // custom-select 2
@@ -32,34 +22,6 @@ if (customSelect) {
                 e.currentTarget.querySelector('.cust-sel__top').textContent = text;
             }
         });
-    });
-}
-// =================================================================================================
-// colour-select
-if (colourSelect) {
-    colourSelect.addEventListener('click', (e) => {
-        if (e.target.classList.contains('colour-select__btn')) {
-            document.querySelectorAll('.colour-select__btn').forEach((elem) => {
-                elem.classList.remove('colour-select__btn_active');
-            });
-            let colourText = e.target.dataset.colour;
-            e.currentTarget.querySelector('.colour-select__done span').textContent = colourText;
-            e.target.classList.add('colour-select__btn_active');
-        }
-    });
-}
-// =================================================================================================
-// size-select
-if (sizeSelect) {
-    sizeSelect.addEventListener('click', (e) => {
-        if (e.target.classList.contains('size-select__btn')) {
-            document.querySelectorAll('.size-select__btn').forEach((elem) => {
-                elem.classList.remove('size-select__btn_active');
-            });
-            let sizeText = e.target.dataset.size;
-            e.currentTarget.querySelector('.size-select__done span').textContent = sizeText;
-            e.target.classList.add('size-select__btn_active');
-        }
     });
 }
 // =================================================================================================
@@ -110,9 +72,6 @@ if (tabsContainer) {
         control.addEventListener('click', setTab);
     }
 }
-// =================================================================================================
-
-
 // =================================================================================================
 // aside
 catalogueFilter.forEach((elem) => {
@@ -209,10 +168,6 @@ customSelectBlock.forEach(function (everyCustomSelect) {
 // }
 
 // ====================================================================================================
-
-
-// =================================================================================================
-
 // show more
 if (goodsGrid && loadMore) {
     const fetchGoods = (line = 3) => {
@@ -266,3 +221,5 @@ if (goodsGrid && loadMore) {
 @@include('./chunks/_columns_number.js')
 @@include('./chunks/_single_custom_select.js')
 @@include('./chunks/_swiper_slider.js')
+@@include('./chunks/_colour_select.js')
+@@include('./chunks/_size_select.js')
