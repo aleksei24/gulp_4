@@ -1,5 +1,6 @@
 // columns number
 
+const catalogGoodsGrid = document.querySelector('.catalogue-goods__grid');
 const catCols = document.querySelector('.catalogue-cols__list');
 
 if (catCols) {
