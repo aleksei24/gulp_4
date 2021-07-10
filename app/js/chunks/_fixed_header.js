@@ -1,6 +1,6 @@
 // fixed menu
-
 const header = document.querySelector('.header');
+const headerTop = document.querySelector('.header_top');
 
 if (header) {
     window.onscroll = function () {
@@ -8,7 +8,7 @@ if (header) {
     };
 }
 
-if (header.classList.contains('header_top')) {
+if (headerTop) {
     header.style.top = -40;
 } else {
     header.style.top = 0;
