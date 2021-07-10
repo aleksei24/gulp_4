@@ -25,6 +25,8 @@
     &__shop-menu {
         display: flex;
         align-items: center;
+        max-width: 300px;
+        width: 100%;
         @media (max-width: $md5) {
             display: none;
         }
@@ -74,14 +76,33 @@
     &__item {
         width: 20px;
         margin-right: 20px;
+        &_search {
+            max-width: 200px;
+            width: 100%;
+            @media (max-width: $md3) {
+                max-width: 100px;
+            }
+        }
+    }
+    &__search {
+        display: flex;
+        align-items: center;
     }
 }
 .search {
     &__btn {
-        display: inline-block;
         background-image: url(../img/icons/search.png);
-        width: 20px;
-        height: 20px;
+        max-width: 20px;
+        width: 100%;
+        padding-right: 20px;
+        cursor: pointer;
+    }
+    &__btn:hover {
+        outline: none;
+        max-width: 200px;
+        width: 100%;
+        border-bottom: 1px solid black;
+        background-size: 0%;
     }
 }
 .cart {

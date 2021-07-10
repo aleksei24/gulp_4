@@ -25,9 +25,17 @@
         @@include('../template/_burger.html')
         <a href="./index.html" class="header__logo logo icon-logo"> logo </a>
         <ul class="header__shop-menu shop-menu">
-            <li class="shop-menu__item">
+            <li class="shop-menu__item shop-menu__item_search">
                 <form action="#" class="shop-menu__search search">
-                    <button type="button" title="smt" class="search__btn ibg"></button>
+                    <label for="search-btn"></label>
+                    <input
+                        type="search"
+                        title="search"
+                        name="search-btn"
+                        class="search__btn ibg"
+                        id="search-btn"
+                        placeholder="Search..."
+                    />
                 </form>
             </li>
             <li class="shop-menu__item">
