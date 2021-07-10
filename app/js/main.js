@@ -1,7 +1,3 @@
-// default variables
-const catalogGoodsGrid = document.querySelector('.catalogue-goods__grid');
-const headerTop = document.querySelector('.header_top');
-
 
 // =================================================================================================
 
