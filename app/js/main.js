@@ -1,28 +1,9 @@
 // default variables
-const catalogueFilter = document.querySelectorAll('.catalogue-filter');
-const foldAside = document.querySelector('.fold-aside');
 const catalogGoodsGrid = document.querySelector('.catalogue-goods__grid');
 const headerTop = document.querySelector('.header_top');
 
 
 // =================================================================================================
-// aside
-catalogueFilter.forEach((elem) => {
-    elem.addEventListener('click', (e) => {
-        e.currentTarget.classList.toggle('catalogue-filter_open');
-    });
-});
-
-if (foldAside) {
-    foldAside.addEventListener('click', (e) => {
-        catalogueFilter.forEach((elem) => {
-            elem.classList.remove('catalogue-filter_open');
-        });
-    });
-}
-
-// ====================================================================================
-
 
 // the code below works well, though errors are underlined
 @@include('./chunks/_hi.js')
@@ -46,3 +27,4 @@ if (foldAside) {
 @@include('./chunks/_fixed_header.js')
 @@include('./chunks/_up_to.js')
 @@include('./chunks/_show_more.js')
+@@include('./chunks/_aside.js')
