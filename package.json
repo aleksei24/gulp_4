@@ -18,6 +18,7 @@
   "homepage": "https://github.com/aleksei24/gulp_4#readme",
   "devDependencies": {
     "animate.css": "^4.1.1",
+    "bootstrap": "^5.1.1",
     "browser-sync": "^2.27.3",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
@@ -38,6 +39,7 @@
     "gulp-webp-html": "^1.0.2",
     "jquery": "^3.5.1",
     "magnific-popup": "^1.1.0",
+    "sass": "^1.41.0",
     "slick-slider": "^1.8.2"
   },
   "dependencies": {}

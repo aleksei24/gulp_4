@@ -12,15 +12,14 @@ let path = {
         fonts: projectFolder + '/fonts/',
     },
     src: {
-        html: [
-            sourceFolder + '/*.html',
-            '!' + sourceFolder + '/template/_*.html',
-        ],
+        html: [sourceFolder + '/*.html', '!' + sourceFolder + '/template/_*.html'],
         css: sourceFolder + '/scss/style.scss',
         js: sourceFolder + '/js/main.js',
         jquery: './node_modules/jquery/dist/jquery.js',
         slick: './node_modules/slick-slider/slick/slick.js',
         magnific: './node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+        bootstrapCss: './node_modules/bootstrap/dist/css/bootstrap.min.css',
+        bootstrapJs: './node_modules/bootstrap/dist/js/bootstrap.min.js',
         img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
         fonts: sourceFolder + '/fonts/*.{woff,woff2}',
     },
@@ -38,7 +37,7 @@ let { src, dest } = require('gulp'),
     browser = require('browser-sync').create(),
     fileinclude = require('gulp-file-include'),
     del = require('del'),
-    scss = require('gulp-sass'),
+    scss = require('gulp-sass')(require('sass')),
     autoprefixer = require('gulp-autoprefixer'),
     groupmedia = require('gulp-group-css-media-queries'),
     cleancss = require('gulp-clean-css'),
@@ -71,11 +70,11 @@ function html() {
         .pipe(browser.stream());
 }
 
-function css(params) {
+function css() {
     return src(path.src.css)
         .pipe(
             scss({
-                outputStyle: 'expanded',
+                outputStyle: 'compressed',
             })
         )
         .pipe(groupmedia())
@@ -86,7 +85,6 @@ function css(params) {
             })
         )
         .pipe(webpcss())
-        .pipe(dest(path.build.css))
         .pipe(cleancss())
         .pipe(
             rename({
@@ -100,7 +98,6 @@ function css(params) {
 function js() {
     return src(path.src.js)
         .pipe(fileinclude())
-        .pipe(dest(path.build.js))
         .pipe(uglifyes())
         .pipe(
             rename({
@@ -125,6 +122,14 @@ function slick() {
         .pipe(rename({ extname: '.min.js' }))
         .pipe(dest(path.build.js))
         .pipe(browser.stream());
+}
+
+function bootstrapCss() {
+    return src(path.src.bootstrapCss).pipe(dest(path.build.css)).pipe(browser.stream());
+}
+
+function bootstrapJS() {
+    return src(path.src.bootstrapJs).pipe(dest(path.build.js)).pipe(browser.stream());
 }
 
 function magnific() {
@@ -228,7 +233,7 @@ function clean(params) {
     return del(path.clean);
 }
 
-const script = [slick, magnific];
+const script = [slick, magnific, bootstrapCss, bootstrapJS];
 
 let build = gulp.series(
     clean,
@@ -237,6 +242,8 @@ let build = gulp.series(
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
+exports.bootstrapCss = bootstrapCss;
+exports.bootstrapJS = bootstrapJS;
 exports.magnific = magnific;
 exports.slick = slick;
 // exports.script = script;

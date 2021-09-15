@@ -7,7 +7,7 @@ $(document).ready(function () {
 });
 // ================================================================================================================
 // slider
-$('.slider__img').slick({
+/*$('.slider__img').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
@@ -34,7 +34,7 @@ $('.slider__row').slick({
     arrows: false,
     centerMode: true,
     focusOnSelect: true,
-});
+});*/
 // =================================================================================================================
 // main-popup
 // setTimeout(() => {
@@ -61,7 +61,7 @@ $(window).scroll(function () {
 });
 // ================================================================================================================
 // magnific
-$('.column__pics').magnificPopup({
+/*$('.column__pics').magnificPopup({
     delegate: 'a',
     type: 'image',
     tLoading: 'Loading image #%curr%...',
@@ -71,7 +71,7 @@ $('.column__pics').magnificPopup({
         navigateByImgClick: true,
         preload: [1, 1], // Will preload 0 - before current, and 1 after the current image
     },
-});
+});*/
 // ========================================================================================================================
 // custom select
 $('.drop .option').click(function () {
@@ -264,29 +264,22 @@ $('.counter-control').click(function () {
     // console.log(inputValue);
 });
 $('.form__params').change(function () {
-    let inputMaterial = document.querySelector('select#first option:checked')
-        .value;
+    let inputMaterial = document.querySelector('select#first option:checked').value;
     // console.log(inputMaterial);
-    let inputQuality = document.querySelector('select#second option:checked')
-        .value;
+    let inputQuality = document.querySelector('select#second option:checked').value;
     // console.log(inputQuality);
-    let inputColour = document.querySelector('select#third option:checked')
-        .value;
+    let inputColour = document.querySelector('select#third option:checked').value;
     // console.log(inputColour);
 });
 $('.btn_output').click(function () {
-    let firstInput = document.querySelector('select#first option:checked')
-        .value;
-    let secondInput = document.querySelector('select#second option:checked')
-        .value;
-    let thirdInput = document.querySelector('select#third option:checked')
-        .value;
+    let firstInput = document.querySelector('select#first option:checked').value;
+    let secondInput = document.querySelector('select#second option:checked').value;
+    let thirdInput = document.querySelector('select#third option:checked').value;
     let counterInput = document.querySelector('#counter-input').value;
     // let minusCounter = document.querySelector('.minus');
     // let plusCounter = document.querySelector('.plus');
     let totalPrice =
-        (parseInt(firstInput) + parseInt(secondInput) + parseInt(thirdInput)) *
-        counterInput;
+        (parseInt(firstInput) + parseInt(secondInput) + parseInt(thirdInput)) * counterInput;
     // let knob = document.querySelector('.btn_output');
     let showPrice = document.querySelector('#total-price span');
     showPrice.innerHTML = totalPrice;
