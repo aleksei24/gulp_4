@@ -8,6 +8,7 @@ let path = {
         html: projectFolder + '/',
         css: projectFolder + '/css/',
         js: projectFolder + '/js/',
+        libs: projectFolder + '/libs/',
         img: projectFolder + '/img/',
         fonts: projectFolder + '/fonts/',
         json: projectFolder + '/json/',
@@ -116,7 +117,7 @@ function json() {
 }
 
 function swiperJs() {
-    return src(path.src.swiper).pipe(uglifyes()).pipe(dest(path.build.js)).pipe(browser.stream());
+    return src(path.src.swiper).pipe(uglifyes()).pipe(dest(path.build.libs)).pipe(browser.stream());
 }
 
 function images() {
