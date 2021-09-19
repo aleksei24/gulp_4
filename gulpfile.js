@@ -117,7 +117,11 @@ function json() {
 }
 
 function swiperJs() {
-    return src(path.src.swiper).pipe(uglifyes()).pipe(dest(path.build.libs)).pipe(browser.stream());
+    return src(path.src.swiper)
+        .pipe(uglifyes())
+        .pipe(rename('libs.js'))
+        .pipe(dest(path.build.libs))
+        .pipe(browser.stream());
 }
 
 function images() {
