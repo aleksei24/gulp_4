@@ -1,9 +1,9 @@
 // popup
 
-const popup = document.querySelector('.popup');
-const closePopup = document.querySelector('.popup__close');
-const popupTitle = document.querySelector('.popup__title');
-const popupWhen = document.querySelector('.popup__from');
+const popup = document.querySelector('.side-popup');
+const closePopup = document.querySelector('.side-popup__close');
+const popupTitle = document.querySelector('.side-popup__title');
+const popupWhen = document.querySelector('.side-popup__from');
 const popupData = [
     {
         title: 'A coat',

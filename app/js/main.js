@@ -10,7 +10,7 @@
 @@include('./chunks/_form.js')
 @@include('./chunks/_counter.js')
 @@include('./chunks/_burger.js')
-@@include('./chunks/_popup.js')
+@@include('./chunks/_side_popup.js')
 @@include('./chunks/_columns_number.js')
 @@include('./chunks/_single_custom_select.js')
 @@include('./chunks/_swiper_slider.js')
