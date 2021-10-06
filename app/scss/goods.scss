@@ -79,7 +79,7 @@
     font-size: 24px;
     @include response-font(26, 14);
     font-weight: 700;
-    line-height: 30/26 * 100%;
+    line-height: math.div(30, 26) * 100%;
     margin-bottom: 20px;
     @media (max-width: $md4) {
         margin-bottom: 10px;
@@ -89,7 +89,7 @@
     color: $btnBgColour;
     @include response-font(14, 12);
     font-weight: 700;
-    line-height: 30/14 * 100%;
+    line-height: math.div(30, 14) * 100%;
     text-transform: uppercase;
     margin: 15px 0 30px 0;
     @media (max-width: $md4) {
@@ -99,7 +99,7 @@
 .trainers__text {
     color: $colourFont;
     @include response-font(16, 11);
-    line-height: 30/16 * 100%;
+    line-height: math.div(30, 16) * 100%;
     text-align: center;
     margin-bottom: 20px;
     // max-width: 330px;

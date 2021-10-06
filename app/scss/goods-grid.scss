@@ -1,3 +1,4 @@
+@use 'sass:math';
 .goods {
     max-width: 1420px;
     display: flex;
@@ -41,21 +42,21 @@
 .goods__headline {
     @include response-font(24, 10);
     font-weight: 700;
-    line-height: 30/24 * 100%;
+    line-height: math.div(30, 24) * 100%;
     // white-space: nowrap;
 }
 .goods__title {
     color: $btnBgColour;
     @include response-font(14, 10);
     font-weight: 700;
-    line-height: 21/14 * 100%;
+    line-height: math.div(21, 14) * 100%;
     text-transform: uppercase;
     margin: 15px 0;
 }
 .goods__text {
     color: $colourFont;
     @include response-font(16, 9);
-    line-height: 18/16 * 100%;
+    line-height: math.div(18, 16) * 100%;
     text-align: center;
     // max-width: 330px;
     min-height: 70px;

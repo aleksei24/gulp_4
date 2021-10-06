@@ -1,3 +1,4 @@
+@use 'sass:math';
 .related-products {
     &__title {
         // font-size: 21px;
@@ -56,7 +57,7 @@
     &__text {
         // font-size: 14px;
         @include response-font(14, 10);
-        line-height: 18/14 * 100%;
+        line-height: math.div(18, 14) * 100%;
         min-height: 64px;
         max-height: 70px;
         overflow: auto;

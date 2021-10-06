@@ -1,3 +1,4 @@
+@use 'sass:math';
 .check {
     display: flex;
     justify-content: center;
@@ -90,5 +91,5 @@
     color: $colourFont;
     // font-size: 12px;
     @include response-font(12, 10);
-    line-height: 14/12 * 100%;
+    line-height: math.div(14, 12) * 100%;
 }

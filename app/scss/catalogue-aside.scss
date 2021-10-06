@@ -1,3 +1,4 @@
+@use 'sass:math';
 .catalogue-content {
     min-height: 300px;
     &__container {
@@ -22,7 +23,7 @@
     // display: none;
     // font-size: 15px;
     @include response-font(15, 11);
-    line-height: 26/15 * 100%;
+    line-height: math.div(26, 15);
     text-transform: uppercase;
     padding-left: 30px;
     margin-bottom: 30px;

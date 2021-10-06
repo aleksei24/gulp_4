@@ -1,3 +1,4 @@
+@use 'sass:math';
 .footer-2 {
     &__container {
         padding: 40px 10px 60px;
@@ -54,7 +55,7 @@
         text-transform: uppercase;
         font-weight: 700;
         font-size: 18px;
-        line-height: 24/18 * 100%;
+        line-height: math.div(24, 18) * 100%;
     }
 
     &__list {
@@ -83,7 +84,7 @@
         padding-left: 12px;
         color: $colourFont;
         font-size: 15px;
-        line-height: 21/15 * 100%;
+        line-height: math.div(21, 15) * 100%;
     }
     &__subscribe input[type='submit'] {
         width: 29%;
