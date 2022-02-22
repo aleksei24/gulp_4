@@ -32,161 +32,163 @@ $error: red;
 
 html,
 body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    min-width: $minWidth;
-    position: relative;
-    color: $colourFont;
-    // overflow-anchor: none;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-width: $minWidth;
+  position: relative;
+  color: $colourFont;
+  // overflow-anchor: none;
 }
 body {
-    font-size: 16px;
-    background-color: $bgColour;
-    font-family: $fontFamily;
-    &.lock {
-        overflow: hidden;
-    }
+  // font-size: 16px;
+  // it allows font-size to be changed by partially blind people
+  background-color: $bgColour;
+  font-family: $fontFamily;
+  &.lock {
+    overflow: hidden;
+  }
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    position: relative;
-    padding: 0;
-    border: 0;
-    margin: 0;
-    list-style-type: none;
-    text-decoration: none;
-    // outline: 1px solid red;
+  box-sizing: border-box;
+  position: relative;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+  // outline: 1px solid red;
 }
 a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 a:focus,
 a:active {
-    outline: none;
+  outline: none;
 }
 
 ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 img {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 input,
 button,
 textarea {
-    font-family: $fontFamily;
+  font-family: $fontFamily;
 }
 button {
-    cursor: pointer;
-    border-radius: 5px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    color: $btnColour;
-    background-color: $btnBgColour;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  color: $btnColour;
+  background-color: $btnBgColour;
 }
 .wrapper {
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-    max-width: $maxWidth;
-    margin: 0 auto;
-    background-color: $bgColour;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  background-color: $bgColour;
 }
 .wrapper-grid {
-    min-height: 100%;
-    display: grid;
-    grid-template: minmax(100px, auto) 1fr minmax(70px, auto) / 1fr;
-    grid-template-areas: 'header-grid' 'main-grid' 'footer-grid';
+  min-height: 100%;
+  display: -ms-grid;
+  display: grid;
+  grid-template: minmax(100px, auto) 1fr minmax(70px, auto) / 1fr;
+  grid-template-areas: 'header-grid' 'main-grid' 'footer-grid';
 }
 .container {
-    max-width: $contWidth;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    padding: 0 15px;
+  max-width: $contWidth;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .ibg {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
 }
 .ibg img {
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .copyright {
-    &::before {
-        content: '©';
-        display: inline-block;
-        padding-right: 5px;
-    }
+  &::before {
+    content: '©';
+    display: inline-block;
+    padding-right: 5px;
+  }
 }
 
 .registerTM {
-    &::after {
-        content: '®';
-        display: inline-block;
-        padding-left: 5px;
-    }
+  &::after {
+    content: '®';
+    display: inline-block;
+    padding-left: 5px;
+  }
 }
 .trademark {
-    &::after {
-        content: '™';
-        display: inline-block;
-        padding-left: 5px;
-    }
+  &::after {
+    content: '™';
+    display: inline-block;
+    padding-left: 5px;
+  }
 }
 .euro {
-    &::after {
-        content: '£';
-        display: inline-block;
-        padding-left: 5px;
-    }
+  &::after {
+    content: '£';
+    display: inline-block;
+    padding-left: 5px;
+  }
 }
 
 .brit-pound {
-    &::after {
-        content: '£';
-        display: inline-block;
-        padding-left: 5px;
-    }
+  &::after {
+    content: '£';
+    display: inline-block;
+    padding-left: 5px;
+  }
 }
 
 .dollar {
-    &::after {
-        content: '$';
-        display: inline-block;
-        padding-left: 5px;
-    }
+  &::after {
+    content: '$';
+    display: inline-block;
+    padding-left: 5px;
+  }
 }
 
 .rub {
-    &::after {
-        content: '₽';
-        display: inline-block;
-        padding-left: 5px;
-    }
+  &::after {
+    content: '₽';
+    display: inline-block;
+    padding-left: 5px;
+  }
 }
