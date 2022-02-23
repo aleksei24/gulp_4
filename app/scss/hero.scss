@@ -27,6 +27,7 @@
   &__content {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -47,10 +48,14 @@
 
   &__title {
     font-family: $secondFont;
-    @include response-font(70, 18);
+    // @include response-font(70, 18);
+    font-size: 2.25rem;
     font-weight: 700;
-    max-width: 500px;
-    margin-bottom: 30px;
+    max-width: 31.25em;
+    margin-bottom: 1.875rem;
+    @media (min-width: $md3) {
+      font-size: 3.25rem;
+    }
 
     @media (max-width: $md3) {
       max-width: 40%;
@@ -62,18 +67,20 @@
   }
 
   &__dscr {
-    @include response-font(21, 11);
-    line-height: math.div(27, 21) * 100%;
-    max-width: 450px;
-    min-height: 80px;
+    // @include response-font(21, 11);
+    font-size: 1.3125rem;
+    line-height: 1.285;
+    max-width: 20em;
+    min-height: 5em;
     overflow: hidden;
-    max-height: 190px;
+    max-height: 11.875em;
+
+    @media (min-width: $md2) {
+      max-width: 28.125em;
+    }
 
     @media (max-width: $md3) {
-      max-width: 40%;
       z-index: 2;
-    }
-    @media (max-width: $md4) {
       max-width: 90%;
     }
   }
@@ -81,16 +88,17 @@
   &__pic {
     position: absolute;
     right: 0;
-    bottom: 0;
-    max-height: 100%;
-    max-width: 100%;
-    @media (max-width: $md2) {
-      max-width: 55%;
-      right: 50px;
+    bottom: 50%;
+    transform: translateY(50%);
+    max-width: 40em;
+    @media (min-width: $md2) {
+      max-width: 52em;
     }
+
     @media (max-width: $md3) {
-      max-width: 100%;
+      bottom: 0;
       right: 0;
+      transform: translateY(0);
     }
   }
 }
