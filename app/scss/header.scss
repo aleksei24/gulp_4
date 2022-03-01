@@ -9,12 +9,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    @media (max-width: $md2) {
-      padding-top: 15px;
-      padding-bottom: 15px;
-    }
+    @include adapt(padding-top, 20, 15, 1);
+    @include adapt(padding-bottom, 20, 15, 1);
+    // padding-top: 20px;
+    // padding-bottom: 20px;
+    // @media (max-width: $md2) {
+    //   padding-top: 15px;
+    //   padding-bottom: 15px;
+    // }
   }
 
   &__logo {

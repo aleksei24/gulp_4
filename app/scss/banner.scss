@@ -69,15 +69,15 @@
 
   &__title {
     font-family: $secondFont;
-    @include response-font(70, 18);
-    // font-size: 4.375rem;
+    // @include response-font(70, 18);
+    font-size: 4.375rem;
     color: yellowgreen;
     text-transform: uppercase;
   }
 
   &__headline {
-    @include response-font(32, 14);
-    // font-size: 2rem;
+    // @include response-font(32, 14);
+    font-size: 2rem;
     color: yellowgreen;
     text-transform: uppercase;
     margin: 1.25rem 0;
@@ -86,8 +86,8 @@
   &__btn {
     height: 2.5em;
     width: 7.5em;
-    @include response-font(16, 14);
-    // font-size: 1rem;
+    // @include response-font(16, 14);
+    font-size: 1rem;
     border-radius: 1.25rem;
     @media (max-width: $md3) {
       width: 6.25em;

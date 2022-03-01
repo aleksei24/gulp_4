@@ -40,14 +40,14 @@
   padding: 10px 0;
 }
 .goods__headline {
-  @include response-font(24, 10);
+  // @include response-font(24, 10);
   font-weight: 700;
   line-height: math.div(30, 24) * 100%;
   // white-space: nowrap;
 }
 .goods__title {
   color: $btnBgColour;
-  @include response-font(14, 10);
+  // @include response-font(14, 10);
   font-weight: 700;
   line-height: math.div(21, 14) * 100%;
   text-transform: uppercase;
@@ -55,7 +55,7 @@
 }
 .goods__text {
   color: $colourFont;
-  @include response-font(16, 9);
+  // @include response-font(16, 9);
   line-height: math.div(18, 16) * 100%;
   text-align: center;
   // max-width: 330px;
@@ -72,7 +72,7 @@
 .goods__label {
   margin-bottom: 10px;
   padding: 0 5px;
-  @include response-font(15, 9);
+  // @include response-font(15, 9);
   text-transform: uppercase;
   background-color: $labelBg;
   border-radius: 15px;
@@ -94,7 +94,7 @@
     text-align: right;
     color: $priceOld;
     // font-size: 12px;
-    @include response-font(12, 9);
+    // @include response-font(12, 9);
     line-height: 150%;
     text-decoration: line-through;
   }
@@ -117,7 +117,7 @@
 
   &__current {
     // font-size: 18px;
-    @include response-font(18, 11);
+    // @include response-font(18, 11);
     font-family: $secondFont;
     color: $priceCurrent;
   }

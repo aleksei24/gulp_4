@@ -35,13 +35,17 @@
   span {
     color: rgb(39, 206, 39);
   }
+  @media (max-width: $md2) {
+    font-size: calc(rem(24) + (70 - 24) * (100vw - 320px) / (1500 - 320));
+    // min-font-size + (max-font-size - min-font-size) * (full-viewport - min-media-query) / (media-query start changes from - min-media-query)
+  }
   @media (max-width: $md3) {
     max-width: calc(100vw - 50%);
-    font-size: 3.5rem;
+    // font-size: 3.5rem;
   }
   @media (max-width: $md5) {
     max-width: calc(100vw - 10%);
-    font-size: 2.5rem;
+    // font-size: 2.5rem;
   }
 }
 .fullscreen__text {
@@ -72,12 +76,8 @@
   line-height: 30px;
   text-transform: uppercase;
   letter-spacing: 1.4px;
-  @media (max-width: 500px) {
-    width: 150px;
-    height: 40px;
-  }
-  @media (max-width: 350px) {
-    width: 120px;
+  @media (max-width: $md3) {
+    width: calc(120px + (169 - 120) * (100vw - 320px) / (992 - 320));
     height: 30px;
     font-size: 12px;
   }

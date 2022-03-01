@@ -48,8 +48,8 @@
 
   &__title {
     font-family: $secondFont;
+    font-size: rem(65);
     // @include response-font(70, 18);
-    font-size: 4.375rem;
     font-weight: 700;
     max-width: 31.25em;
     margin-bottom: 0.875em;
@@ -64,7 +64,8 @@
   }
 
   &__dscr {
-    @include response-font(21, 10);
+    font-size: rem(21);
+    // @include response-font(21, 10);
     line-height: math.div(27, 21);
     max-width: 28.125em;
     min-height: 5em;
@@ -110,7 +111,8 @@
   &__btn {
     height: 3.125em;
     width: 8.75em;
-    @include response-font(18, 11);
+    font-size: rem(18);
+    // @include response-font(18, 11);
     border: 1px solid $colourFont;
     border-radius: 0.625em;
     @media (max-width: $md4) {

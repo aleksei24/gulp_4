@@ -13,7 +13,7 @@
 
   &__text {
     color: $bgColour;
-    @include response-font(16, 8);
+    // @include response-font(16, 8);
   }
 
   &__close {

@@ -66,7 +66,7 @@
   left: 50%;
   transform: translateX(-50%);
   span {
-    @include response-font(24, 12);
+    // @include response-font(24, 12);
     font-weight: 700;
     text-transform: capitalize;
     border: 1px solid $colourFont;
