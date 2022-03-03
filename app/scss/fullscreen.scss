@@ -36,8 +36,10 @@
     color: rgb(39, 206, 39);
   }
   @media (max-width: $md2) {
-    font-size: calc(rem(24) + (70 - 24) * (100vw - 320px) / (1500 - 320));
-    // min-font-size + (max-font-size - min-font-size) * (full-viewport - min-media-query) / (media-query start changes from - min-media-query)
+    @include adapt(font-size, 70, 24, 1)
+      // font-size: calc(rem(24) + (70 - 24) * (100vw - 320px) / (1520 - 320));
+      // min-font-size + (max-font-size - min-font-size) * (full-viewport - min-media-query) / (media-query start changes from - min-media-query)
+;
   }
   @media (max-width: $md3) {
     max-width: calc(100vw - 50%);
