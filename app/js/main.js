@@ -19,6 +19,7 @@
 @@include('./chunks/_size_select.js')
 @@include('./chunks/_custom_select.js')
 @@include('./chunks/_tabs_page.js')
+@@include('./chunks/_dynamic_adapt.js')
 @@include('./chunks/_advert_top.js')
 @@include('./chunks/_fixed_header.js')
 @@include('./chunks/_up_to.js')

@@ -87,6 +87,7 @@
   &__prop {
     // font-size: 12px;
     @include response-font(12, 9);
+    font-size: rem(12);
     text-transform: uppercase;
     color: $priceOld;
     margin-bottom: 20px;
@@ -97,8 +98,7 @@
 
   &__title {
     font-family: $secondFont;
-    // font-size: 24px;
-    @include response-font(24, 13);
+    font-size: rem(24);
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 35px;
@@ -124,7 +124,7 @@
     span {
       min-width: 80px;
       margin-left: 10px;
-      @include response-font(15, 10);
+      font-size: rem(15);
     }
   }
 
@@ -143,7 +143,7 @@
   }
 
   &__descr {
-    @include response-font(15, 10);
+    font-size: rem(15);
     margin-bottom: 20px;
     max-width: 500px;
     min-height: 65px;
@@ -168,8 +168,7 @@
     width: 45%;
     height: 70px;
     border: 1px solid black;
-    // font-size: 18px;
-    @include response-font(18, 8);
+    font-size: rem(18);
     font-weight: 700;
     text-transform: uppercase;
     border-radius: 5px;
@@ -196,8 +195,7 @@
       margin-top: 25px;
     }
     span {
-      // font-size: 19px;
-      @include response-font(19, 11);
+      font-size: rem(19);
       color: $priceOld;
       text-transform: uppercase;
     }
@@ -207,25 +205,23 @@
   font-family: $secondFont;
   &__current {
     color: $priceCurrent;
-    @include response-font(16, 12);
-    font-size: 20px;
+    font-size: rem(20);
   }
 
   &__old {
     color: $priceOld;
-    // font-size: 15px;
-    @include response-font(15, 11);
+    font-size: rem(15);
   }
 }
 
 .colour-select {
   &__done {
     color: $priceOld;
-    @include response-font(16, 11);
     text-transform: capitalize;
+    font-size: rem(16);
     span {
       color: $colourFont;
-      @include response-font(16, 11);
+      font-size: rem(16);
     }
   }
 
@@ -301,10 +297,10 @@
   &__done {
     color: $priceOld;
     text-transform: capitalize;
-    @include response-font(16, 11);
+    font-size: rem(16);
     span {
       color: $colourFont;
-      @include response-font(16, 11);
+      font-size: rem(16);
     }
   }
 
@@ -324,7 +320,7 @@
     border: 1px solid $priceOld;
     @media (max-width: $md3) {
       margin-right: 15px;
-      @include response-font(16, 11);
+      font-size: rem(16);
     }
     &:last-child {
       margin-right: 0;
