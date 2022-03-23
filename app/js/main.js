@@ -17,6 +17,7 @@
 @@include('./chunks/_swiper_slider.js')
 @@include('./chunks/_colour_select.js')
 @@include('./chunks/_size_select.js')
+@@include('./chunks/_spoilers.js')
 @@include('./chunks/_custom_select.js')
 @@include('./chunks/_tabs_page.js')
 @@include('./chunks/_dynamic_adapt.js')
