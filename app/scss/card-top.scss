@@ -86,7 +86,6 @@
 .card-info {
   &__prop {
     // font-size: 12px;
-    @include response-font(12, 9);
     font-size: rem(12);
     text-transform: uppercase;
     color: $priceOld;
