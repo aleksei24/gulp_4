@@ -114,7 +114,7 @@ function hideSpoilersBody(spoilersBlock) {
 }
 
 let _slideUp = (target, duration = 500) => {
-  if (target.classList.contains('_slide')) {
+  if (!target.classList.contains('_slide')) {
     target.classList.add('_slide');
     target.style.transitionProperty = 'height, margin, padding';
     target.style.transitionDuration = duration + 'ms';
