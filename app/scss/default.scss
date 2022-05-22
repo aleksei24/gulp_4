@@ -1,8 +1,8 @@
 $fontFamily: 'Varela';
 $secondFont: 'Salsa';
 
-$maxWidth: 120em;
-$minWidth: 20em;
+$maxWidth: em(1920);
+$minWidth: em(320);
 $contWidth: 111.875rem;
 $md1: $contWidth;
 $md2: 93.75em;
