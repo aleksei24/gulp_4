@@ -1,30 +1,39 @@
 // upTo
 
+const header = document.querySelector('.header');
 const toTop = document.querySelector('.toTop');
 
 if (toTop) {
-    window.onscroll = function () {
-        scrollFunction();
-        fixedHeader();
-    };
+  window.onscroll = function () {
+    scrollFunction();
+    fixedHeader();
+  };
 
-    toTop.addEventListener('click', onTheTop);
+  toTop.addEventListener('click', onTheTop);
 }
 
 function scrollFunction() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        toTop.classList.add('show');
-    } else {
-        toTop.classList.remove('show');
-    }
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    toTop.classList.add('show');
+  } else {
+    toTop.classList.remove('show');
+  }
+}
+
+function fixedHeader() {
+  if (window.pageYOffset >= 50) {
+    header.classList.add('header_fixed');
+  } else {
+    header.classList.remove('header_fixed');
+  }
 }
 
 function onTheTop() {
-    let position = document.body.scrollTop !== 0 || document.documentElement.scrollTop !== 0;
-    if (position) {
-        window.scrollBy(0, -40);
-        requestAnimationFrame(onTheTop);
-    }
+  let position = document.body.scrollTop !== 0 || document.documentElement.scrollTop !== 0;
+  if (position) {
+    window.scrollBy(0, -40);
+    requestAnimationFrame(onTheTop);
+  }
 }
 
 // in window.scrollBy(0, -30), changing a second parameter(-30) affects the speed of scrolling

@@ -10,6 +10,7 @@ if (header) {
 
 if (headerTop) {
   header.style.top = -40;
+  fixedHeader();
 } else {
   header.style.top = 0;
 }
