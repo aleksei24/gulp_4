@@ -1,47 +1,47 @@
 // Swiper
 const indexSwiper = new Swiper('.index-swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    speed: 1000,
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  speed: 1000,
 
-    // Navigation arrows
-    /*navigation: {
+  // Navigation arrows
+  /*navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },*/
 
-    // autoplay
-    autoplay: {
-        delay: 5000,
-    },
+  // autoplay
+  autoplay: {
+    delay: 5000,
+  },
 
-    // pagination
-    pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-    },
+  // pagination
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+  },
 });
 
 const catalogueSwiper = new Swiper('.catalog-swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    speed: 1500,
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  speed: 1500,
 
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
-    // autoplay
-    /*autoplay: {
+  // autoplay
+  /*autoplay: {
         delay: 45000,
     },*/
 
-    // pagination
-    /*pagination: {
+  // pagination
+  /*pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
     },*/
