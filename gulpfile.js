@@ -97,7 +97,7 @@ function css() {
 
 function js() {
   return src(path.src.js)
-    .pipe(webpack())
+    .pipe(webpack(require('./webpack.config.js')))
     .pipe(uglifyes())
     .pipe(
       rename({
