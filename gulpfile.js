@@ -48,7 +48,6 @@ const { src, dest } = require('gulp'),
   webpcss = require('gulp-webp-css'),
   ttf2woff = require('gulp-ttf2woff'),
   ttf2woff2 = require('gulp-ttf2woff2'),
-  fonter = require('gulp-fonter'),
   webpack = require('webpack-stream');
 
 function browserSync() {
@@ -135,16 +134,6 @@ function fonts() {
   src(path.src.fonts).pipe(ttf2woff()).pipe(dest(path.build.fonts));
   return src(path.src.fonts).pipe(ttf2woff2()).pipe(dest(path.build.fonts));
 }
-
-gulp.task('otf2ttf', function () {
-  return src([sourceFolder + '/fonts/*.otf'])
-    .pipe(
-      fonter({
-        formats: ['ttf'],
-      })
-    )
-    .pipe(dest(sourceFolder + '/fonts/'));
-});
 
 function fontsStyle() {
   let file_content = fs.readFileSync(sourceFolder + '/scss/fonts.scss');
