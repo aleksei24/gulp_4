@@ -21,3 +21,4 @@ import './chunks/_advert_top';
 import './chunks/_up_to';
 import './chunks/_show_more';
 import './chunks/_aside';
+import './chunks/_spoilers';
