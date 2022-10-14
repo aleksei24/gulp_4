@@ -43,13 +43,15 @@ const { src, dest } = require('gulp'),
   cleancss = require('gulp-clean-css'),
   rename = require('gulp-rename'),
   uglifyes = require('gulp-uglify-es').default,
-  webp = require('gulp-webp'),
-  webphtml = require('gulp-webp-html'),
-  webpcss = require('gulp-webp-css'),
+  // imagemin = require('imagemin'),
+  // imageminwebp = require('imagemin-webp'),
   ttf2woff = require('gulp-ttf2woff'),
   ttf2woff2 = require('gulp-ttf2woff2'),
   fonter = require('gulp-fonter'),
   webpack = require('webpack-stream');
+
+import { imagemin } from './node_modules/imagemin/index.js';
+import { imageminwebp } from './node_modules/imagemin-webp/index.js';
 
 function browserSync() {
   browser.init({
@@ -62,11 +64,7 @@ function browserSync() {
 }
 
 function html() {
-  return src(path.src.html)
-    .pipe(fileinclude())
-    .pipe(webphtml())
-    .pipe(dest(path.build.html))
-    .pipe(browser.stream());
+  return src(path.src.html).pipe(fileinclude()).pipe(dest(path.build.html)).pipe(browser.stream());
 }
 
 function css() {
@@ -84,7 +82,6 @@ function css() {
         cascade: true,
       })
     )
-    .pipe(webpcss())
     .pipe(cleancss())
     .pipe(
       rename({
@@ -120,11 +117,16 @@ function swiperJs() {
     .pipe(browser.stream());
 }
 
-function images() {
+async function images() {
   return src(path.src.img)
     .pipe(
-      webp({
-        quality: 70,
+      await imagemin(['app/img/*.{jpg,png}'], {
+        destination: 'build/img',
+        plugins: [
+          imageminwebp({
+            quality: 70,
+          }),
+        ],
       })
     )
     .pipe(dest(path.build.img))
