@@ -43,14 +43,8 @@ const { src, dest } = require('gulp'),
   cleancss = require('gulp-clean-css'),
   rename = require('gulp-rename'),
   uglifyes = require('gulp-uglify-es').default,
-  imagemin = require('imagemin'),
-  imageminwebp = require('imagemin-webp'),
   ttf2woff2 = require('gulp-ttf2woff2'),
-  fonter = require('gulp-fonter'),
   webpack = require('webpack-stream');
-
-// import imagemin from 'imagemin';
-// import imageminwebp from 'imagemin-webp';
 
 function browserSync() {
   browser.init({
@@ -117,33 +111,12 @@ function swiperJs() {
 }
 
 function images() {
-  return src(path.src.img)
-    .pipe(
-      imagemin({
-        plugins: [
-          imageminwebp({
-            quality: 70,
-          }),
-        ],
-      })
-    )
-    .pipe(dest(path.build.img))
-    .pipe(browser.stream());
+  return src(path.src.img).pipe(dest(path.build.img)).pipe(browser.stream());
 }
 
 function fonts() {
   return src(path.src.fonts).pipe(ttf2woff2()).pipe(dest(path.build.fonts));
 }
-
-gulp.task('otf2ttf', function () {
-  return src([sourceFolder + '/fonts/*.otf'])
-    .pipe(
-      fonter({
-        formats: ['ttf'],
-      })
-    )
-    .pipe(dest(sourceFolder + '/fonts/'));
-});
 
 function fontsStyle() {
   let file_content = fs.readFileSync(sourceFolder + '/scss/fonts.scss');
