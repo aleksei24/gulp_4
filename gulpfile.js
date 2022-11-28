@@ -45,7 +45,6 @@ const { src, dest } = require('gulp'),
   uglifyes = require('gulp-uglify-es').default,
   imagemin = require('imagemin'),
   imageminwebp = require('imagemin-webp'),
-  ttf2woff = require('gulp-ttf2woff'),
   ttf2woff2 = require('gulp-ttf2woff2'),
   fonter = require('gulp-fonter'),
   webpack = require('webpack-stream');
@@ -133,7 +132,6 @@ function images() {
 }
 
 function fonts() {
-  src(path.src.fonts).pipe(ttf2woff()).pipe(dest(path.build.fonts));
   return src(path.src.fonts).pipe(ttf2woff2()).pipe(dest(path.build.fonts));
 }
 
