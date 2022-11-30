@@ -43,9 +43,6 @@ const { src, dest } = require('gulp'),
   cleancss = require('gulp-clean-css'),
   rename = require('gulp-rename'),
   uglifyes = require('gulp-uglify-es').default,
-  webp = require('gulp-webp'),
-  webphtml = require('gulp-webp-html'),
-  webpcss = require('gulp-webp-css'),
   ttf2woff2 = require('gulp-ttf2woff2'),
   webpack = require('webpack-stream');
 
@@ -60,11 +57,7 @@ function browserSync() {
 }
 
 function html() {
-  return src(path.src.html)
-    .pipe(fileinclude())
-    .pipe(webphtml())
-    .pipe(dest(path.build.html))
-    .pipe(browser.stream());
+  return src(path.src.html).pipe(fileinclude()).pipe(dest(path.build.html)).pipe(browser.stream());
 }
 
 function css() {
@@ -82,7 +75,6 @@ function css() {
         cascade: true,
       })
     )
-    .pipe(webpcss())
     .pipe(cleancss())
     .pipe(
       rename({
@@ -119,14 +111,7 @@ function swiperJs() {
 }
 
 function images() {
-  return src(path.src.img)
-    .pipe(
-      webp({
-        quality: 70,
-      })
-    )
-    .pipe(dest(path.build.img))
-    .pipe(browser.stream());
+  return src(path.src.img).pipe(dest(path.build.img)).pipe(browser.stream());
 }
 
 function fonts() {
