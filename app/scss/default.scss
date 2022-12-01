@@ -3,15 +3,15 @@ $secondFont: 'Salsa';
 
 $maxWidth: em(1920);
 $minWidth: em(320);
-$contWidth: 111.875rem;
+$contWidth: em(1790);
 $md1: $contWidth;
-$md2: 93.75em;
-$md3: 62em;
-$md4: 48em;
-$md5: 30em;
+$md2: em(1500);
+$md3: em(992);
+$md4: em(768);
+$md5: em(480);
 
-$indexSliderWidth: 100em;
-$catalogSliderWidth: 112.5em;
+$indexSliderWidth: em(1600);
+$catalogSliderWidth: em(1800);
 
 $bgColour: #ffffff;
 $popupBg: rgb(202, 202, 202);
