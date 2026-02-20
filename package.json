@@ -32,7 +32,7 @@
     "gulp-webp-css": "^1.1.0",
     "gulp-webp-html": "^1.0.2",
     "sass": "^1.56.1",
-    "swiper": "^8.4.5",
+    "swiper": "^12.1.2",
     "webpack-stream": "^7.0.0"
   }
 }
